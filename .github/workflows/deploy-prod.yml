@@ -17,6 +17,7 @@ jobs:
       matrix:
         client:
           - BLUE_PROD
+          - ULTREX_PROD
       fail-fast: false
 
     steps:
