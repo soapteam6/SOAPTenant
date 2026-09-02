@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{de308207-a0a5-4a5d-b868-4f39f1b6791a}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="soap_appkey" select="1" icon="1" preview="1">
+        <row name="result" id="soap_gridviewpreferenceid">
+          <cell name="soap_appkey" width="300" />
+          <cell name="soap_defaultview" width="150" />
+          <cell name="soap_prefs" width="150" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="soap_gridviewpreference">
+          <attribute name="soap_gridviewpreferenceid" />
+          <attribute name="soap_appkey" />
+          <attribute name="createdon" />
+          <order attribute="soap_appkey" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <attribute name="soap_defaultview" />
+          <attribute name="soap_prefs" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Active Grid View Preferences" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

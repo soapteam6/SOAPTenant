@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{73c4d95d-a204-4748-912f-c33d5327fec8}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="soap_name" select="1" icon="1" preview="1">
+        <row name="result" id="soap_leaseagreementid">
+          <cell name="soap_name" width="300" />
+          <cell name="soap_agreementleasecode" width="106" />
+          <cell name="soap_leasecodedescription" width="175" />
+          <cell name="soap_startdate" width="100" />
+          <cell name="soap_terminationdate" width="139" />
+          <cell name="soap_paymentamount" width="139" />
+          <cell name="soap_financedamount" width="141" />
+          <cell name="soap_isactive" width="100" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="soap_leaseagreement">
+          <attribute name="soap_leaseagreementid" />
+          <attribute name="soap_name" />
+          <order attribute="soap_name" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <attribute name="soap_startdate" />
+          <attribute name="soap_terminationdate" />
+          <attribute name="soap_isactive" />
+          <attribute name="soap_paymentamount" />
+          <attribute name="soap_leasecodedescription" />
+          <attribute name="soap_financedamount" />
+          <attribute name="soap_agreementleasecode" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Active EA Lease Agreements" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

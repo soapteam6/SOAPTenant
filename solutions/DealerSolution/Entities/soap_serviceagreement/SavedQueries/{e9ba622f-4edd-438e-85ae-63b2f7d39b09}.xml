@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{e9ba622f-4edd-438e-85ae-63b2f7d39b09}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="soap_name" select="1" icon="1" preview="1">
+        <row name="result" id="soap_serviceagreementid">
+          <cell name="soap_name" width="300" />
+          <cell name="soap_coveredcopies" width="130" />
+          <cell name="soap_contractdetailmetercode" width="163" />
+          <cell name="soap_contractmetergroup" width="165" />
+          <cell name="soap_metergroupcode" width="198" />
+          <cell name="soap_baserateperiod" width="137" />
+          <cell name="soap_detailbaserate" width="135" />
+          <cell name="soap_rate" width="100" />
+          <cell name="soap_contractleasetermcode" width="139" />
+          <cell name="soap_contractterminationcode" width="142" />
+          <cell name="soap_isactive" width="100" />
+          <cell name="soap_startdate" width="100" />
+          <cell name="soap_expdate" width="100" />
+          <cell name="soap_equipmentid" width="102" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="soap_serviceagreement">
+          <attribute name="soap_serviceagreementid" />
+          <attribute name="soap_name" />
+          <order attribute="soap_name" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <attribute name="soap_coveredcopies" />
+          <attribute name="soap_detailbaserate" />
+          <attribute name="soap_rate" />
+          <attribute name="soap_contractdetailmetercode" />
+          <attribute name="soap_metergroupcode" />
+          <attribute name="soap_contractleasetermcode" />
+          <attribute name="soap_contractterminationcode" />
+          <attribute name="soap_contractmetergroup" />
+          <attribute name="soap_isactive" />
+          <attribute name="soap_startdate" />
+          <attribute name="soap_expdate" />
+          <attribute name="soap_equipmentid" />
+          <attribute name="soap_baserateperiod" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Active EA Service Agreements" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

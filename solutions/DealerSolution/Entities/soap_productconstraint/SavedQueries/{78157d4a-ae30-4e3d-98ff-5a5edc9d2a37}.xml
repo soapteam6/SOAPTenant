@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{78157d4a-ae30-4e3d-98ff-5a5edc9d2a37}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="soap_name" select="1" icon="1" preview="1">
+        <row name="result" id="soap_productconstraintid">
+          <cell name="soap_name" width="135" />
+          <cell name="soap_parentproductid" width="164" />
+          <cell name="soap_childproductid" width="119" />
+          <cell name="soap_type" width="100" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="soap_productconstraint">
+          <attribute name="soap_productconstraintid" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <attribute name="soap_parentproductid" />
+          <attribute name="soap_childproductid" />
+          <attribute name="soap_name" />
+          <order attribute="soap_name" descending="false" />
+          <attribute name="soap_type" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Active Product Constraints" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

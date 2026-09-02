@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{7bc26895-cdcb-4556-bf7c-9c57870dd974}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="soap_name" select="1" icon="1" preview="1">
+        <row name="result" id="soap_salesorderid">
+          <cell name="soap_name" width="300" />
+          <cell name="soap_accountid" width="100" />
+          <cell name="statuscode" width="119" />
+          <cell name="soap_totalcost" width="100" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>1</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="soap_salesorder">
+          <attribute name="soap_salesorderid" />
+          <attribute name="soap_name" />
+          <order attribute="soap_name" descending="false" />
+          <attribute name="soap_accountid" />
+          <attribute name="statuscode" />
+          <attribute name="soap_totalcost" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0.0.2</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Sales Order Advanced Find View" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

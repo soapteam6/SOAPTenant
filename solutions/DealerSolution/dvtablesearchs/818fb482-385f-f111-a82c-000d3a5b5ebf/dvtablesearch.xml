@@ -1,0 +1,11 @@
+<dvtablesearch dvtablesearchid="818fb482-385f-f111-a82c-000d3a5b5ebf">
+  <appmoduleuniquename>soap_CRM</appmoduleuniquename>
+  <iscustomizable>1</iscustomizable>
+  <m365appmoduleid>
+    <uniquename>soap_CRM</uniquename>
+  </m365appmoduleid>
+  <name>M365_Primary_model_soap_CRM</name>
+  <searchtype>0</searchtype>
+  <statecode>1</statecode>
+  <statuscode>2</statuscode>
+</dvtablesearch>

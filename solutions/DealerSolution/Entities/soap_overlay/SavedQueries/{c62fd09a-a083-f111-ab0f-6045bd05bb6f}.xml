@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{c62fd09a-a083-f111-ab0f-6045bd05bb6f}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="soap_name" select="1" icon="1" preview="1">
+        <row name="result" id="soap_overlayid">
+          <cell name="soap_name" width="200" />
+          <cell name="soap_territoryid" width="158" />
+          <cell name="soap_systemuserid" width="242" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" output-format="xml-platform" mapping="logical" distinct="true">
+        <entity name="soap_overlay">
+          <attribute name="soap_name" />
+          <attribute name="soap_overlayid" />
+          <attribute name="soap_territoryid" />
+          <attribute name="soap_systemuserid" />
+          <order attribute="soap_name" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0.0.14</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Active Overlays" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

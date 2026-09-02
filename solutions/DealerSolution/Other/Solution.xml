@@ -1,0 +1,342 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ImportExportXml version="9.2.26071.168" SolutionPackageVersion="9.2" languagecode="1033" generatedBy="CrmLive" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" OrganizationVersion="9.2.26071.168" OrganizationSchemaType="Standard" CRMServerServiceabilityVersion="9.2.26071.00168">
+  <SolutionManifest>
+    <UniqueName>DealerSolution</UniqueName>
+    <LocalizedNames>
+      <LocalizedName description="DealerSolution" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions />
+    <Version>1.0.0.26</Version>
+    <Managed>0</Managed>
+    <Publisher>
+      <UniqueName>Soap</UniqueName>
+      <LocalizedNames>
+        <LocalizedName description="Soap Solutions" languagecode="1033" />
+      </LocalizedNames>
+      <Descriptions />
+      <EMailAddress xsi:nil="true"></EMailAddress>
+      <SupportingWebsiteUrl xsi:nil="true"></SupportingWebsiteUrl>
+      <CustomizationPrefix>soap</CustomizationPrefix>
+      <CustomizationOptionValuePrefix>40667</CustomizationOptionValuePrefix>
+      <Addresses>
+        <Address>
+          <AddressNumber>1</AddressNumber>
+          <AddressTypeCode>1</AddressTypeCode>
+          <City xsi:nil="true"></City>
+          <County xsi:nil="true"></County>
+          <Country xsi:nil="true"></Country>
+          <Fax xsi:nil="true"></Fax>
+          <FreightTermsCode xsi:nil="true"></FreightTermsCode>
+          <ImportSequenceNumber xsi:nil="true"></ImportSequenceNumber>
+          <Latitude xsi:nil="true"></Latitude>
+          <Line1 xsi:nil="true"></Line1>
+          <Line2 xsi:nil="true"></Line2>
+          <Line3 xsi:nil="true"></Line3>
+          <Longitude xsi:nil="true"></Longitude>
+          <Name xsi:nil="true"></Name>
+          <PostalCode xsi:nil="true"></PostalCode>
+          <PostOfficeBox xsi:nil="true"></PostOfficeBox>
+          <PrimaryContactName xsi:nil="true"></PrimaryContactName>
+          <ShippingMethodCode>1</ShippingMethodCode>
+          <StateOrProvince xsi:nil="true"></StateOrProvince>
+          <Telephone1 xsi:nil="true"></Telephone1>
+          <Telephone2 xsi:nil="true"></Telephone2>
+          <Telephone3 xsi:nil="true"></Telephone3>
+          <TimeZoneRuleVersionNumber xsi:nil="true"></TimeZoneRuleVersionNumber>
+          <UPSZone xsi:nil="true"></UPSZone>
+          <UTCOffset xsi:nil="true"></UTCOffset>
+          <UTCConversionTimeZoneCode xsi:nil="true"></UTCConversionTimeZoneCode>
+        </Address>
+        <Address>
+          <AddressNumber>2</AddressNumber>
+          <AddressTypeCode>1</AddressTypeCode>
+          <City xsi:nil="true"></City>
+          <County xsi:nil="true"></County>
+          <Country xsi:nil="true"></Country>
+          <Fax xsi:nil="true"></Fax>
+          <FreightTermsCode xsi:nil="true"></FreightTermsCode>
+          <ImportSequenceNumber xsi:nil="true"></ImportSequenceNumber>
+          <Latitude xsi:nil="true"></Latitude>
+          <Line1 xsi:nil="true"></Line1>
+          <Line2 xsi:nil="true"></Line2>
+          <Line3 xsi:nil="true"></Line3>
+          <Longitude xsi:nil="true"></Longitude>
+          <Name xsi:nil="true"></Name>
+          <PostalCode xsi:nil="true"></PostalCode>
+          <PostOfficeBox xsi:nil="true"></PostOfficeBox>
+          <PrimaryContactName xsi:nil="true"></PrimaryContactName>
+          <ShippingMethodCode>1</ShippingMethodCode>
+          <StateOrProvince xsi:nil="true"></StateOrProvince>
+          <Telephone1 xsi:nil="true"></Telephone1>
+          <Telephone2 xsi:nil="true"></Telephone2>
+          <Telephone3 xsi:nil="true"></Telephone3>
+          <TimeZoneRuleVersionNumber xsi:nil="true"></TimeZoneRuleVersionNumber>
+          <UPSZone xsi:nil="true"></UPSZone>
+          <UTCOffset xsi:nil="true"></UTCOffset>
+          <UTCConversionTimeZoneCode xsi:nil="true"></UTCConversionTimeZoneCode>
+        </Address>
+      </Addresses>
+    </Publisher>
+    <RootComponents>
+      <RootComponent type="1" schemaName="account" behavior="1" />
+      <RootComponent type="1" schemaName="appointment" behavior="2" />
+      <RootComponent type="1" schemaName="contact" behavior="1" />
+      <RootComponent type="1" schemaName="email" behavior="2" />
+      <RootComponent type="1" schemaName="phonecall" behavior="2" />
+      <RootComponent type="1" schemaName="soap_accessory" behavior="0" />
+      <RootComponent type="1" schemaName="soap_accountcompinfo" behavior="0" />
+      <RootComponent type="1" schemaName="soap_associatedcontact" behavior="0" />
+      <RootComponent type="1" schemaName="soap_brand" behavior="0" />
+      <RootComponent type="1" schemaName="soap_competitor" behavior="0" />
+      <RootComponent type="1" schemaName="soap_contact" behavior="0" />
+      <RootComponent type="1" schemaName="soap_contactrole" behavior="0" />
+      <RootComponent type="1" schemaName="soap_customer" behavior="0" />
+      <RootComponent type="1" schemaName="soap_dealgroup" behavior="0" />
+      <RootComponent type="1" schemaName="soap_dealnote" behavior="0" />
+      <RootComponent type="1" schemaName="soap_dealnoteattachment" behavior="0" />
+      <RootComponent type="1" schemaName="soap_dealsource" behavior="0" />
+      <RootComponent type="1" schemaName="soap_dealtag" behavior="0" />
+      <RootComponent type="1" schemaName="soap_discountpromotion" behavior="0" />
+      <RootComponent type="1" schemaName="soap_equipment" behavior="0" />
+      <RootComponent type="1" schemaName="soap_gridview" behavior="0" />
+      <RootComponent type="1" schemaName="soap_gridviewpreference" behavior="0" />
+      <RootComponent type="1" schemaName="soap_lead" behavior="0" />
+      <RootComponent type="1" schemaName="soap_leaseagreement" behavior="0" />
+      <RootComponent type="1" schemaName="soap_leaserate" behavior="0" />
+      <RootComponent type="1" schemaName="soap_leasetype" behavior="0" />
+      <RootComponent type="1" schemaName="soap_leasingcompany" behavior="0" />
+      <RootComponent type="1" schemaName="soap_meterreading" behavior="0" />
+      <RootComponent type="1" schemaName="soap_offering" behavior="0" />
+      <RootComponent type="1" schemaName="soap_opportunity" behavior="0" />
+      <RootComponent type="1" schemaName="soap_overlay" behavior="0" />
+      <RootComponent type="1" schemaName="soap_pillar" behavior="0" />
+      <RootComponent type="1" schemaName="soap_pricelist" behavior="0" />
+      <RootComponent type="1" schemaName="soap_pricelistitem" behavior="0" />
+      <RootComponent type="1" schemaName="soap_product" behavior="0" />
+      <RootComponent type="1" schemaName="soap_productaccessorygroup" behavior="0" />
+      <RootComponent type="1" schemaName="soap_productaccessoryitem" behavior="0" />
+      <RootComponent type="1" schemaName="soap_productbundle" behavior="0" />
+      <RootComponent type="1" schemaName="soap_productbundleitem" behavior="0" />
+      <RootComponent type="1" schemaName="soap_productconstraint" behavior="0" />
+      <RootComponent type="1" schemaName="soap_productextensionitem" behavior="0" />
+      <RootComponent type="1" schemaName="soap_productgrouptype" behavior="0" />
+      <RootComponent type="1" schemaName="soap_productline" behavior="0" />
+      <RootComponent type="1" schemaName="soap_productpropertytype" behavior="0" />
+      <RootComponent type="1" schemaName="soap_quote" behavior="0" />
+      <RootComponent type="1" schemaName="soap_quotedetail" behavior="0" />
+      <RootComponent type="1" schemaName="soap_quoteproductline" behavior="0" />
+      <RootComponent type="1" schemaName="soap_salesorder" behavior="0" />
+      <RootComponent type="1" schemaName="soap_salesorderdetail" behavior="0" />
+      <RootComponent type="1" schemaName="soap_salesorderproductline" behavior="0" />
+      <RootComponent type="1" schemaName="soap_salesstage" behavior="0" />
+      <RootComponent type="1" schemaName="soap_serviceagreement" behavior="0" />
+      <RootComponent type="1" schemaName="soap_servicecall" behavior="0" />
+      <RootComponent type="1" schemaName="soap_servicecontract" behavior="0" />
+      <RootComponent type="1" schemaName="soap_territory" behavior="0" />
+      <RootComponent type="1" schemaName="soap_zipcode" behavior="0" />
+      <RootComponent type="1" schemaName="systemuser" behavior="1" />
+      <RootComponent type="1" schemaName="tag" behavior="1" />
+      <RootComponent type="1" schemaName="task" behavior="2" />
+      <RootComponent type="20" id="{0527251a-e697-f111-8075-70a8a5b02c62}" behavior="0" />
+      <RootComponent type="29" id="{19c3d918-9e83-f111-ab0f-6045bd05bb6f}" behavior="0" />
+      <RootComponent type="29" id="{6a8872d8-9d83-f111-ab0f-6045bd05bb6f}" behavior="0" />
+      <RootComponent type="29" id="{6bbeca56-9e83-f111-ab0f-6045bd05bb6f}" behavior="0" />
+      <RootComponent type="29" id="{a03e426a-6186-f111-ab0f-6045bd05bb6f}" behavior="0" />
+      <RootComponent type="29" id="{ac794483-a781-f111-ab0e-00224806fd03}" behavior="0" />
+      <RootComponent type="29" id="{beff82e6-1481-f111-ab0e-6045bd05bb6f}" behavior="0" />
+      <RootComponent type="300" schemaName="cr0b4_configuratorcanvasapp_67512" behavior="0" />
+      <RootComponent type="300" schemaName="soap_opportunityview_28fed" behavior="0" />
+      <RootComponent type="300" schemaName="soap_productmanagercodeapp_e9e5e" behavior="0" />
+      <RootComponent type="300" schemaName="soap_quoteviewcodeapp_02b73" behavior="0" />
+      <RootComponent type="431" schemaName="soap_brand soap_brandimage" behavior="0" />
+      <RootComponent type="431" schemaName="soap_product soap_productimage" behavior="0" />
+      <RootComponent type="432" schemaName="soap_brand" behavior="0" />
+      <RootComponent type="432" schemaName="soap_product" behavior="0" />
+      <RootComponent type="61" schemaName="soap_account.js" behavior="0" />
+      <RootComponent type="61" schemaName="soap_accountcompinfo_icon.svg" behavior="0" />
+      <RootComponent type="61" schemaName="soap_accountcompinfo.js" behavior="0" />
+      <RootComponent type="61" schemaName="soap_associatedcontact_icon.svg" behavior="0" />
+      <RootComponent type="61" schemaName="soap_competitor_icon.svg" behavior="0" />
+      <RootComponent type="61" schemaName="soap_contactrole_icon.svg" behavior="0" />
+      <RootComponent type="61" schemaName="soap_crmapp_icon.png" behavior="0" />
+      <RootComponent type="61" schemaName="soap_dealgroup_icon.svg" behavior="0" />
+      <RootComponent type="61" schemaName="soap_dealsource_icon.svg" behavior="0" />
+      <RootComponent type="61" schemaName="soap_dealtag_icon.svg" behavior="0" />
+      <RootComponent type="61" schemaName="soap_discountpromotion_icon.svg" behavior="0" />
+      <RootComponent type="61" schemaName="soap_DocumentSet" behavior="0" />
+      <RootComponent type="61" schemaName="soap_eaaccessory_icon.svg" behavior="0" />
+      <RootComponent type="61" schemaName="soap_eacontact_icon.svg" behavior="0" />
+      <RootComponent type="61" schemaName="soap_eacustomer_icon.svg" behavior="0" />
+      <RootComponent type="61" schemaName="soap_eaequipment_icon.svg" behavior="0" />
+      <RootComponent type="61" schemaName="soap_eameter_icon.svg" behavior="0" />
+      <RootComponent type="61" schemaName="soap_EntitlementPolicy" behavior="0" />
+      <RootComponent type="61" schemaName="soap_Folder" behavior="0" />
+      <RootComponent type="61" schemaName="soap_KnowledgeArticle" behavior="0" />
+      <RootComponent type="61" schemaName="soap_lead_icon.svg" behavior="0" />
+      <RootComponent type="61" schemaName="soap_leaseagreement_icon.svg" behavior="0" />
+      <RootComponent type="61" schemaName="soap_leasecompany_icon.svg" behavior="0" />
+      <RootComponent type="61" schemaName="soap_leaserate_icon.svg" behavior="0" />
+      <RootComponent type="61" schemaName="soap_leasetype_icon.svg" behavior="0" />
+      <RootComponent type="61" schemaName="soap_NewFolder" behavior="0" />
+      <RootComponent type="61" schemaName="soap_offering_icon.svg" behavior="0" />
+      <RootComponent type="61" schemaName="soap_offeringtype_icon.svg" behavior="0" />
+      <RootComponent type="61" schemaName="soap_opportunity_icon.svg" behavior="0" />
+      <RootComponent type="61" schemaName="soap_opportunity_view_html" behavior="0" />
+      <RootComponent type="61" schemaName="soap_overlay_icon.svg" behavior="0" />
+      <RootComponent type="61" schemaName="soap_pricelist_icon.svg" behavior="0" />
+      <RootComponent type="61" schemaName="soap_pricelistitem_icon.svg" behavior="0" />
+      <RootComponent type="61" schemaName="soap_product_icon.svg" behavior="0" />
+      <RootComponent type="61" schemaName="soap_product_manager_html" behavior="0" />
+      <RootComponent type="61" schemaName="soap_productaccessorygroup_icon.svg" behavior="0" />
+      <RootComponent type="61" schemaName="soap_productaccessoryitem_icon.svg" behavior="0" />
+      <RootComponent type="61" schemaName="soap_productassociation_icon.svg" behavior="0" />
+      <RootComponent type="61" schemaName="soap_productbundle_icon.svg" behavior="0" />
+      <RootComponent type="61" schemaName="soap_productbundleitem_icon.svg" behavior="0" />
+      <RootComponent type="61" schemaName="soap_ProductCatalog" behavior="0" />
+      <RootComponent type="61" schemaName="soap_productconstraint_icon.svg" behavior="0" />
+      <RootComponent type="61" schemaName="soap_productextensionitem_icon.svg" behavior="0" />
+      <RootComponent type="61" schemaName="soap_productgrouptype_icon.svg" behavior="0" />
+      <RootComponent type="61" schemaName="soap_productline_icon.svg" behavior="0" />
+      <RootComponent type="61" schemaName="soap_productpropertytype_icon.svg" behavior="0" />
+      <RootComponent type="61" schemaName="soap_quote_icon.svg" behavior="0" />
+      <RootComponent type="61" schemaName="soap_quote_view_html" behavior="0" />
+      <RootComponent type="61" schemaName="soap_quote.js" behavior="0" />
+      <RootComponent type="61" schemaName="soap_quotedetail_icon.svg" behavior="0" />
+      <RootComponent type="61" schemaName="soap_quoteproductline_icon.svg" behavior="0" />
+      <RootComponent type="61" schemaName="soap_salesorder_icon.svg" behavior="0" />
+      <RootComponent type="61" schemaName="soap_salesstage_icon.svg" behavior="0" />
+      <RootComponent type="61" schemaName="soap_serviceagreement_icon.svg" behavior="0" />
+      <RootComponent type="61" schemaName="soap_servicecall_icon.svg" behavior="0" />
+      <RootComponent type="61" schemaName="soap_servicecontract_icon.svg" behavior="0" />
+      <RootComponent type="61" schemaName="soap_territory_icon.svg" behavior="0" />
+      <RootComponent type="61" schemaName="soap_theme.xml" behavior="0" />
+      <RootComponent type="61" schemaName="soap_zipcode_icon.svg" behavior="0" />
+      <RootComponent type="62" schemaName="soap_CRM" behavior="0" />
+      <RootComponent type="80" schemaName="soap_CRM" behavior="0" />
+      <RootComponent type="9" schemaName="cr0b4_outputtype" behavior="0" />
+      <RootComponent type="9" schemaName="soap_accounttype" behavior="0" />
+      <RootComponent type="9" schemaName="soap_businesspillar" behavior="0" />
+      <RootComponent type="9" schemaName="soap_maintenancetype" behavior="0" />
+      <RootComponent type="9" schemaName="soap_opportunitysalesstage" behavior="0" />
+      <RootComponent type="9" schemaName="soap_paymenttype" behavior="0" />
+      <RootComponent type="9" schemaName="soap_placementtype" behavior="0" />
+      <RootComponent type="9" schemaName="soap_pricingmethod" behavior="0" />
+      <RootComponent type="9" schemaName="soap_productcategory" behavior="0" />
+      <RootComponent type="9" schemaName="soap_producttype" behavior="0" />
+      <RootComponent type="9" schemaName="soap_propertycalculationmethod" behavior="0" />
+      <RootComponent type="9" schemaName="soap_propertyunit" behavior="0" />
+      <RootComponent type="9" schemaName="soap_purchasetype" behavior="0" />
+      <RootComponent type="9" schemaName="soap_telecomtype" behavior="0" />
+      <RootComponent type="9" schemaName="soap_whylost" behavior="0" />
+      <RootComponent type="91" id="{eba62108-5ceb-49be-8c5c-0cbcf63880e1}" schemaName="SoapCRMPlugins, Version=0.1.0.0, Culture=neutral, PublicKeyToken=9f47782067046d89" behavior="0" />
+      <RootComponent type="92" id="{008ccaf6-e697-f111-8075-70a8a5b02d7a}" behavior="0" />
+      <RootComponent type="92" id="{06683256-1781-f111-ab0e-6045bd05bb6f}" behavior="0" />
+      <RootComponent type="92" id="{11649a38-716a-f111-a825-000d3a30a3e5}" behavior="0" />
+      <RootComponent type="92" id="{15b13568-4c96-f111-8075-70a8a5b02c62}" behavior="0" />
+      <RootComponent type="92" id="{4417872b-d872-f111-ab0e-6045bd05bb6f}" behavior="0" />
+      <RootComponent type="92" id="{4a028326-716a-f111-a825-000d3a30a3e5}" behavior="0" />
+      <RootComponent type="92" id="{51b8e3b2-da72-f111-ab0e-6045bd05bb6f}" behavior="0" />
+      <RootComponent type="92" id="{58b528ba-d772-f111-ab0e-6045bd05bb6f}" behavior="0" />
+      <RootComponent type="92" id="{5ab52886-4c96-f111-8075-70a8a5b02c62}" behavior="0" />
+      <RootComponent type="92" id="{616e6fa7-d772-f111-ab0e-6045bd05bb6f}" behavior="0" />
+      <RootComponent type="92" id="{68c5e86c-e45f-f111-a826-000d3a5a5ef8}" behavior="0" />
+      <RootComponent type="92" id="{72e27ffb-d772-f111-ab0e-6045bd05bb6f}" behavior="0" />
+      <RootComponent type="92" id="{73742c15-e797-f111-8075-70a8a5b02d7a}" behavior="0" />
+      <RootComponent type="92" id="{73ae68df-d772-f111-ab0e-6045bd05bb6f}" behavior="0" />
+      <RootComponent type="92" id="{a16b3a69-1781-f111-ab0e-6045bd05bb6f}" behavior="0" />
+      <RootComponent type="92" id="{af2ad823-e797-f111-8075-70a8a5b02d7a}" behavior="0" />
+      <RootComponent type="92" id="{c518b7e8-d772-f111-ab0e-6045bd05bb6f}" behavior="0" />
+      <RootComponent type="92" id="{c582507f-e45f-f111-a826-000d3a5a5a08}" behavior="0" />
+      <RootComponent type="92" id="{dcdd767e-4c96-f111-8075-70a8a5b02c62}" behavior="0" />
+      <RootComponent type="92" id="{e971e718-d872-f111-ab0e-6045bd05bb6f}" behavior="0" />
+    </RootComponents>
+    <MissingDependencies>
+      <MissingDependency>
+        <Required type="1" schemaName="systemuser" displayName="SystemUser" parentSchemaName="" solution="msdyn_PowerAdminSettingsEmail (2.2.3468.1)" />
+        <Dependent type="1" schemaName="systemuser" displayName="SystemUser" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="tag" displayName="Tag" solution="MicrosoftFlowExtensionsCore (1.10.10.0)">
+          <package appName="MicrosoftFlowExtensionsCore" version="1.10.10.0">MicrosoftFlowExtensionsAnchor (1.10.10.0)</package>
+        </Required>
+        <Dependent type="1" schemaName="tag" displayName="Tag" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="60" displayName="account contact card" parentDisplayName="Contact" solution="msdynce_AppCommon (9.0.4.0066)" id="{29de27bc-a257-4f29-99cf-bab4a84e688f}">
+          <package appName="msdynce_AppCommon" version="9.0.26071.10001">msdynce_AppCommonAnchor (9.0.26071.10001)</package>
+        </Required>
+        <Dependent type="60" displayName="Account" parentDisplayName="Account" id="{8448b78f-8f42-454e-8e2a-f8196b0419af}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="60" displayName="Account" parentDisplayName="Account" solution="msdynce_AppCommon (9.0.4.0066)" id="{8448b78f-8f42-454e-8e2a-f8196b0419af}">
+          <package appName="msdynce_AppCommon" version="9.0.26071.10001">msdynce_AppCommonAnchor (9.0.26071.10001)</package>
+        </Required>
+        <Dependent type="60" displayName="Account" parentDisplayName="Account" id="{8448b78f-8f42-454e-8e2a-f8196b0419af}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="60" displayName="account card" parentDisplayName="Account" solution="msdynce_AppCommon (9.0.4.0066)" id="{b028db32-3619-48a5-ac51-cf3f947b0ef3}">
+          <package appName="msdynce_AppCommon" version="9.0.26071.10001">msdynce_AppCommonAnchor (9.0.26071.10001)</package>
+        </Required>
+        <Dependent type="60" displayName="Information" parentDisplayName="Sales Order" id="{10e9ec36-6add-4a66-99c4-749e2b2904c1}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="66" schemaName="be_Controls.NNDropdown" displayName="be_Controls.NNDropdown" solution="NN_Dropdown (1.0.0.4)" />
+        <Dependent type="60" displayName="Information" parentDisplayName="Account Competitive Information" id="{d1edb2de-1875-444e-94e0-bf45bac12090}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="66" schemaName="MscrmControls.Canvas.CanvasControl" displayName="MscrmControls.Canvas.CanvasControl" solution="BaseCustomControlsCore (9.0.2607.1005)">
+          <package appName="Base Custom Controls" version="9.0.2607.1005">BaseCustomControlsCore (9.0.2607.1005)</package>
+        </Required>
+        <Dependent type="60" displayName="Information" parentDisplayName="Quote" id="{4330b64a-d09c-4958-839d-1d63e26b6d2b}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="66" schemaName="MscrmControls.CardFeedContainer.CardFeedContainer" displayName="MscrmControls.CardFeedContainer.CardFeedContainer" solution="BaseCustomControlsCore (9.0.2607.1005)">
+          <package appName="Base Custom Controls" version="9.0.2607.1005">BaseCustomControlsCore (9.0.2607.1005)</package>
+        </Required>
+        <Dependent type="60" displayName="Account" parentDisplayName="Account" id="{8448b78f-8f42-454e-8e2a-f8196b0419af}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="66" schemaName="MscrmControls.FieldControls.ToggleControl" displayName="MscrmControls.FieldControls.ToggleControl" solution="BaseCustomControlsCore (9.0.2607.1005)">
+          <package appName="Base Custom Controls" version="9.0.2607.1005">BaseCustomControlsCore (9.0.2607.1005)</package>
+        </Required>
+        <Dependent type="60" displayName="Information" parentDisplayName="Sales Order" id="{10e9ec36-6add-4a66-99c4-749e2b2904c1}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="66" schemaName="MscrmControls.FieldControls.ToggleControl" displayName="MscrmControls.FieldControls.ToggleControl" solution="BaseCustomControlsCore (9.0.2607.1005)">
+          <package appName="Base Custom Controls" version="9.0.2607.1005">BaseCustomControlsCore (9.0.2607.1005)</package>
+        </Required>
+        <Dependent type="60" displayName="Information" parentDisplayName="Quote" id="{4330b64a-d09c-4958-839d-1d63e26b6d2b}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="66" schemaName="MscrmControls.FieldControls.ToggleControl" displayName="MscrmControls.FieldControls.ToggleControl" solution="BaseCustomControlsCore (9.0.2607.1005)">
+          <package appName="Base Custom Controls" version="9.0.2607.1005">BaseCustomControlsCore (9.0.2607.1005)</package>
+        </Required>
+        <Dependent type="60" displayName="Account" parentDisplayName="Account" id="{8448b78f-8f42-454e-8e2a-f8196b0419af}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="66" schemaName="MscrmControls.ModelForm.ModelFormControl" displayName="MscrmControls.ModelForm.ModelFormControl" solution="BaseCustomControlsCore (9.0.2607.1005)">
+          <package appName="Base Custom Controls" version="9.0.2607.1005">BaseCustomControlsCore (9.0.2607.1005)</package>
+        </Required>
+        <Dependent type="60" displayName="Account" parentDisplayName="Account" id="{8448b78f-8f42-454e-8e2a-f8196b0419af}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="SettingDefinition" displayName="AppChannel" solution="msdyn_AppFrameworkInfraExtensions (1.0.0.18)" id.uniquename="AppChannel">
+          <package appName="PowerAppsAppFramework Package" version="1.0.0.25">PowerAppsAppFramework_Anchor (1.0.0.25)</package>
+        </Required>
+        <Dependent type="AppSetting" displayName="parentappmoduleid.uniquename=soap_CRM,settingdefinitionid.uniquename=AppChannel" id.parentappmoduleid.uniquename="soap_CRM" id.settingdefinitionid.uniquename="AppChannel" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="SettingDefinition" displayName="OverrideAppHeaderColor" solution="msdyn_PowerAppsThemingSettings (1.0.0.13)" id.uniquename="OverrideAppHeaderColor">
+          <package appName="PowerAppsThemingApp Package" version="1.0.0.12">PowerAppsThemingApp_Anchor (1.0.0.12)</package>
+        </Required>
+        <Dependent type="AppSetting" displayName="parentappmoduleid.uniquename=soap_CRM,settingdefinitionid.uniquename=OverrideAppHeaderColor" id.parentappmoduleid.uniquename="soap_CRM" id.settingdefinitionid.uniquename="OverrideAppHeaderColor" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="SettingDefinition" displayName="OverrideAppHeaderColor" solution="msdyn_PowerAppsThemingSettings (1.0.0.13)" id.uniquename="OverrideAppHeaderColor">
+          <package appName="PowerAppsThemingApp Package" version="1.0.0.12">PowerAppsThemingApp_Anchor (1.0.0.12)</package>
+        </Required>
+        <Dependent type="SettingDefinition" displayName="OverrideAppHeaderColor" id.uniquename="OverrideAppHeaderColor" />
+      </MissingDependency>
+    </MissingDependencies>
+  </SolutionManifest>
+</ImportExportXml>

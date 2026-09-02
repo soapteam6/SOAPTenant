@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WebResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <WebResourceId>{8a09e81a-df6a-f111-a825-00224806fd03}</WebResourceId>
+  <Name>soap_servicecontract_icon.svg</Name>
+  <DisplayName>soap_servicecontract_icon.svg</DisplayName>
+  <WebResourceType>11</WebResourceType>
+  <IntroducedVersion>1.0.0.1</IntroducedVersion>
+  <IsEnabledForMobileClient>1</IsEnabledForMobileClient>
+  <IsAvailableForMobileOffline>0</IsAvailableForMobileOffline>
+  <IsCustomizable>1</IsCustomizable>
+  <CanBeDeleted>1</CanBeDeleted>
+  <IsHidden>0</IsHidden>
+  <FileName>/WebResources/soap_servicecontract_iconsvg8A09E81A-DF6A-F111-A825-00224806FD03</FileName>
+</WebResource>

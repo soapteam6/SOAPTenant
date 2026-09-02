@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>1</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{7d21d29c-9a5d-4ffe-8dcf-6f9559a179a1}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="soap_name" select="1" icon="1" preview="1">
+        <row name="result" id="soap_productid">
+          <cell name="soap_name" width="300" />
+          <cell name="soap_productnumber" width="133" />
+          <cell name="soap_productcategory" width="139" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>4</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="soap_product">
+          <attribute name="soap_productid" />
+          <attribute name="soap_name" />
+          <order attribute="soap_name" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <filter type="or" isquickfindfields="1">
+            <condition attribute="soap_name" operator="like" value="{0}" />
+            <condition attribute="soap_brand" operator="like" value="{0}" />
+            <condition attribute="soap_productnumber" operator="like" value="{0}" />
+            <condition attribute="soap_productcategory" operator="like" value="{0}" />
+          </filter>
+          <attribute name="soap_productnumber" />
+          <attribute name="soap_productcategory" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Quick Find Active Products" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

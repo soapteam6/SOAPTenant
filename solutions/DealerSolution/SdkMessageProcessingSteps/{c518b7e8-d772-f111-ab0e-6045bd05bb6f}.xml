@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SdkMessageProcessingStep Name="SoapCRMPlugins.OrderProductTotalsPlugin: Delete of soap_salesorderdetail" SdkMessageProcessingStepId="{c518b7e8-d772-f111-ab0e-6045bd05bb6f}" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SdkMessageId>a1bdbb1b-ea3e-db11-86a7-000a3a5473e8</SdkMessageId>
+  <PluginTypeName>SoapCRMPlugins.OrderProductTotalsPlugin, SoapCRMPlugins, Version=0.1.0.0, Culture=neutral, PublicKeyToken=9f47782067046d89</PluginTypeName>
+  <PluginTypeId>d25ab548-a49b-4b72-bd14-47a526d9c7d0</PluginTypeId>
+  <PrimaryEntity>soap_salesorderdetail</PrimaryEntity>
+  <AsyncAutoDelete>0</AsyncAutoDelete>
+  <FilteringAttributes></FilteringAttributes>
+  <InvocationSource>1</InvocationSource>
+  <Mode>0</Mode>
+  <Rank>1</Rank>
+  <EventHandlerTypeCode>4602</EventHandlerTypeCode>
+  <Stage>40</Stage>
+  <IsCustomizable>1</IsCustomizable>
+  <IsHidden>0</IsHidden>
+  <SupportedDeployment>0</SupportedDeployment>
+  <IntroducedVersion>1.0.0.7</IntroducedVersion>
+  <SdkMessageProcessingStepImages>
+    <SdkMessageProcessingStepImage Name="PreImage">
+      <SdkMessageProcessingStepImageId>{f6b9a105-d872-f111-ab0e-6045bd05bb6f}</SdkMessageProcessingStepImageId>
+      <Attributes>soap_salesorderid</Attributes>
+      <EntityAlias>PreImage</EntityAlias>
+      <ImageType>0</ImageType>
+      <MessagePropertyName>Target</MessagePropertyName>
+      <IsCustomizable>1</IsCustomizable>
+    </SdkMessageProcessingStepImage>
+  </SdkMessageProcessingStepImages>
+</SdkMessageProcessingStep>

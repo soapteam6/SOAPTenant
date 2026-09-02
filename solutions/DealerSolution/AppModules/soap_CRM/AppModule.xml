@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AppModule>
+  <UniqueName>soap_CRM</UniqueName>
+  <IntroducedVersion>1.0.0.0</IntroducedVersion>
+  <WebResourceId>630cfd19-385f-f111-a826-000d3a5a52d8</WebResourceId>
+  <OptimizedFor></OptimizedFor>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+  <FormFactor>1</FormFactor>
+  <ClientType>4</ClientType>
+  <NavigationType>0</NavigationType>
+  <AppModuleComponents>
+    <AppModuleComponent type="1" schemaName="account" />
+    <AppModuleComponent type="1" schemaName="contact" />
+    <AppModuleComponent type="1" schemaName="soap_accessory" />
+    <AppModuleComponent type="1" schemaName="soap_accountcompinfo" />
+    <AppModuleComponent type="1" schemaName="soap_competitor" />
+    <AppModuleComponent type="1" schemaName="soap_contact" />
+    <AppModuleComponent type="1" schemaName="soap_customer" />
+    <AppModuleComponent type="1" schemaName="soap_dealgroup" />
+    <AppModuleComponent type="1" schemaName="soap_dealsource" />
+    <AppModuleComponent type="1" schemaName="soap_dealtag" />
+    <AppModuleComponent type="1" schemaName="soap_equipment" />
+    <AppModuleComponent type="1" schemaName="soap_leaseagreement" />
+    <AppModuleComponent type="1" schemaName="soap_meterreading" />
+    <AppModuleComponent type="1" schemaName="soap_offering" />
+    <AppModuleComponent type="1" schemaName="soap_opportunity" />
+    <AppModuleComponent type="1" schemaName="soap_overlay" />
+    <AppModuleComponent type="1" schemaName="soap_pricelist" />
+    <AppModuleComponent type="1" schemaName="soap_pricelistitem" />
+    <AppModuleComponent type="1" schemaName="soap_product" />
+    <AppModuleComponent type="1" schemaName="soap_productaccessorygroup" />
+    <AppModuleComponent type="1" schemaName="soap_productaccessoryitem" />
+    <AppModuleComponent type="1" schemaName="soap_productbundle" />
+    <AppModuleComponent type="1" schemaName="soap_productconstraint" />
+    <AppModuleComponent type="1" schemaName="soap_productextensionitem" />
+    <AppModuleComponent type="1" schemaName="soap_productline" />
+    <AppModuleComponent type="1" schemaName="soap_quote" />
+    <AppModuleComponent type="1" schemaName="soap_quotedetail" />
+    <AppModuleComponent type="1" schemaName="soap_quoteproductline" />
+    <AppModuleComponent type="1" schemaName="soap_salesstage" />
+    <AppModuleComponent type="1" schemaName="soap_serviceagreement" />
+    <AppModuleComponent type="1" schemaName="soap_servicecall" />
+    <AppModuleComponent type="1" schemaName="soap_servicecontract" />
+    <AppModuleComponent type="1" schemaName="soap_territory" />
+    <AppModuleComponent type="1" schemaName="soap_zipcode" />
+    <AppModuleComponent type="26" id="{6f7d6fdd-bf2a-4cbf-a7d6-49f189652bf8}" />
+    <AppModuleComponent type="26" id="{81c8ff51-15da-487f-a610-52be5c697dce}" />
+    <AppModuleComponent type="26" id="{80d2626c-8d28-4dbb-b64a-582d8d650ea6}" />
+    <AppModuleComponent type="26" id="{c62fd09a-a083-f111-ab0f-6045bd05bb6f}" />
+    <AppModuleComponent type="26" id="{7c511431-c02b-4add-8588-80f34eaf0d8e}" />
+    <AppModuleComponent type="26" id="{4564090f-2a0b-4033-9601-943972e9f985}" />
+    <AppModuleComponent type="60" id="{8448b78f-8f42-454e-8e2a-f8196b0419af}" />
+    <AppModuleComponent type="62" schemaName="soap_CRM" />
+  </AppModuleComponents>
+  <AppModuleRoleMaps>
+    <Role id="{627090ff-40a3-4053-8790-584edc5be201}" />
+    <Role id="{119f245c-3cc8-4b62-b31c-d1a046ced15d}" />
+  </AppModuleRoleMaps>
+  <LocalizedNames>
+    <LocalizedName description="CRM" languagecode="1033" />
+  </LocalizedNames>
+  <Descriptions>
+    <Description description="Streamline customer relationship management by organizing accounts, contacts, products, quotes, and opportunities in one centralized platform. Enable business users to efficiently track interactions and manage sales processes for improved productivity." languagecode="1033" />
+  </Descriptions>
+  <appsettings>
+    <appsetting settingdefinitionid.uniquename="AppChannel">
+      <iscustomizable>1</iscustomizable>
+      <value>1</value>
+    </appsetting>
+    <appsetting settingdefinitionid.uniquename="OverrideAppHeaderColor">
+      <iscustomizable>1</iscustomizable>
+      <value>soap_theme.xml</value>
+    </appsetting>
+  </appsettings>
+</AppModule>

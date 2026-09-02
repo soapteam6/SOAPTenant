@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{1ab2a488-53d0-4f4c-bdc7-c23c5c523190}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="soap_name" select="1" icon="1" preview="1">
+        <row name="result" id="soap_servicecallid">
+          <cell name="soap_callnumber" width="113" />
+          <cell name="soap_caller" width="100" />
+          <cell name="soap_calltype" width="100" />
+          <cell name="soap_equipmentid" width="102" />
+          <cell name="soap_description" width="106" />
+          <cell name="soap_notes" width="100" />
+          <cell name="soap_technician" width="102" />
+          <cell name="soap_workordernumber" width="157" />
+          <cell name="soap_calldate" width="100" />
+          <cell name="soap_closedate" width="102" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="soap_servicecall">
+          <attribute name="soap_servicecallid" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <attribute name="soap_callnumber" />
+          <attribute name="soap_caller" />
+          <attribute name="soap_calltype" />
+          <attribute name="soap_description" />
+          <attribute name="soap_equipmentid" />
+          <attribute name="soap_notes" />
+          <attribute name="soap_technician" />
+          <attribute name="soap_workordernumber" />
+          <attribute name="soap_calldate" />
+          <attribute name="soap_closedate" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Active EA Service Calls" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

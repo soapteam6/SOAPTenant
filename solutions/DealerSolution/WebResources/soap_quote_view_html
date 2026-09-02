@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quote View</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        overflow: hidden;
+      }
+      #quote-frame {
+        width: 100%;
+        height: 100%;
+        border: none;
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <iframe id="quote-frame" title="Quote View" allow="clipboard-write; fullscreen"></iframe>
+
+    <script>
+      (function () {
+        // =====================================================================
+        // Self-configuring wrapper for the QUOTE VIEW code app.
+        //
+        // Nothing here is environment-specific, so the web resource survives
+        // transport with no edits:
+        //   - environmentId  <- Xrm global context (organizationSettings.bapEnvironmentId)
+        //   - code app id    <- looked up at runtime from the canvasapp table by
+        //                       the app's STABLE unique name
+        //   - org url        <- Xrm global context (getClientUrl)
+        //   - host app id    <- the model-driven app the user is actually in
+        //
+        // The last two are forwarded to the code app, which cannot read them
+        // itself: it runs on apps.powerapps.com, not on the org, so its own
+        // window.location says nothing about the tenant it belongs to. Without
+        // them every link the app generates would point at whichever org was
+        // baked in at build time.
+        // =====================================================================
+
+        var APP_UNIQUE_NAME = "soap_quoteviewcodeapp_02b73";
+        var APP_DISPLAY_NAME = "QuoteViewCodeApp";
+
+        // Last-resort App ID if both catalog reads fail. Only ever correct in the
+        // environment this file was authored in — the lookups above are the
+        // supported path.
+        var FALLBACK_APP_ID = "8f88a758-719b-4ba6-8fb4-38878a59e69f";
+        var PLAY_HOST = "https://apps.powerapps.com";
+
+        var xrm = window.Xrm || (window.parent && window.parent.Xrm) || null;
+
+        // ---- read the deep-link quote id from THIS page's URL ---------------
+        function qs(name, search) {
+          try {
+            return new URLSearchParams(search || window.location.search).get(name);
+          } catch (e) {
+            return null;
+          }
+        }
+        function readQuoteId() {
+          var direct = qs("quoteId") || qs("id");
+          if (direct) return direct;
+          // Model-driven apps pass custom values through "data", which may hold a
+          // bare GUID or a query-string fragment of its own.
+          var data = qs("data");
+          if (!data) return null;
+          var decoded = decodeURIComponent(data);
+          if (decoded.indexOf("=") !== -1) {
+            return qs("quoteId", decoded) || qs("id", decoded) || null;
+          }
+          return decoded;
+        }
+
+        // ---- resolve THIS environment's code app id from the canvasapp table -
+        function queryCanvas(filter) {
+          return xrm.WebApi.retrieveMultipleRecords(
+            "canvasapp",
+            "?$select=canvasappid&$top=1&$filter=" + filter,
+          )
+            .then(function (res) {
+              var e = res && res.entities && res.entities[0];
+              return (e && e.canvasappid) || "";
+            })
+            .catch(function () {
+              return "";
+            });
+        }
+        function lookupAppId() {
+          if (!xrm || !xrm.WebApi || !xrm.WebApi.retrieveMultipleRecords) return Promise.resolve("");
+          // Unique name first — it is stable across transport. Display name is a
+          // fallback for environments where the unique name was regenerated.
+          return queryCanvas("name eq '" + APP_UNIQUE_NAME + "'").then(function (id) {
+            return id || queryCanvas("displayname eq '" + APP_DISPLAY_NAME.replace(/'/g, "''") + "'");
+          });
+        }
+
+        // ---- the model-driven app hosting us, so record links reopen in it ---
+        function readHostAppId(gc) {
+          try {
+            if (gc && gc.getCurrentAppProperties) {
+              // Returns a Promise — not a plain object.
+              return gc
+                .getCurrentAppProperties()
+                .then(function (p) {
+                  return (p && p.appId) || "";
+                })
+                .catch(function () {
+                  return "";
+                });
+            }
+          } catch (e) {
+            /* fall through */
+          }
+          return Promise.resolve("");
+        }
+
+        // ---- environment id + org url from the global context ----------------
+        var gc = null;
+        try {
+          gc = xrm && xrm.Utility && xrm.Utility.getGlobalContext();
+        } catch (e) {
+          gc = null;
+        }
+
+        var environmentId = "";
+        var orgUrl = "";
+        try {
+          environmentId = (gc && gc.organizationSettings && gc.organizationSettings.bapEnvironmentId) || "";
+        } catch (e) {
+          /* leave blank */
+        }
+        try {
+          orgUrl = (gc && gc.getClientUrl && gc.getClientUrl()) || "";
+        } catch (e) {
+          /* leave blank */
+        }
+
+        // ---- build the play URL once everything resolves ---------------------
+        Promise.all([lookupAppId(), readHostAppId(gc)]).then(function (r) {
+          var codeAppId = r[0] || FALLBACK_APP_ID;
+          var hostAppId = r[1] || "";
+
+          var url = PLAY_HOST + "/play/e/" + environmentId + "/app/" + codeAppId;
+
+          var params = [];
+          var quoteId = readQuoteId();
+          if (quoteId) params.push("quoteId=" + encodeURIComponent(quoteId.trim()));
+          // Read back via getContext().app.queryParams in src/lib/appContext.ts.
+          if (hostAppId) params.push("hostAppId=" + encodeURIComponent(hostAppId));
+          if (orgUrl) params.push("hostOrgUrl=" + encodeURIComponent(orgUrl));
+          if (params.length) url += "?" + params.join("&");
+
+          document.getElementById("quote-frame").src = url;
+        });
+      })();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{825fff0b-b708-4bcd-ab51-2f12a5a3353b}</formid>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab verticallayout="true" id="{F10C456C-BA86-4E17-BF47-80861B92315B}" IsUserDefined="1">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showlabel="false" showbar="false" IsUserDefined="0" id="{129B21D5-D055-444A-9A40-3CA17E0720F7}">
+                  <labels>
+                    <label description="General" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{46944E6A-8BA3-47C7-B6C4-EB737939BEE6}">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                        <control id="soap_appkey" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="soap_AppKey" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{4C1464C6-B08A-47D9-9924-7E0DE9332B12}">
+                        <labels>
+                          <label description="Owner" languagecode="1033" />
+                        </labels>
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{a470cfee-6398-47d7-ac13-12bd495e3379}">
+                        <labels>
+                          <label description="Default View" languagecode="1033" />
+                        </labels>
+                        <control id="soap_defaultview" classid="{4273edbd-ac1d-40d3-9fb2-095c621b552d}" datafieldname="soap_defaultview" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{1927580a-9ea0-4c5d-b0be-35754563d997}">
+                        <labels>
+                          <label description="Prefs" languagecode="1033" />
+                        </labels>
+                        <control id="soap_prefs" classid="{e0dece4b-6fc8-4a8f-a065-082708572369}" datafieldname="soap_prefs" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Information" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

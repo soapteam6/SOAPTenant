@@ -1,0 +1,12 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+/SoapCRMPlugins/obj
+/SoapCRMPlugins/bin
+[Bb]in/
+[Oo]bj/
+*.user
+packages/
+Webresources/node_modules/

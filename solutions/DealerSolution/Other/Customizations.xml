@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ImportExportXml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" OrganizationVersion="9.2.26071.168" OrganizationSchemaType="Standard" CRMServerServiceabilityVersion="9.2.26071.00168">
+  <Entities />
+  <Roles />
+  <Workflows />
+  <FieldSecurityProfiles />
+  <Templates />
+  <EntityImageConfigs />
+  <AttributeImageConfigs />
+  <EntityMaps />
+  <EntityRelationships />
+  <OrganizationSettings />
+  <optionsets />
+  <WebResources />
+  <CustomControls />
+  <SolutionPluginAssemblies />
+  <SdkMessageProcessingSteps />
+  <AppModuleSiteMaps />
+  <teamtemplates>
+    <teamtemplate teamtemplateid="e8bb5188-9d83-f111-ab0f-6045bd05bb6f">
+      <entitylogicalname>account</entitylogicalname>
+      <defaultaccessrightsmask>262167</defaultaccessrightsmask>
+      <iscustomizable>1</iscustomizable>
+      <issystem>0</issystem>
+      <teamtemplatename>Account RW Team</teamtemplatename>
+    </teamtemplate>
+  </teamtemplates>
+  <AppModules />
+  <EntityDataProviders />
+  <CanvasApps />
+  <connectionreferences>
+    <connectionreference connectionreferencelogicalname="soap_sharedcommondataserviceforapps_a209b">
+      <connectionreferencedisplayname>Microsoft Dataverse DealerSolution-a209b</connectionreferencedisplayname>
+      <connectorid>/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps</connectorid>
+      <iscustomizable>1</iscustomizable>
+      <promptingbehavior>0</promptingbehavior>
+      <statecode>0</statecode>
+      <statuscode>1</statuscode>
+    </connectionreference>
+  </connectionreferences>
+  <Languages>
+    <Language>1033</Language>
+  </Languages>
+</ImportExportXml>

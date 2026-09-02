@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CanvasApp xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>cr0b4_configuratorcanvasapp_67512</Name>
+  <AppVersion>2026-06-29T17:39:07Z</AppVersion>
+  <Status>Ready</Status>
+  <CreatedByClientVersion>3.26062.6.0</CreatedByClientVersion>
+  <MinClientVersion>3.26062.6.0</MinClientVersion>
+  <Tags>{"primaryDeviceWidth":"1588","primaryDeviceHeight":"620","supportsPortrait":"true","supportsLandscape":"true","primaryFormFactor":"Web","showStatusBar":"false","publisherVersion":"3.26062.6","minimumRequiredApiVersion":"2.2.0","hasComponent":"false","hasUnlockedComponent":"false","isUnifiedRootApp":"false","m365CopilotSettingValue":"0","sienaVersion":"20260625T214915Z-3.26062.6.0"}</Tags>
+  <IsCdsUpgraded>0</IsCdsUpgraded>
+  <GalleryItemId xsi:nil="true"></GalleryItemId>
+  <BackgroundColor>RGBA(0,176,240,1)</BackgroundColor>
+  <DisplayName>Configurator Canvas App</DisplayName>
+  <Description>Enable users to configure, quote, and manage equipment and accessory builds with streamlined product selection, pricing, and service calculations. Facilitate efficient handling of ad-hoc items, miscellaneous costs, and buyouts. Improve quoting workflows through robust catalog search, filtering, and export features for accurate product and service management.</Description>
+  <CommitMessage xsi:nil="true"></CommitMessage>
+  <Publisher xsi:nil="true"></Publisher>
+  <AuthorizationReferences>[]</AuthorizationReferences>
+  <ConnectionReferences>{}</ConnectionReferences>
+  <DatabaseReferences>{"default.cds":{"databaseDetails":{"referenceType":"Environmental","environmentName":"default.cds","overrideValues":{"status":"NotSpecified","environmentVariableName":""}},"dataSources":{"Quotes":{"entitySetName":"soap_quotes","logicalName":"soap_quote"},"Quote Products":{"entitySetName":"soap_quotedetails","logicalName":"soap_quotedetail"},"Quote Product Properties":{"entitySetName":"soap_quoteproductlines","logicalName":"soap_quoteproductline"},"Price List Items":{"entitySetName":"soap_pricelistitems","logicalName":"soap_pricelistitem"},"Price Lists":{"entitySetName":"soap_pricelists","logicalName":"soap_pricelist"},"Product Extension Items":{"entitySetName":"soap_productextensionitems","logicalName":"soap_productextensionitem"},"Product Accessory Items":{"entitySetName":"soap_productaccessoryitems","logicalName":"soap_productaccessoryitem"},"Product Bundles":{"entitySetName":"soap_productbundles","logicalName":"soap_productbundle"},"Products":{"entitySetName":"soap_products","logicalName":"soap_product"},"Product Properties":{"entitySetName":"soap_productlines","logicalName":"soap_productline"},"Product Constraints":{"entitySetName":"soap_productconstraints","logicalName":"soap_productconstraint"},"Product Accessory Groups":{"entitySetName":"soap_productaccessorygroups","logicalName":"soap_productaccessorygroup"},"Users":{"entitySetName":"systemusers","logicalName":"systemuser"},"Product Property Types":{"entitySetName":"soap_productpropertytypes","logicalName":"soap_productpropertytype"},"Product Group Types":{"entitySetName":"soap_productgrouptypes","logicalName":"soap_productgrouptype"},"Product Bundle Items":{"entitySetName":"soap_productbundleitems","logicalName":"soap_productbundleitem"}}}}</DatabaseReferences>
+  <AppComponents>[]</AppComponents>
+  <AppComponentDependencies>[]</AppComponentDependencies>
+  <CanConsumeAppPass>1</CanConsumeAppPass>
+  <CanvasAppType>0</CanvasAppType>
+  <BypassConsent>0</BypassConsent>
+  <AdminControlBypassConsent>0</AdminControlBypassConsent>
+  <EmbeddedApp xsi:nil="true"></EmbeddedApp>
+  <IntroducedVersion>1.0</IntroducedVersion>
+  <CdsDependencies>{"cdsdependencies":[{"logicalname":"soap_quote","componenttype":1},{"logicalname":"soap_quotedetail","componenttype":1},{"logicalname":"soap_quoteproductline","componenttype":1},{"logicalname":"soap_pricelistitem","componenttype":1},{"logicalname":"soap_pricelist","componenttype":1},{"logicalname":"soap_productextensionitem","componenttype":1},{"logicalname":"soap_productaccessoryitem","componenttype":1},{"logicalname":"soap_productbundle","componenttype":1},{"logicalname":"soap_product","componenttype":1},{"logicalname":"soap_productline","componenttype":1},{"logicalname":"soap_productconstraint","componenttype":1},{"logicalname":"soap_productaccessorygroup","componenttype":1},{"logicalname":"systemuser","componenttype":1},{"logicalname":"soap_productpropertytype","componenttype":1},{"logicalname":"soap_productgrouptype","componenttype":1},{"logicalname":"soap_productbundleitem","componenttype":1}]}</CdsDependencies>
+  <IsCustomizable>1</IsCustomizable>
+  <BackgroundImageUri>/CanvasApps/cr0b4_configuratorcanvasapp_67512_BackgroundImageUri</BackgroundImageUri>
+  <DocumentUri>/CanvasApps/cr0b4_configuratorcanvasapp_67512_DocumentUri.msapp</DocumentUri>
+  <AdditionalUris>
+    <AdditionalUri>/CanvasApps/cr0b4_configuratorcanvasapp_67512_AdditionalUris0_identity.json</AdditionalUri>
+  </AdditionalUris>
+</CanvasApp>

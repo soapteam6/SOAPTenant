@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{a9d9024d-e759-f111-bec7-000d3a5a5a08}</formid>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab id="F931FFE2-B873-473F-8F95-9502F0AA3F5E" name="tab_1" showlabel="false" labelid="{8d257f73-9ceb-46ae-83f2-3e0f8b312b07}">
+          <labels>
+            <label description="New Tab" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="34%">
+              <sections>
+                <section id="0C655D4E-C6E3-424E-9AF5-71E72D30D12E" name="tab_1_column_1_section_1" columns="1" showlabel="false" showbar="false" IsUserDefined="0" labelwidth="130" labelid="{bcf05015-8828-486e-b467-082df6bbf606}">
+                  <labels>
+                    <label description="New Section" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="542FBFBE-0E4C-496C-8012-555DE6581923" labelid="{d918e01c-b860-43a6-ab2f-8e2b74c3b5c7}">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{6ff1a925-df28-4a55-a5ef-ac43d3672249}" locklevel="0" colspan="1" rowspan="1" labelid="{ac4d461a-968f-44b9-a826-d73268535d6a}">
+                        <labels>
+                          <label description="Name" languagecode="1033" />
+                        </labels>
+                        <control id="soap_name" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="soap_name" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{6833c2f4-52ff-4aa6-b60b-9b17f5850134}" locklevel="0" colspan="1" rowspan="1" labelid="{580c2bde-692d-4a8b-8cbb-04948c566649}">
+                        <labels>
+                          <label description="Product Accessory Group" languagecode="1033" />
+                        </labels>
+                        <control id="soap_productaccessorygroupid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="soap_productaccessorygroupid" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{3fae5860-413d-43e3-8dfa-0f8d4b95d298}" locklevel="0" colspan="1" rowspan="1" labelid="{eff2bbdf-a4f4-4f9b-9c6a-a82de73e1c2b}">
+                        <labels>
+                          <label description="Related Product" languagecode="1033" />
+                        </labels>
+                        <control id="soap_relatedproductid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="soap_relatedproductid" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+            <column width="33%">
+              <sections>
+                <section id="02DECBA0-3AE2-484D-A19F-C5353AF4F4F2" name="tab_1_column_2_section_1" columns="1" showlabel="true" showbar="false" IsUserDefined="0" labelwidth="130" visible="false" labelid="{6b848cf3-06e4-4434-8efa-45952a68fdd8}">
+                  <labels>
+                    <label description="New Section" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="266FE48D-4D04-4E9A-8C5A-7DEF9A2F059B" labelid="{e421f365-6184-4167-a3d1-fb67dab53a17}">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+            <column width="33%">
+              <sections>
+                <section id="46FD66EA-B686-41D9-AAE0-C565BD78EC1F" name="tab_1_column_3_section_1" columns="1" showlabel="true" showbar="false" IsUserDefined="0" labelwidth="130" visible="false" labelid="{70fdbb39-cea9-44a1-ab01-0aa718d05939}">
+                  <labels>
+                    <label description="New Section" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="07C04A4E-A482-45CC-BAB7-7FCA3CD02938" labelid="{82bbecc8-6af8-49a3-9d2d-721cd5940a64}">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <DisplayConditions Order="0" FallbackForm="true">
+        <Role Id="{627090ff-40a3-4053-8790-584edc5be201}" />
+        <Role Id="{119f245c-3cc8-4b62-b31c-d1a046ced15d}" />
+      </DisplayConditions>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="QC" languagecode="1033" />
+    </LocalizedNames>
+  </systemform>
+</forms>

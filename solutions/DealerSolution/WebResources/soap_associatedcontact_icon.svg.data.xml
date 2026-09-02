@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WebResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <WebResourceId>{33485a7c-2454-f111-bec6-000d3a5a5a08}</WebResourceId>
+  <Name>soap_associatedcontact_icon.svg</Name>
+  <DisplayName>soap_associatedcontact_icon.svg</DisplayName>
+  <WebResourceType>11</WebResourceType>
+  <IntroducedVersion>1.0.0.0</IntroducedVersion>
+  <IsEnabledForMobileClient>1</IsEnabledForMobileClient>
+  <IsAvailableForMobileOffline>0</IsAvailableForMobileOffline>
+  <IsCustomizable>1</IsCustomizable>
+  <CanBeDeleted>1</CanBeDeleted>
+  <IsHidden>0</IsHidden>
+  <FileName>/WebResources/soap_associatedcontact_iconsvg33485A7C-2454-F111-BEC6-000D3A5A5A08</FileName>
+</WebResource>

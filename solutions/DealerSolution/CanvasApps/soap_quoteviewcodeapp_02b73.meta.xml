@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CanvasApp xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>soap_quoteviewcodeapp_02b73</Name>
+  <AppVersion>2026-08-12T05:55:40Z</AppVersion>
+  <Status>Ready</Status>
+  <CreatedByClientVersion>0.0.0.0</CreatedByClientVersion>
+  <MinClientVersion>0.0.0.0</MinClientVersion>
+  <Tags>{}</Tags>
+  <IsCdsUpgraded>0</IsCdsUpgraded>
+  <GalleryItemId xsi:nil="true"></GalleryItemId>
+  <BackgroundColor>RGBA(255,255,255,1)</BackgroundColor>
+  <DisplayName>QuoteViewCodeApp</DisplayName>
+  <Description></Description>
+  <CommitMessage xsi:nil="true"></CommitMessage>
+  <Publisher xsi:nil="true"></Publisher>
+  <AuthorizationReferences>[]</AuthorizationReferences>
+  <ConnectionReferences>{"69570c3d-d561-469a-98a4-711bbf1089cf":{"id":"/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps","displayName":"Microsoft Dataverse","iconUri":"https://static.powerapps.com/resource/ppcr/releases/v1.0.1820/1.0.1820.4809/commondataserviceforapps/icon.png","dataSources":["commondataserviceforapps"],"isOnPremiseConnection":false,"bypassConsent":false,"dataSets":{},"apiTier":"Premium","authenticationType":"Oauth"},"46a75ac4-697c-461b-8697-7843d68e1cd0":{"id":"/providers/Microsoft.PowerApps/apis/shared_office365users","displayName":"Office 365 Users","iconUri":"https://static.powerapps.com/resource/ppcr/releases/v1.0.1818/1.0.1818.4788/office365users/icon.png","dataSources":["office365users"],"isOnPremiseConnection":false,"bypassConsent":false,"dataSets":{},"apiTier":"Standard"},"747bb993-4f2a-4b68-a47a-2b6dfa1cb5c6":{"id":"/providers/Microsoft.PowerApps/apis/shared_teams","displayName":"Microsoft Teams","iconUri":"https://static.powerapps.com/resource/ppcr/releases/v1.0.1821/1.0.1821.4811/teams/icon.png","dataSources":["teams"],"isOnPremiseConnection":false,"bypassConsent":false,"dataSets":{},"apiTier":"Standard"},"af732b3c-9d41-4364-8d84-b2a4d978596e":{"id":"/providers/Microsoft.PowerApps/apis/shared_office365","displayName":"Office 365 Outlook","iconUri":"https://static.powerapps.com/resource/ppcr/releases/v1.0.1819/1.0.1819.4795/office365/icon.png","dataSources":["office365"],"isOnPremiseConnection":false,"bypassConsent":false,"dataSets":{},"apiTier":"Standard"}}</ConnectionReferences>
+  <DatabaseReferences>{"default.cds":{"databaseDetails":{"referenceType":"Environmental","environmentName":"default.cds","overrideValues":{"status":"NotSpecified","environmentVariableName":""}},"dataSources":{"quotes":{"entitySetName":"soap_quotes","logicalName":"soap_quote"},"quotedetails":{"entitySetName":"soap_quotedetails","logicalName":"soap_quotedetail"},"quoteproductlines":{"entitySetName":"soap_quoteproductlines","logicalName":"soap_quoteproductline"},"accounts":{"entitySetName":"accounts","logicalName":"account"},"opportunities":{"entitySetName":"soap_opportunities","logicalName":"soap_opportunity"},"pricelists":{"entitySetName":"soap_pricelists","logicalName":"soap_pricelist"},"pricelistitems":{"entitySetName":"soap_pricelistitems","logicalName":"soap_pricelistitem"},"leaserates":{"entitySetName":"soap_leaserates","logicalName":"soap_leaserate"},"leasetypes":{"entitySetName":"soap_leasetypes","logicalName":"soap_leasetype"},"leasingcompanies":{"entitySetName":"soap_leasingcompanies","logicalName":"soap_leasingcompany"},"products":{"entitySetName":"soap_products","logicalName":"soap_product"},"productbundles":{"entitySetName":"soap_productbundles","logicalName":"soap_productbundle"},"productlines":{"entitySetName":"soap_productlines","logicalName":"soap_productline"},"productpropertytypes":{"entitySetName":"soap_productpropertytypes","logicalName":"soap_productpropertytype"},"productaccessorygroups":{"entitySetName":"soap_productaccessorygroups","logicalName":"soap_productaccessorygroup"},"productaccessoryitems":{"entitySetName":"soap_productaccessoryitems","logicalName":"soap_productaccessoryitem"},"productconstraints":{"entitySetName":"soap_productconstraints","logicalName":"soap_productconstraint"},"brands":{"entitySetName":"soap_brands","logicalName":"soap_brand"},"quoteproducts":{"entitySetName":"soap_quotedetails","logicalName":"soap_quotedetail"},"quoteproductproperties":{"entitySetName":"soap_quoteproductlines","logicalName":"soap_quoteproductline"},"productbundleitems":{"entitySetName":"soap_productbundleitems","logicalName":"soap_productbundleitem"},"pillars":{"entitySetName":"soap_pillars","logicalName":"soap_pillar"},"dealnotes":{"entitySetName":"soap_dealnotes","logicalName":"soap_dealnote"},"dealnoteattachments":{"entitySetName":"soap_dealnoteattachments","logicalName":"soap_dealnoteattachment"},"users":{"entitySetName":"systemusers","logicalName":"systemuser"},"gridviews":{"entitySetName":"soap_gridviews","logicalName":"soap_gridview"},"gridviewpreferences":{"entitySetName":"soap_gridviewpreferences","logicalName":"soap_gridviewpreference"}}}}</DatabaseReferences>
+  <AppComponents>[]</AppComponents>
+  <AppComponentDependencies>[]</AppComponentDependencies>
+  <CanConsumeAppPass>1</CanConsumeAppPass>
+  <CanvasAppType>4</CanvasAppType>
+  <BypassConsent>0</BypassConsent>
+  <AdminControlBypassConsent>0</AdminControlBypassConsent>
+  <EmbeddedApp xsi:nil="true"></EmbeddedApp>
+  <IntroducedVersion>1.0</IntroducedVersion>
+  <CdsDependencies>{"cdsdependencies":[{"logicalname":"soap_quote","componenttype":1},{"logicalname":"soap_quotedetail","componenttype":1},{"logicalname":"soap_quoteproductline","componenttype":1},{"logicalname":"account","componenttype":1},{"logicalname":"soap_opportunity","componenttype":1},{"logicalname":"soap_pricelist","componenttype":1},{"logicalname":"soap_pricelistitem","componenttype":1},{"logicalname":"soap_leaserate","componenttype":1},{"logicalname":"soap_leasetype","componenttype":1},{"logicalname":"soap_leasingcompany","componenttype":1},{"logicalname":"soap_product","componenttype":1},{"logicalname":"soap_productbundle","componenttype":1},{"logicalname":"soap_productline","componenttype":1},{"logicalname":"soap_productpropertytype","componenttype":1},{"logicalname":"soap_productaccessorygroup","componenttype":1},{"logicalname":"soap_productaccessoryitem","componenttype":1},{"logicalname":"soap_productconstraint","componenttype":1},{"logicalname":"soap_brand","componenttype":1},{"logicalname":"soap_productbundleitem","componenttype":1},{"logicalname":"soap_pillar","componenttype":1},{"logicalname":"soap_dealnote","componenttype":1},{"logicalname":"soap_dealnoteattachment","componenttype":1},{"logicalname":"systemuser","componenttype":1},{"logicalname":"soap_gridview","componenttype":1},{"logicalname":"soap_gridviewpreference","componenttype":1}]}</CdsDependencies>
+  <IsCustomizable>1</IsCustomizable>
+  <CodeAppPackageUris>
+    <CodeAppPackageUri>/CanvasApps/soap_quoteviewcodeapp_02b73_CodeAppPackages/index.html_ContentType_text/html</CodeAppPackageUri>
+    <CodeAppPackageUri>/CanvasApps/soap_quoteviewcodeapp_02b73_CodeAppPackages/assets/brother_logo-C3TZdmgl.png_ContentType_image/png</CodeAppPackageUri>
+    <CodeAppPackageUri>/CanvasApps/soap_quoteviewcodeapp_02b73_CodeAppPackages/assets/canon_logo-MmvHaoku.png_ContentType_image/png</CodeAppPackageUri>
+    <CodeAppPackageUri>/CanvasApps/soap_quoteviewcodeapp_02b73_CodeAppPackages/assets/hp_logo-zYF6RGOI.png_ContentType_image/png</CodeAppPackageUri>
+    <CodeAppPackageUri>/CanvasApps/soap_quoteviewcodeapp_02b73_CodeAppPackages/assets/index-B9Io7dRR.js_ContentType_application/javascript</CodeAppPackageUri>
+    <CodeAppPackageUri>/CanvasApps/soap_quoteviewcodeapp_02b73_CodeAppPackages/assets/index-Z46TeybT.css_ContentType_text/css</CodeAppPackageUri>
+    <CodeAppPackageUri>/CanvasApps/soap_quoteviewcodeapp_02b73_CodeAppPackages/assets/inter-latin-ext-wght-italic-0pjOp8NU.woff2_ContentType_font/woff2</CodeAppPackageUri>
+    <CodeAppPackageUri>/CanvasApps/soap_quoteviewcodeapp_02b73_CodeAppPackages/assets/inter-latin-ext-wght-normal-DO1Apj_S.woff2_ContentType_font/woff2</CodeAppPackageUri>
+    <CodeAppPackageUri>/CanvasApps/soap_quoteviewcodeapp_02b73_CodeAppPackages/assets/inter-latin-wght-italic-DpCbqKDY.woff2_ContentType_font/woff2</CodeAppPackageUri>
+    <CodeAppPackageUri>/CanvasApps/soap_quoteviewcodeapp_02b73_CodeAppPackages/assets/inter-latin-wght-normal-Dx4kXJAl.woff2_ContentType_font/woff2</CodeAppPackageUri>
+    <CodeAppPackageUri>/CanvasApps/soap_quoteviewcodeapp_02b73_CodeAppPackages/assets/kip_logo-RlDgi_qf.png_ContentType_image/png</CodeAppPackageUri>
+    <CodeAppPackageUri>/CanvasApps/soap_quoteviewcodeapp_02b73_CodeAppPackages/assets/konica_logo-CzSojrQA.png_ContentType_image/png</CodeAppPackageUri>
+    <CodeAppPackageUri>/CanvasApps/soap_quoteviewcodeapp_02b73_CodeAppPackages/assets/kyocera_logo-YIzAq3yS.png_ContentType_image/png</CodeAppPackageUri>
+    <CodeAppPackageUri>/CanvasApps/soap_quoteviewcodeapp_02b73_CodeAppPackages/assets/lexmark_logo-PzHCr4Cj.png_ContentType_image/png</CodeAppPackageUri>
+    <CodeAppPackageUri>/CanvasApps/soap_quoteviewcodeapp_02b73_CodeAppPackages/assets/ricoh_logo-DXh4XF2U.png_ContentType_image/png</CodeAppPackageUri>
+    <CodeAppPackageUri>/CanvasApps/soap_quoteviewcodeapp_02b73_CodeAppPackages/assets/verkada_logo-CI-EpdKf.png_ContentType_image/png</CodeAppPackageUri>
+    <CodeAppPackageUri>/CanvasApps/soap_quoteviewcodeapp_02b73_CodeAppPackages/assets/xerox_logo-DzQHKD1f.png_ContentType_image/png</CodeAppPackageUri>
+    <CodeAppPackageUri>/CanvasApps/soap_quoteviewcodeapp_02b73_CodeAppPackages/vite.svg_ContentType_image/svg+xml</CodeAppPackageUri>
+  </CodeAppPackageUris>
+</CanvasApp>

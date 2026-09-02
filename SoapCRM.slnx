@@ -1,0 +1,10 @@
+<Solution>
+  <Project Path="SoapCRMPlugins/SoapCRMPlugins.csproj" Id="c74a66a1-c40e-4288-bef6-2e2b5e4a6402" />
+  <Project Path="Webresources/Webresources.esproj">
+    <Build />
+    <Deploy />
+  </Project>
+  <Properties Name="CRMSolutionProperties">
+    <Property Name="SolutionIsBoundToCRM" Value="True" />
+  </Properties>
+</Solution>

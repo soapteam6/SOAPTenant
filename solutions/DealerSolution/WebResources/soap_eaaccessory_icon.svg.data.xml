@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WebResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <WebResourceId>{9e7f71ff-7b6a-f111-a825-6045bd05bb6f}</WebResourceId>
+  <Name>soap_eaaccessory_icon.svg</Name>
+  <DisplayName>soap_eaaccessory_icon.svg</DisplayName>
+  <WebResourceType>11</WebResourceType>
+  <IntroducedVersion>1.0.0.1</IntroducedVersion>
+  <IsEnabledForMobileClient>1</IsEnabledForMobileClient>
+  <IsAvailableForMobileOffline>0</IsAvailableForMobileOffline>
+  <IsCustomizable>1</IsCustomizable>
+  <CanBeDeleted>1</CanBeDeleted>
+  <IsHidden>0</IsHidden>
+  <FileName>/WebResources/soap_eaaccessory_iconsvg9E7F71FF-7B6A-F111-A825-6045BD05BB6F</FileName>
+</WebResource>

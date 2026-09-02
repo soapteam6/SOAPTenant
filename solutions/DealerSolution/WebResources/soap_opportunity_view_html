@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Opportunity View</title>
+  <style>
+    html, body { margin: 0; height: 100%; background: #f4f5f7; }
+    #app-frame { width: 100%; height: 100vh; border: none; display: block; }
+  </style>
+</head>
+<body>
+  <iframe
+    id="app-frame"
+    title="Opportunity View"
+    allow="clipboard-write; fullscreen"></iframe>
+
+  <script>
+    (function () {
+      // =====================================================================
+      // Self-configuring wrapper. Nothing here is environment-specific — the
+      // real values are read at runtime from the hosting model-driven app (Xrm)
+      // so this web resource survives transport to another environment/tenant
+      // with NO edits and NO environment variables to set:
+      //
+      //   environmentId, orgUrl, hosting appId : Xrm global context
+      //   code-app appId (the play-URL id)     : looked up from the canvasapps
+      //       table by the code app's STABLE unique name (APP_UNIQUE_NAME). The
+      //       App ID = canvasappid, which is resolved per environment.
+      // =====================================================================
+
+      // Stable identifiers of the Opportunity View code app (unchanged across
+      // environments — this is the solution component name, not the App ID).
+      var APP_UNIQUE_NAME = "soap_opportunityview_28fed";
+      var APP_DISPLAY_NAME = "Opportunity View";
+
+      // Last-resort fallback App ID (this environment) used only if the Xrm /
+      // canvasapps reads fail, so the frame still loads.
+      var FALLBACK_APP_ID = "2eb281b1-7328-4516-a27a-78225b161caa";
+      var PLAY_HOST = "https://apps.powerapps.com";
+
+      // ---- reach the model-driven app's Xrm (same-origin parent) ----------
+      var xrm = window.Xrm || (window.parent && window.parent.Xrm) || null;
+
+      // ---- read the deep-link opportunity id from THIS page's URL ----------
+      function qs(name, search) {
+        try { return new URLSearchParams(search || window.location.search).get(name); }
+        catch (e) { return null; }
+      }
+      function readOpportunityId() {
+        var direct = qs("opportunityId") || qs("id");
+        if (direct) return direct;
+        var data = qs("data");
+        if (!data) return null;
+        var decoded = decodeURIComponent(data);
+        if (decoded.indexOf("=") !== -1) {
+          return qs("opportunityId", decoded) || qs("id", decoded) || null;
+        }
+        return decoded; // raw guid
+      }
+
+      // ---- resolve THIS environment's App ID from the canvasapps table ------
+      // App ID == canvasappid. Filter by the stable unique name; fall back to
+      // the display name. Requires the user to have read on the Canvas App table.
+      function queryCanvas(filter) {
+        return xrm.WebApi.retrieveMultipleRecords("canvasapp", "?$select=canvasappid&$top=1&$filter=" + filter)
+          .then(function (res) {
+            var e = res && res.entities && res.entities[0];
+            return (e && e.canvasappid) || "";
+          })
+          .catch(function () { return ""; });
+      }
+      function lookupAppId() {
+        if (!xrm || !xrm.WebApi || !xrm.WebApi.retrieveMultipleRecords) return Promise.resolve("");
+        return queryCanvas("name eq '" + APP_UNIQUE_NAME + "'").then(function (id) {
+          return id || queryCanvas("displayname eq '" + APP_DISPLAY_NAME.replace(/'/g, "''") + "'");
+        });
+      }
+
+      // ---- hosting model-driven app id (so record links open in this app) ---
+      function readHostAppId(gc) {
+        try {
+          if (gc && gc.getCurrentAppProperties) {
+            return gc.getCurrentAppProperties()
+              .then(function (p) { return (p && p.appId) || ""; })
+              .catch(function () { return ""; });
+          }
+        } catch (e) { /* fall through */ }
+        return Promise.resolve("");
+      }
+
+      // ---- derive env id + org url from the global context ------------------
+      var gc = null;
+      try { gc = xrm && xrm.Utility && xrm.Utility.getGlobalContext(); } catch (e) { gc = null; }
+
+      var environmentId = "";
+      var orgUrl = "";
+      try { environmentId = (gc && gc.organizationSettings && gc.organizationSettings.bapEnvironmentId) || ""; } catch (e) {}
+      try { orgUrl = (gc && gc.getClientUrl && gc.getClientUrl()) || ""; } catch (e) {}
+
+      // ---- build the play URL once everything resolves ---------------------
+      Promise.all([lookupAppId(), readHostAppId(gc)]).then(function (r) {
+        var codeAppId = r[0] || FALLBACK_APP_ID;
+        var hostAppId = r[1] || "";
+
+        var url = PLAY_HOST + "/play/e/" + environmentId + "/app/" + codeAppId;
+
+        var params = [];
+        var oppId = readOpportunityId();
+        if (oppId) params.push("opportunityId=" + encodeURIComponent(oppId));
+        // Forward the hosting app id + org so the code app's record/quote links
+        // open in THIS model-driven app in any environment.
+        if (hostAppId) params.push("hostAppId=" + encodeURIComponent(hostAppId));
+        if (orgUrl) params.push("hostOrgUrl=" + encodeURIComponent(orgUrl));
+        if (params.length) url += "?" + params.join("&");
+
+        document.getElementById("app-frame").src = url;
+      });
+    })();
+  </script>
+</body>
+</html>

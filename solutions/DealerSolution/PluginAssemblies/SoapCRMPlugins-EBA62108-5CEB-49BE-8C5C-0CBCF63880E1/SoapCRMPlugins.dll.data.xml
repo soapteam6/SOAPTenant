@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PluginAssembly FullName="SoapCRMPlugins, Version=0.1.0.0, Culture=neutral, PublicKeyToken=9f47782067046d89" PluginAssemblyId="eba62108-5ceb-49be-8c5c-0cbcf63880e1" CustomizationLevel="1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <IsolationMode>2</IsolationMode>
+  <SourceType>0</SourceType>
+  <IntroducedVersion>1.0.0.0</IntroducedVersion>
+  <FileName>/PluginAssemblies/SoapCRMPlugins-EBA62108-5CEB-49BE-8C5C-0CBCF63880E1/SoapCRMPlugins.dll</FileName>
+  <PluginTypes>
+    <PluginType AssemblyQualifiedName="SoapCRMPlugins.AccountSharingPlugin, SoapCRMPlugins, Version=0.1.0.0, Culture=neutral, PublicKeyToken=9f47782067046d89" PluginTypeId="8d3130f8-85cc-4635-bafb-fc0673e6f78e" Name="SoapCRMPlugins.AccountSharingPlugin">
+      <FriendlyName>469222e7-ade8-4d92-90da-a4ff5c17d814</FriendlyName>
+    </PluginType>
+    <PluginType AssemblyQualifiedName="SoapCRMPlugins.AccountTerritoryPlugin, SoapCRMPlugins, Version=0.1.0.0, Culture=neutral, PublicKeyToken=9f47782067046d89" PluginTypeId="f8c9f7aa-973d-44fc-a9f4-af9784baf919" Name="SoapCRMPlugins.AccountTerritoryPlugin">
+      <FriendlyName>11a14c05-b852-4e94-96fe-1abbee65b836</FriendlyName>
+    </PluginType>
+    <PluginType AssemblyQualifiedName="SoapCRMPlugins.AccountTypePlugin, SoapCRMPlugins, Version=0.1.0.0, Culture=neutral, PublicKeyToken=9f47782067046d89" PluginTypeId="9cfe46f8-36eb-4257-b296-020967db4063" Name="SoapCRMPlugins.AccountTypePlugin">
+      <FriendlyName>3ec015f8-8603-48f9-ba83-7e1d49c6a216</FriendlyName>
+    </PluginType>
+    <PluginType AssemblyQualifiedName="SoapCRMPlugins.EaTableOwnerAssignmentPlugin, SoapCRMPlugins, Version=0.1.0.0, Culture=neutral, PublicKeyToken=9f47782067046d89" PluginTypeId="fdebd586-6c66-489f-8efb-1ca80242e05f" Name="SoapCRMPlugins.EaTableOwnerAssignmentPlugin">
+      <FriendlyName>71647bf2-d926-4bf2-b0fa-3a07cc32ec7b</FriendlyName>
+    </PluginType>
+    <PluginType AssemblyQualifiedName="SoapCRMPlugins.OpportunityDealGroupRollupPlugin, SoapCRMPlugins, Version=0.1.0.0, Culture=neutral, PublicKeyToken=9f47782067046d89" PluginTypeId="e37d95fa-d35f-44a0-a9e0-3912779a43d2" Name="SoapCRMPlugins.OpportunityDealGroupRollupPlugin">
+      <FriendlyName>fdda9d4a-2f06-425e-80ce-02150fb9ca5a</FriendlyName>
+    </PluginType>
+    <PluginType AssemblyQualifiedName="SoapCRMPlugins.OrderProductCostPlugin, SoapCRMPlugins, Version=0.1.0.0, Culture=neutral, PublicKeyToken=9f47782067046d89" PluginTypeId="355debac-c311-4f0f-b6fc-22b7c1cfca75" Name="SoapCRMPlugins.OrderProductCostPlugin">
+      <FriendlyName>ef17b211-ca4d-44dd-a8ac-abf9ec8d59ac</FriendlyName>
+    </PluginType>
+    <PluginType AssemblyQualifiedName="SoapCRMPlugins.OrderProductTotalsPlugin, SoapCRMPlugins, Version=0.1.0.0, Culture=neutral, PublicKeyToken=9f47782067046d89" PluginTypeId="d25ab548-a49b-4b72-bd14-47a526d9c7d0" Name="SoapCRMPlugins.OrderProductTotalsPlugin">
+      <FriendlyName>e9681b7a-9189-4ea6-a3fc-0d798063fb3c</FriendlyName>
+    </PluginType>
+    <PluginType AssemblyQualifiedName="SoapCRMPlugins.QuoteProductCostPlugin, SoapCRMPlugins, Version=0.1.0.0, Culture=neutral, PublicKeyToken=9f47782067046d89" PluginTypeId="e7be219c-d1a3-4f30-be23-5436d1b79e91" Name="SoapCRMPlugins.QuoteProductCostPlugin">
+      <FriendlyName>f3b20e59-e5ad-4f3f-9efa-5553f1b71d94</FriendlyName>
+    </PluginType>
+    <PluginType AssemblyQualifiedName="SoapCRMPlugins.QuoteProductTotalsPlugin, SoapCRMPlugins, Version=0.1.0.0, Culture=neutral, PublicKeyToken=9f47782067046d89" PluginTypeId="35ef8697-99de-47c8-a22b-138d4ddc1646" Name="SoapCRMPlugins.QuoteProductTotalsPlugin">
+      <FriendlyName>1b85d2ec-d275-46fc-88d9-7081530cd5e0</FriendlyName>
+    </PluginType>
+  </PluginTypes>
+</PluginAssembly>

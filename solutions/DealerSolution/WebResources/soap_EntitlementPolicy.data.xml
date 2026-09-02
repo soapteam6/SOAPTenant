@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WebResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <WebResourceId>{d4129991-c784-f111-ab0f-000d3a5d5ce4}</WebResourceId>
+  <Name>soap_EntitlementPolicy</Name>
+  <DisplayName>EntitlementPolicy</DisplayName>
+  <WebResourceType>11</WebResourceType>
+  <IntroducedVersion>1.0.0.2</IntroducedVersion>
+  <IsEnabledForMobileClient>0</IsEnabledForMobileClient>
+  <IsAvailableForMobileOffline>0</IsAvailableForMobileOffline>
+  <IsCustomizable>1</IsCustomizable>
+  <CanBeDeleted>1</CanBeDeleted>
+  <IsHidden>0</IsHidden>
+  <FileName>/WebResources/soap_EntitlementPolicyD4129991-C784-F111-AB0F-000D3A5D5CE4</FileName>
+</WebResource>

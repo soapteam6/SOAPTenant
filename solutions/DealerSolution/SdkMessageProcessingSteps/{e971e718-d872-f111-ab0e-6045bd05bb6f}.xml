@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SdkMessageProcessingStep Name="SoapCRMPlugins.OrderProductCostPlugin: Create of soap_salesorderdetail" SdkMessageProcessingStepId="{e971e718-d872-f111-ab0e-6045bd05bb6f}" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SdkMessageId>9ebdbb1b-ea3e-db11-86a7-000a3a5473e8</SdkMessageId>
+  <PluginTypeName>SoapCRMPlugins.OrderProductCostPlugin, SoapCRMPlugins, Version=0.1.0.0, Culture=neutral, PublicKeyToken=9f47782067046d89</PluginTypeName>
+  <PluginTypeId>355debac-c311-4f0f-b6fc-22b7c1cfca75</PluginTypeId>
+  <PrimaryEntity>soap_salesorderdetail</PrimaryEntity>
+  <AsyncAutoDelete>0</AsyncAutoDelete>
+  <FilteringAttributes></FilteringAttributes>
+  <InvocationSource>1</InvocationSource>
+  <Mode>0</Mode>
+  <Rank>1</Rank>
+  <EventHandlerTypeCode>4602</EventHandlerTypeCode>
+  <Stage>20</Stage>
+  <IsCustomizable>1</IsCustomizable>
+  <IsHidden>0</IsHidden>
+  <SupportedDeployment>0</SupportedDeployment>
+  <IntroducedVersion>1.0.0.7</IntroducedVersion>
+  <SdkMessageProcessingStepImages />
+</SdkMessageProcessingStep>

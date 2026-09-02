@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RibbonDiffXml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <CustomActions>
+    <HideCustomAction HideActionId="soap.Mscrm.Form.soap_overlay.Activate.Hide" Location="Mscrm.Form.soap_overlay.Activate" />
+    <HideCustomAction HideActionId="soap.Mscrm.Form.soap_overlay.Delete.Hide" Location="Mscrm.Form.soap_overlay.Delete" />
+    <HideCustomAction HideActionId="soap.Mscrm.HomepageGrid.soap_overlay.Activate.Hide" Location="Mscrm.HomepageGrid.soap_overlay.Activate" />
+    <HideCustomAction HideActionId="soap.Mscrm.HomepageGrid.soap_overlay.DeleteMenu.Hide" Location="Mscrm.HomepageGrid.soap_overlay.DeleteMenu" />
+    <HideCustomAction HideActionId="soap.Mscrm.SubGrid.soap_overlay.Activate.Hide" Location="Mscrm.SubGrid.soap_overlay.Activate" />
+    <HideCustomAction HideActionId="soap.Mscrm.SubGrid.soap_overlay.Delete.Hide" Location="Mscrm.SubGrid.soap_overlay.Delete" />
+    <HideCustomAction HideActionId="soap.Mscrm.SubGrid.soap_overlay.Remove.Hide" Location="Mscrm.SubGrid.soap_overlay.Remove" />
+  </CustomActions>
+  <Templates>
+    <RibbonTemplates Id="Mscrm.Templates"></RibbonTemplates>
+  </Templates>
+  <CommandDefinitions />
+  <RuleDefinitions>
+    <TabDisplayRules />
+    <DisplayRules />
+    <EnableRules />
+  </RuleDefinitions>
+  <LocLabels />
+</RibbonDiffXml>

@@ -1,0 +1,48 @@
+name: Deploy to Clients PROD
+
+on:
+  workflow_dispatch:
+    inputs:
+      confirm:
+        description: 'Release to all PROD environments? Type "yes"'
+        required: true
+
+jobs:
+  deploy-to-prod:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    if: ${{ github.event.inputs.confirm == 'yes' }}
+
+    strategy:
+      matrix:
+        client:
+          - BLUE_PROD
+      fail-fast: false
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+ 
+      - name: Install PAC CLI
+        uses: microsoft/powerplatform-actions/actions-install@v1
+ 
+      - name: Parse client config
+        id: config
+        run: |
+          CONFIG='${{ secrets[matrix.client] }}'
+          echo "env_url=$(echo $CONFIG | jq -r '.env_url')" >> $GITHUB_OUTPUT
+          echo "client_id=$(echo $CONFIG | jq -r '.client_id')" >> $GITHUB_OUTPUT
+          echo "client_secret=$(echo $CONFIG | jq -r '.client_secret')" >> $GITHUB_OUTPUT
+          echo "tenant_id=$(echo $CONFIG | jq -r '.tenant_id')" >> $GITHUB_OUTPUT
+ 
+      - name: Import managed solution to ${{ matrix.client }} PROD
+        uses: microsoft/powerplatform-actions/import-solution@v1
+        with:
+          environment-url: ${{ steps.config.outputs.env_url }}
+          app-id: ${{ steps.config.outputs.client_id }}
+          client-secret: ${{ steps.config.outputs.client_secret }}
+          tenant-id: ${{ steps.config.outputs.tenant_id }}
+          solution-file: solutions/DealerSolution_managed.zip
+          force-overwrite: true
+          publish-changes: true
+          run-asynchronously: true

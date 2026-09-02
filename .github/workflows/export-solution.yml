@@ -1,0 +1,83 @@
+name: Export Solution from DEV
+
+on:
+  workflow_dispatch:
+    inputs:
+      commit_message:
+        description: 'commit message'
+        required: true
+        default: 'Export: DealerSolution'
+
+jobs:
+  export-and-unpack:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Install PAC CLI
+        uses: microsoft/powerplatform-actions/actions-install@v1
+
+      - name: Bump solution version in Dataverse
+        run: |
+          ${{ env.POWERPLATFORMTOOLS_PACPATH }} auth create \
+            --url ${{ secrets.SOURCE_ENV_URL }} \
+            --applicationId ${{ secrets.SOURCE_CLIENT_ID }} \
+            --clientSecret ${{ secrets.SOURCE_CLIENT_SECRET }} \
+            --tenant ${{ secrets.SOURCE_TENANT_ID }}
+ 
+          ${{ env.POWERPLATFORMTOOLS_PACPATH }} solution online-version \
+            --solution-name DealerSolution \
+            --solution-version 1.0.0.${{ github.run_number }}
+ 
+          ${{ env.POWERPLATFORMTOOLS_PACPATH }} auth clear
+ 
+      - name: Cleanup old zips
+        run: |
+          rm -f solutions/DealerSolution_unmanaged.zip
+          rm -f solutions/DealerSolution_managed.zip
+
+      - name: Export solution (unmanaged - source control)
+        uses: microsoft/powerplatform-actions/export-solution@v1
+        with:
+          environment-url: ${{ secrets.SOURCE_ENV_URL }}
+          app-id: ${{ secrets.SOURCE_CLIENT_ID }}
+          client-secret: ${{ secrets.SOURCE_CLIENT_SECRET }}
+          tenant-id: ${{ secrets.SOURCE_TENANT_ID }}
+          solution-name: DealerSolution
+          solution-output-file: solutions/DealerSolution_unmanaged.zip
+          managed: false
+
+      - name: Export solution (managed - deployment)
+        uses: microsoft/powerplatform-actions/export-solution@v1
+        with:
+          environment-url: ${{ secrets.SOURCE_ENV_URL }}
+          app-id: ${{ secrets.SOURCE_CLIENT_ID }}
+          client-secret: ${{ secrets.SOURCE_CLIENT_SECRET }}
+          tenant-id: ${{ secrets.SOURCE_TENANT_ID }}
+          solution-name: DealerSolution
+          solution-output-file: solutions/DealerSolution_managed.zip
+          managed: true
+
+      - name: Unpack unmanaged solution (source control)
+        uses: microsoft/powerplatform-actions/unpack-solution@v1
+        with:
+          solution-file: solutions/DealerSolution_unmanaged.zip
+          solution-folder: solutions/DealerSolution
+          solution-type: Unmanaged
+          overwrite-files: true
+
+      - name: Cleanup unmanaged zip
+        run: rm -f solutions/DealerSolution_unmanaged.zip
+
+      - name: Commit to repo
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add solutions/
+          git diff --staged --quiet || git commit -m "${{ github.event.inputs.commit_message }}"
+          git push

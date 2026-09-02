@@ -1,0 +1,781 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{4330b64a-d09c-4958-839d-1d63e26b6d2b}</formid>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form headerdensity="HighWithControls">
+      <tabs>
+        <tab verticallayout="true" id="{e1c54078-d2a5-47b4-a1b0-9925e158d57d}" IsUserDefined="1" name="Summary">
+          <labels>
+            <label description="Summary" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="34%">
+              <sections>
+                <section showlabel="false" showbar="false" IsUserDefined="0" id="{fa1dffa1-e49d-4959-864d-41e1ac249bbd}" name="quote information">
+                  <labels>
+                    <label description="Quote Information" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{299d7b02-2734-4f79-88c5-c26fe88598aa}" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Owner" languagecode="1033" />
+                        </labels>
+                        <control id="header_ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{8745b3ca-827b-452c-aab8-8096937d8255}">
+                        <labels>
+                          <label description="Name" languagecode="1033" />
+                        </labels>
+                        <control id="soap_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="soap_name" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{63d6ce37-7340-4472-a5c0-6f5dc2ffee17}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Order Type" languagecode="1033" />
+                        </labels>
+                        <control id="soap_ordertype" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="soap_ordertype" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{98e69242-c866-4933-b140-562d285d525b}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Maintenance Type" languagecode="1033" />
+                        </labels>
+                        <control id="soap_maintenancetype" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="soap_maintenancetype" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{1fc452b0-6b83-43cf-a28c-a17f9d51b924}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="ITT" languagecode="1033" />
+                        </labels>
+                        <control id="soap_itt" classid="{F9A8A302-114E-466A-B582-6771B2AE0D92}" datafieldname="soap_itt" disabled="false" uniqueid="{20e87acf-8d10-4c60-9439-94fb6f8a1e67}" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{cfd3355a-ab2d-475a-8e53-310584892b0b}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Connectivity Required" languagecode="1033" />
+                        </labels>
+                        <control id="soap_connectivityrequired" classid="{F9A8A302-114E-466A-B582-6771B2AE0D92}" datafieldname="soap_connectivityrequired" disabled="false" uniqueid="{42efeb3e-2b09-484e-81a5-e530106ab8e6}" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{59260a55-4db3-455b-872e-e56be52031ae}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Special Pricing" languagecode="1033" />
+                        </labels>
+                        <control id="soap_specialpricing" classid="{F9A8A302-114E-466A-B582-6771B2AE0D92}" datafieldname="soap_specialpricing" disabled="false" uniqueid="{5bf0633f-27e5-42c9-b302-25a522be0a49}" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{c8ed064d-233d-4dcc-aad5-c63d374f7962}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Special Pricing Details" languagecode="1033" />
+                        </labels>
+                        <control id="soap_specialpricingdetails" classid="{E0DECE4B-6FC8-4A8F-A065-082708572369}" datafieldname="soap_specialpricingdetails" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="sales_information" id="0e13f953-f63b-409c-b01e-bde2028fc940" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115">
+                  <labels>
+                    <label description="Related Information" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{c7dadd41-36a6-4677-8826-e4393ed48d76}">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{0f080b60-b9a5-4032-8c7b-5d5c370f298f}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Opportunity" languagecode="1033" />
+                        </labels>
+                        <control id="soap_opportunityid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="soap_opportunityid" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{2a8490c6-990d-445a-8e9b-ae6b7cc8dd22}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Account" languagecode="1033" />
+                        </labels>
+                        <control id="soap_accountid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="soap_accountid" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="Summary_tab_section_101" id="64c8325a-305c-4555-bb84-82fb0ab8fc60" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115">
+                  <labels>
+                    <label description="Lease Points" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{a0e366ad-14a2-4aff-9e96-adaa32357017}">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{e3f0888d-0bff-4e77-bfcb-4be95d5c74ef}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="LPNTS" languagecode="1033" />
+                        </labels>
+                        <control id="soap_lpnts" classid="{C3EFE0C3-0EC6-42BE-8349-CBD9079DFD8E}" datafieldname="soap_lpnts" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{5f1698e7-e28c-425f-a9c1-244a1f4ab56b}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="TOTWPTS" languagecode="1033" />
+                        </labels>
+                        <control id="soap_totwpts" classid="{C3EFE0C3-0EC6-42BE-8349-CBD9079DFD8E}" datafieldname="soap_totwpts" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+            <column width="33%">
+              <sections>
+                <section name="Summary_tab_section_10" id="9277172c-9a9a-4ae2-a91c-a43d5fc68435" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115">
+                  <labels>
+                    <label description="Payment Information" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{467f0cf9-70eb-487a-96ff-b7f504bcd5f1}">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{95f9f745-6d4a-47fb-abf7-7e17886eb3ba}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Buyout" languagecode="1033" />
+                        </labels>
+                        <control id="soap_buyoutamount" classid="{533B9E00-756B-4312-95A0-DC888637AC78}" datafieldname="soap_buyoutamount" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{9bd978a8-c1f0-4acb-adcf-9484ee744520}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Payment Type" languagecode="1033" />
+                        </labels>
+                        <control id="soap_paymenttype" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="soap_paymenttype" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{d77f9453-1fa5-4c63-a257-b7a2f24f8a9e}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Leasing Company" languagecode="1033" />
+                        </labels>
+                        <control id="soap_leasingcompanyid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="soap_leasingcompanyid" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{b26e7f1a-e0ab-483d-987c-c9533519a688}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Lease Type" languagecode="1033" />
+                        </labels>
+                        <control id="soap_leasetypeid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="soap_leasetypeid" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{02cd028e-dd26-475c-a259-72557f3514db}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Term" languagecode="1033" />
+                        </labels>
+                        <control id="soap_leaserateid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="soap_leaserateid" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{92da806e-a024-45b1-bfc0-79fc47a8903a}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Lease Rate" languagecode="1033" />
+                        </labels>
+                        <control id="soap_leasefactor" classid="{C3EFE0C3-0EC6-42BE-8349-CBD9079DFD8E}" datafieldname="soap_leasefactor" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{384569aa-c9d4-4d8a-9c63-252f4959ead0}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Sales Tax Rate (%)" languagecode="1033" />
+                        </labels>
+                        <control id="soap_salestaxrate" classid="{C3EFE0C3-0EC6-42BE-8349-CBD9079DFD8E}" datafieldname="soap_salestaxrate" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="_section_788" id="fedcfb87-ab0b-43c2-846e-5355d73ce8e3" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115">
+                  <labels>
+                    <label description="Service Information" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{e0bff4e7-6b49-4a44-a5a9-15105cd12b18}">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{ba409dac-b450-4575-9170-30f415053a4f}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Include Service in Mo Payment" languagecode="1033" />
+                        </labels>
+                        <control id="soap_includeservice" classid="{F9A8A302-114E-466A-B582-6771B2AE0D92}" datafieldname="soap_includeservice" disabled="false" uniqueid="{047f0305-e28e-41b3-9d0c-5ba714269496}" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{645d8b48-842b-4f63-b78c-db21308ae4bf}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Total Service Payment" languagecode="1033" />
+                        </labels>
+                        <control id="soap_totalservice" classid="{533B9E00-756B-4312-95A0-DC888637AC78}" datafieldname="soap_totalservice" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{3639e62a-f34f-4baa-9625-8c0d7c74e6d5}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Service Initial Base Payment" languagecode="1033" />
+                        </labels>
+                        <control id="soap_serviceinitialbasepayment" classid="{533B9E00-756B-4312-95A0-DC888637AC78}" datafieldname="soap_serviceinitialbasepayment" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{3cae2c29-eb8a-4c0d-945b-89ad9ac84f4c}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Service BW Payment" languagecode="1033" />
+                        </labels>
+                        <control id="soap_servicebwpayment" classid="{533B9E00-756B-4312-95A0-DC888637AC78}" datafieldname="soap_servicebwpayment" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{5a25a8aa-323d-4c1d-ab25-7a62ad410323}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Service Color Payment" languagecode="1033" />
+                        </labels>
+                        <control id="soap_colorservice" classid="{533B9E00-756B-4312-95A0-DC888637AC78}" datafieldname="soap_colorservice" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{17a6a18e-469b-4a2e-a6de-d24e5e1798ba}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="BW CPC" languagecode="1033" />
+                        </labels>
+                        <control id="soap_bwcpc" classid="{533B9E00-756B-4312-95A0-DC888637AC78}" datafieldname="soap_bwcpc" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{c6da3210-9ea7-4a0f-b5bf-e3fe36f6cf01}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="BW Volume" languagecode="1033" />
+                        </labels>
+                        <control id="soap_bwvolume" classid="{C6D124CA-7EDA-4A60-AEA9-7FB8D318B68F}" datafieldname="soap_bwvolume" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{c1395c0d-40fe-432d-9f80-408f4c61e55d}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Color CPC" languagecode="1033" />
+                        </labels>
+                        <control id="soap_colorcpc" classid="{533B9E00-756B-4312-95A0-DC888637AC78}" datafieldname="soap_colorcpc" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{a42a38f7-73ff-4296-9472-cff61e520fae}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Color Volume" languagecode="1033" />
+                        </labels>
+                        <control id="soap_colorvolume" classid="{C6D124CA-7EDA-4A60-AEA9-7FB8D318B68F}" datafieldname="soap_colorvolume" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{8ffb94ed-4076-41f0-af5a-75679c79cdb7}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Overage BW" languagecode="1033" />
+                        </labels>
+                        <control id="soap_overagebw" classid="{533B9E00-756B-4312-95A0-DC888637AC78}" datafieldname="soap_overagebw" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{f9d4f2b4-f1b2-4415-9e9b-94d70372a315}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Overage Color" languagecode="1033" />
+                        </labels>
+                        <control id="soap_overagecolor" classid="{533B9E00-756B-4312-95A0-DC888637AC78}" datafieldname="soap_overagecolor" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{ffbac8a3-ff41-4e3b-ae89-327125994b13}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Overage Scan" languagecode="1033" />
+                        </labels>
+                        <control id="soap_overagescan" classid="{533B9E00-756B-4312-95A0-DC888637AC78}" datafieldname="soap_overagescan" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+            <column width="33%">
+              <sections>
+                <section name="totals" id="48940f41-a81c-40f0-98a5-8b95489ba987" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115">
+                  <labels>
+                    <label description="Financial Information" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{4fe5ab1d-291d-4987-a798-88ac26d2d482}">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{7827d684-c9a5-47e3-94fe-eb40650f717b}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Total Billed Revenue" languagecode="1033" />
+                        </labels>
+                        <control id="soap_totalamount" classid="{533B9E00-756B-4312-95A0-DC888637AC78}" datafieldname="soap_totalamount" disabled="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{c65e5532-cff9-4e45-9991-174c431e83fd}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Total Rep Cost" languagecode="1033" />
+                        </labels>
+                        <control id="soap_totalrepcost" classid="{533B9E00-756B-4312-95A0-DC888637AC78}" datafieldname="soap_totalrepcost" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{af6f8893-a10b-4943-b5f8-3becb3eda0a7}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Net Equipment Revenue" languagecode="1033" />
+                        </labels>
+                        <control id="soap_netequipmentrevenue" classid="{533B9E00-756B-4312-95A0-DC888637AC78}" datafieldname="soap_netequipmentrevenue" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{9ffbe69e-ce25-4bd9-928f-ecd4d656393c}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Total Misc Cost" languagecode="1033" />
+                        </labels>
+                        <control id="soap_totalmisccost" classid="{533B9E00-756B-4312-95A0-DC888637AC78}" datafieldname="soap_totalmisccost" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{a6221cc4-4562-45c2-a2e3-b3992c89b30f}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Equipment AGP" languagecode="1033" />
+                        </labels>
+                        <control id="soap_agpcalc" classid="{533B9E00-756B-4312-95A0-DC888637AC78}" datafieldname="soap_agpcalc" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{4d0dc21f-5294-49cb-a37c-95cc24c5499c}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Sales Tax Amount" languagecode="1033" />
+                        </labels>
+                        <control id="soap_salestaxamount" classid="{533B9E00-756B-4312-95A0-DC888637AC78}" datafieldname="soap_salestaxamount" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{ba8fd1aa-e914-4f6c-9ede-85302310a176}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Total Amount Due" languagecode="1033" />
+                        </labels>
+                        <control id="soap_totalamountdue" classid="{533B9E00-756B-4312-95A0-DC888637AC78}" datafieldname="soap_totalamountdue" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{0cccad05-2f69-4c83-b42c-e0d63665a576}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Lease Payment" languagecode="1033" />
+                        </labels>
+                        <control id="soap_leasepayment" classid="{533B9E00-756B-4312-95A0-DC888637AC78}" datafieldname="soap_leasepayment" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{741f37e5-8312-4f44-a5a7-892f95fdce58}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Bundled Lease/Service Payment" languagecode="1033" />
+                        </labels>
+                        <control id="soap_bundledleaseservicepayment" classid="{533B9E00-756B-4312-95A0-DC888637AC78}" datafieldname="soap_bundledleaseservicepayment" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="Summary_tab_section_11" id="bdc40bd4-d6d6-4a71-8cbf-557e5c10a71b" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115">
+                  <labels>
+                    <label description="Calculations" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{9c0b2734-a8d3-4e65-9471-fdd43e60caa1}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Total Line Product" languagecode="1033" />
+                        </labels>
+                        <control id="soap_equipmenttotal" classid="{533B9E00-756B-4312-95A0-DC888637AC78}" datafieldname="soap_equipmenttotal" disabled="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{f1445406-b34a-4e9c-a4c5-ec45f371a5a5}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Total Cost" languagecode="1033" />
+                        </labels>
+                        <control id="soap_totalcost" classid="{533B9E00-756B-4312-95A0-DC888637AC78}" datafieldname="soap_totalcost" disabled="true" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="description_section" id="e226802c-4f8a-4256-a8c1-c7a410f9bc0d" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115">
+                  <labels>
+                    <label description="Notes (Visible on Order Summary)" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{67bce524-ebde-45d3-96e1-d8d446558a17}">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{589813e0-677f-4150-817e-4e6e0581c35e}" locklevel="0" colspan="1" rowspan="1" showlabel="false">
+                        <labels>
+                          <label description="STAMPS" languagecode="1033" />
+                        </labels>
+                        <control id="soap_description" classid="{E0DECE4B-6FC8-4A8F-A065-082708572369}" datafieldname="soap_description" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab name="tab_3" id="d0c8ea0d-3edb-4706-a15e-864444f46c1c" IsUserDefined="0" locklevel="0" showlabel="true" contenttype="cardSections" expanded="false">
+          <labels>
+            <label description="Configurator" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="tab_3_section_1" id="ed697063-5b11-42ef-b6c2-4b6cb7ce2866" IsUserDefined="0" locklevel="0" showlabel="false" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115">
+                  <labels>
+                    <label description="New Section" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{99a92d16-86b8-4058-933e-8cc7e1f0ddfd}">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{ecae07b9-298b-4843-80c5-f2948f6705b8}" locklevel="0" colspan="1" rowspan="1" showlabel="false">
+                        <labels>
+                          <label description="Name" languagecode="1033" />
+                        </labels>
+                        <control id="soap_name" classid="{F9A8A302-114E-466A-B582-6771B2AE0D92}" datafieldname="soap_name" disabled="false" uniqueid="{6cc97347-e1d7-34c5-ea4b-db51d0bd346b}" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab name="tab_2" id="00844baa-4f33-4540-affc-eaa6da6668f0" IsUserDefined="0" locklevel="0" showlabel="true">
+          <labels>
+            <label description="Order Information" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="tab_2_section_1" id="002987e2-9d30-4514-b33d-f248ca602283" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115">
+                  <labels>
+                    <label description="Product" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{01a14294-6e98-4620-978e-cc58767c73de}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Price List" languagecode="1033" />
+                        </labels>
+                        <control id="soap_pricelistid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="soap_pricelistid" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell locklevel="0" id="{cc854d4d-75ce-4e7b-875e-6ed4cee19794}" rowspan="4" colspan="1" auto="true">
+                        <labels>
+                          <label description="Quote Products" languagecode="1033" />
+                        </labels>
+                        <control indicationOfSubgrid="true" id="quoteproductgrid" classid="{E7A81278-8635-4D9E-8D4D-59480B391C5B}">
+                          <parameters>
+                            <RecordsPerPage>4</RecordsPerPage>
+                            <AutoExpand>Auto</AutoExpand>
+                            <EnableQuickFind>false</EnableQuickFind>
+                            <EnableViewPicker>true</EnableViewPicker>
+                            <EnableChartPicker>true</EnableChartPicker>
+                            <ChartGridMode>All</ChartGridMode>
+                            <RelationshipName>soap_quotedetail_quoteid_soap_quote</RelationshipName>
+                            <TargetEntityType>soap_quotedetail</TargetEntityType>
+                            <ViewId>{16A6A228-51BD-4A0B-93DC-EAF122D0337A}</ViewId>
+                            <ViewIds>{16A6A228-51BD-4A0B-93DC-EAF122D0337A}</ViewIds>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                    <row />
+                    <row height="auto" />
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <header id="{e2d536e4-0878-4683-b182-35b36ff2d67e}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{a7942e18-f5f7-4615-a2f2-ba3211a32c2b}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{9b503bc5-df68-4776-b208-e97bbba5fddf}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{e9b230ad-32d7-4d7d-b042-56d52a615a10}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{ca4e07bd-061d-4d81-a157-52a68e0675f8}" locklevel="0" colspan="1" rowspan="1">
+              <labels>
+                <label description="Status Reason" languagecode="1033" />
+              </labels>
+              <control id="header_statuscode" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="statuscode" disabled="false" />
+            </cell>
+          </row>
+        </rows>
+      </header>
+      <footer id="{6138045f-e782-4c44-b40a-f727346078ec}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{336ebeae-17a7-4fd9-aeae-2f610255e62a}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{88d70d2e-4295-48e5-aa00-955a9bea5b77}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{3c3518e8-0d6d-4790-9bca-0a368db89a7c}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </footer>
+      <controlDescriptions>
+        <controlDescription forControl="{20e87acf-8d10-4c60-9439-94fb6f8a1e67}">
+          <customControl id="{67FAC785-CD58-4F9F-ABB3-4B7DDC6ED5ED}">
+            <parameters>
+              <datafieldname>soap_itt</datafieldname>
+            </parameters>
+          </customControl>
+          <customControl formFactor="0" name="MscrmControls.FieldControls.ToggleControl">
+            <parameters>
+              <value type="TwoOptions">soap_itt</value>
+            </parameters>
+          </customControl>
+          <customControl formFactor="2" name="MscrmControls.FieldControls.ToggleControl">
+            <parameters>
+              <value type="TwoOptions">soap_itt</value>
+            </parameters>
+          </customControl>
+          <customControl formFactor="1" name="MscrmControls.FieldControls.ToggleControl">
+            <parameters>
+              <value type="TwoOptions">soap_itt</value>
+            </parameters>
+          </customControl>
+        </controlDescription>
+        <controlDescription forControl="{42efeb3e-2b09-484e-81a5-e530106ab8e6}">
+          <customControl id="{67FAC785-CD58-4F9F-ABB3-4B7DDC6ED5ED}">
+            <parameters>
+              <datafieldname>soap_connectivityrequired</datafieldname>
+            </parameters>
+          </customControl>
+          <customControl formFactor="0" name="MscrmControls.FieldControls.ToggleControl">
+            <parameters>
+              <value type="TwoOptions">soap_connectivityrequired</value>
+            </parameters>
+          </customControl>
+          <customControl formFactor="2" name="MscrmControls.FieldControls.ToggleControl">
+            <parameters>
+              <value type="TwoOptions">soap_connectivityrequired</value>
+            </parameters>
+          </customControl>
+          <customControl formFactor="1" name="MscrmControls.FieldControls.ToggleControl">
+            <parameters>
+              <value type="TwoOptions">soap_connectivityrequired</value>
+            </parameters>
+          </customControl>
+        </controlDescription>
+        <controlDescription forControl="{5bf0633f-27e5-42c9-b302-25a522be0a49}">
+          <customControl id="{67FAC785-CD58-4F9F-ABB3-4B7DDC6ED5ED}">
+            <parameters>
+              <datafieldname>soap_specialpricing</datafieldname>
+            </parameters>
+          </customControl>
+          <customControl formFactor="0" name="MscrmControls.FieldControls.ToggleControl">
+            <parameters>
+              <value type="TwoOptions">soap_specialpricing</value>
+            </parameters>
+          </customControl>
+          <customControl formFactor="2" name="MscrmControls.FieldControls.ToggleControl">
+            <parameters>
+              <value type="TwoOptions">soap_specialpricing</value>
+            </parameters>
+          </customControl>
+          <customControl formFactor="1" name="MscrmControls.FieldControls.ToggleControl">
+            <parameters>
+              <value type="TwoOptions">soap_specialpricing</value>
+            </parameters>
+          </customControl>
+        </controlDescription>
+        <controlDescription forControl="{047f0305-e28e-41b3-9d0c-5ba714269496}">
+          <customControl id="{67FAC785-CD58-4F9F-ABB3-4B7DDC6ED5ED}">
+            <parameters>
+              <datafieldname>soap_includeservice</datafieldname>
+            </parameters>
+          </customControl>
+          <customControl formFactor="0" name="MscrmControls.FieldControls.ToggleControl">
+            <parameters>
+              <value type="TwoOptions">soap_includeservice</value>
+            </parameters>
+          </customControl>
+          <customControl formFactor="2" name="MscrmControls.FieldControls.ToggleControl">
+            <parameters>
+              <value type="TwoOptions">soap_includeservice</value>
+            </parameters>
+          </customControl>
+          <customControl formFactor="1" name="MscrmControls.FieldControls.ToggleControl">
+            <parameters>
+              <value type="TwoOptions">soap_includeservice</value>
+            </parameters>
+          </customControl>
+        </controlDescription>
+        <controlDescription forControl="{6cc97347-e1d7-34c5-ea4b-db51d0bd346b}">
+          <customControl id="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}">
+            <parameters>
+              <datafieldname>soap_name</datafieldname>
+            </parameters>
+          </customControl>
+          <customControl formFactor="0" name="MscrmControls.Canvas.CanvasControl">
+            <parameters>
+              <record>soap_name</record>
+              <schema static="true" type="SingleLine.Text">{}</schema>
+              <entityName static="true" type="SingleLine.Text">Quote</entityName>
+              <appName static="true" type="SingleLine.Text">cr0b4_configuratorcanvasapp_67512</appName>
+              <appId static="true" type="SingleLine.Text">e70ef7ad-b6b4-43fc-b29c-37cafc516b76</appId>
+            </parameters>
+          </customControl>
+          <customControl formFactor="1" name="MscrmControls.Canvas.CanvasControl">
+            <parameters>
+              <record>soap_name</record>
+              <schema static="true" type="SingleLine.Text">{}</schema>
+              <entityName static="true" type="SingleLine.Text">Quote</entityName>
+              <appName static="true" type="SingleLine.Text">cr0b4_configuratorcanvasapp_67512</appName>
+              <appId static="true" type="SingleLine.Text">e70ef7ad-b6b4-43fc-b29c-37cafc516b76</appId>
+            </parameters>
+          </customControl>
+          <customControl formFactor="2" name="MscrmControls.Canvas.CanvasControl">
+            <parameters>
+              <record>soap_name</record>
+              <schema static="true" type="SingleLine.Text">{}</schema>
+              <entityName static="true" type="SingleLine.Text">Quote</entityName>
+              <appName static="true" type="SingleLine.Text">cr0b4_configuratorcanvasapp_67512</appName>
+              <appId static="true" type="SingleLine.Text">e70ef7ad-b6b4-43fc-b29c-37cafc516b76</appId>
+            </parameters>
+          </customControl>
+        </controlDescription>
+      </controlDescriptions>
+      <Navigation>
+        <NavBar />
+        <NavBarAreas>
+          <NavBarArea Id="Info">
+            <Titles>
+              <Title LCID="1033" Text="Common" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="Sales">
+            <Titles>
+              <Title LCID="1033" Text="Sales" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="Service">
+            <Titles>
+              <Title LCID="1033" Text="Service" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="Marketing">
+            <Titles>
+              <Title LCID="1033" Text="Marketing" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="ProcessCenter">
+            <Titles>
+              <Title LCID="1033" Text="Process Sessions" />
+            </Titles>
+          </NavBarArea>
+        </NavBarAreas>
+      </Navigation>
+      <DisplayConditions Order="0" FallbackForm="true">
+        <Everyone />
+      </DisplayConditions>
+      <formLibraries>
+        <Library name="soap_quote.js" libraryUniqueId="{4c3a6ef6-4b20-4c1c-ad95-963f54d6bbc0}" />
+      </formLibraries>
+      <events>
+        <event name="onload" application="false" active="false">
+          <Handlers>
+            <Handler functionName="onLoad" libraryName="soap_quote.js" handlerUniqueId="{65fa68f0-a447-41e3-b04f-b56f88d11b53}" enabled="true" parameters="" passExecutionContext="true" />
+          </Handlers>
+        </event>
+      </events>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Information" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

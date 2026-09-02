@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{7ea38ed2-9f25-4ad5-acbf-172ea0d693d2}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="soap_name" select="1" icon="1" preview="1">
+        <row name="result" id="soap_dealnoteattachmentid">
+          <cell name="soap_name" width="300" />
+          <cell name="soap_mimetype" width="150" />
+          <cell name="soap_size" width="150" />
+          <cell name="soap_note" width="150" />
+          <cell name="soap_quote" width="150" />
+          <cell name="soap_opportunity" width="150" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="soap_dealnoteattachment">
+          <attribute name="soap_dealnoteattachmentid" />
+          <attribute name="soap_name" />
+          <attribute name="createdon" />
+          <order attribute="soap_name" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <attribute name="soap_mimetype" />
+          <attribute name="soap_size" />
+          <attribute name="soap_note" />
+          <attribute name="soap_quote" />
+          <attribute name="soap_opportunity" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Active Deal Note Attachments" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

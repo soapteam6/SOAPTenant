@@ -1,0 +1,385 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{1bdd9a15-39e5-4b70-a3d0-ed0ba5360d87}</formid>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form headerdensity="HighWithControls">
+      <tabs>
+        <tab verticallayout="true" id="{fce45a5e-ebee-4fc5-a9bf-0b3ded2cdce8}" IsUserDefined="1" name="General">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="34%">
+              <sections>
+                <section showlabel="true" showbar="false" IsUserDefined="0" id="{84a3b6bd-99d5-4aa5-9629-fe1c5127fb66}" name="EquipmentInformation">
+                  <labels>
+                    <label description="Equipment Information" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{289b8737-06b2-422d-a9be-5c9ca503b8cd}">
+                        <labels>
+                          <label description="Name" languagecode="1033" />
+                        </labels>
+                        <control id="soap_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="soap_name" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{76ec4c74-d560-4f25-9cdb-75002c4c7a5c}" visible="false">
+                        <labels>
+                          <label description="Owner" languagecode="1033" />
+                        </labels>
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{48d9b340-312d-4c74-9d0f-770c7b4d424f}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Equipment Number" languagecode="1033" />
+                        </labels>
+                        <control id="soap_equipmentnumber" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="soap_equipmentnumber" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{99c76a16-11f4-40ca-9533-047f45092339}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Location Customer" languagecode="1033" />
+                        </labels>
+                        <control id="soap_locationid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="soap_locationid" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{7099a15c-0280-424b-b531-df3b01caa564}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Make" languagecode="1033" />
+                        </labels>
+                        <control id="soap_make" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="soap_make" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{f43adeec-dc36-442a-98ed-5baca9002bd7}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Model" languagecode="1033" />
+                        </labels>
+                        <control id="soap_model" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="soap_model" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{f16d7f19-878e-407b-981d-f5e0de14fab4}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Model Category" languagecode="1033" />
+                        </labels>
+                        <control id="soap_modelcategory" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="soap_modelcategory" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{9c661411-0306-4fc3-9695-1e62450b9615}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Serial Number" languagecode="1033" />
+                        </labels>
+                        <control id="soap_serialnumber" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="soap_serialnumber" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{80a0be5b-cea9-42a6-a2ac-c32b8f4603f6}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Install Date" languagecode="1033" />
+                        </labels>
+                        <control id="soap_installdate" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="soap_installdate" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="General_section_5" id="1148a4cf-0c84-4c0c-b876-4179640fbe3e" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115">
+                  <labels>
+                    <label description="Delinquent Information" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row />
+                  </rows>
+                </section>
+              </sections>
+            </column>
+            <column width="33%">
+              <sections>
+                <section name="_section_851" id="98d20c00-7475-48fb-a2a4-932b1bcedb70" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115">
+                  <labels>
+                    <label description="Lease Information" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row />
+                    <row>
+                      <cell id="{cad52aec-8d21-4ece-8001-0c1c44e160ac}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Lease Payment" languagecode="1033" />
+                        </labels>
+                        <control id="soap_leasepayment" classid="{533B9E00-756B-4312-95A0-DC888637AC78}" datafieldname="soap_leasepayment" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{800af079-d240-4d38-8d2c-7782312bf86c}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Lease Agreement" languagecode="1033" />
+                        </labels>
+                        <control id="soap_leaseagreementid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="soap_leaseagreementid" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+            <column width="33%">
+              <sections>
+                <section name="_section_187" id="337b4816-f489-45ad-989d-83f25b071d88" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115">
+                  <labels>
+                    <label description="Contract Information" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row />
+                    <row>
+                      <cell id="{e24ad660-a34c-4fa8-b9df-bc1ef636a0f7}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Service Contract" languagecode="1033" />
+                        </labels>
+                        <control id="soap_servicecontractid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="soap_servicecontractid" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab name="tab_2" id="6b6a0131-488e-46aa-bba8-7e98f1185a54" IsUserDefined="0" locklevel="0" showlabel="true">
+          <labels>
+            <label description="Rates and Meters" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="tab_2_section_1" id="741148bf-1e5f-4f87-9731-aaf4a6b55dc6" IsUserDefined="0" locklevel="0" showlabel="false" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115">
+                  <labels>
+                    <label description="Agreements" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row />
+                    <row>
+                      <cell locklevel="0" id="{2781b6c0-56b1-47a0-9017-f5f2e916819d}" rowspan="4" colspan="1" auto="false">
+                        <labels>
+                          <label description="Agreements" languagecode="1033" />
+                        </labels>
+                        <control indicationOfSubgrid="true" id="Subgrid_new_1" classid="{E7A81278-8635-4D9E-8D4D-59480B391C5B}">
+                          <parameters>
+                            <RecordsPerPage>4</RecordsPerPage>
+                            <AutoExpand>Fixed</AutoExpand>
+                            <EnableQuickFind>false</EnableQuickFind>
+                            <EnableViewPicker>false</EnableViewPicker>
+                            <EnableChartPicker>true</EnableChartPicker>
+                            <ChartGridMode>All</ChartGridMode>
+                            <RelationshipName>soap_soap_serviceagreement_soap_equipment_soap_equipmentid</RelationshipName>
+                            <TargetEntityType>soap_serviceagreement</TargetEntityType>
+                            <ViewId>{E9BA622F-4EDD-438E-85AE-63B2F7D39B09}</ViewId>
+                            <ViewIds>{E9BA622F-4EDD-438E-85AE-63B2F7D39B09}</ViewIds>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                    <row />
+                  </rows>
+                </section>
+                <section name="tab_2_section_3" id="0f09714d-d26b-48b6-9dd3-1bb1914319b9" IsUserDefined="0" locklevel="0" showlabel="false" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115">
+                  <labels>
+                    <label description="Meter Readings" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row />
+                    <row>
+                      <cell locklevel="0" id="{1ad00188-73e6-487f-9a11-1399fd50c5a1}" rowspan="4" colspan="1" auto="true">
+                        <labels>
+                          <label description="Meter Readings" languagecode="1033" />
+                        </labels>
+                        <control indicationOfSubgrid="true" id="Subgrid_new_2" classid="{E7A81278-8635-4D9E-8D4D-59480B391C5B}">
+                          <parameters>
+                            <RecordsPerPage>20</RecordsPerPage>
+                            <AutoExpand>Auto</AutoExpand>
+                            <EnableQuickFind>false</EnableQuickFind>
+                            <EnableViewPicker>false</EnableViewPicker>
+                            <EnableChartPicker>true</EnableChartPicker>
+                            <ChartGridMode>All</ChartGridMode>
+                            <RelationshipName>soap_soap_meterreading_soap_equipment_soap_equipmentid</RelationshipName>
+                            <TargetEntityType>soap_meterreading</TargetEntityType>
+                            <ViewId>{651B69A4-0A7D-46B9-A98F-BC1D692BD667}</ViewId>
+                            <ViewIds>{651B69A4-0A7D-46B9-A98F-BC1D692BD667}</ViewIds>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                    <row />
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab name="tab_3" id="486c5520-4a65-4f37-82e7-722bf0b60a13" IsUserDefined="0" locklevel="0" showlabel="true">
+          <labels>
+            <label description="Accessories" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="tab_3_section_1" id="53938c53-28a4-4724-8db3-90d3e56ac708" IsUserDefined="0" locklevel="0" showlabel="false" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115">
+                  <labels>
+                    <label description="Accessories" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row />
+                    <row>
+                      <cell locklevel="0" id="{7a007d0c-6256-4e3a-8361-2adebac54d6c}" rowspan="4" colspan="1" auto="true">
+                        <labels>
+                          <label description="Accessories" languagecode="1033" />
+                        </labels>
+                        <control indicationOfSubgrid="true" id="Subgrid_new_3" classid="{E7A81278-8635-4D9E-8D4D-59480B391C5B}">
+                          <parameters>
+                            <RecordsPerPage>20</RecordsPerPage>
+                            <AutoExpand>Auto</AutoExpand>
+                            <EnableQuickFind>false</EnableQuickFind>
+                            <EnableViewPicker>false</EnableViewPicker>
+                            <EnableChartPicker>true</EnableChartPicker>
+                            <ChartGridMode>All</ChartGridMode>
+                            <RelationshipName>soap_soap_accessory_soap_equipment_soap_equipmentid</RelationshipName>
+                            <TargetEntityType>soap_accessory</TargetEntityType>
+                            <ViewId>{10980378-E856-4A4B-AA1D-7F25F48F1167}</ViewId>
+                            <ViewIds>{10980378-E856-4A4B-AA1D-7F25F48F1167}</ViewIds>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                    <row />
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab name="tab_4" id="5c89663a-b050-4f5b-ac03-48d1a15e51ce" IsUserDefined="0" locklevel="0" showlabel="true">
+          <labels>
+            <label description="Calls" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="tab_4_section_1" id="c9e4b1ac-da9c-477c-ae1b-ecbe589a648d" IsUserDefined="0" locklevel="0" showlabel="false" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115">
+                  <labels>
+                    <label description="Calls" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row />
+                    <row>
+                      <cell locklevel="0" id="{419a1658-0a12-4c3c-85a9-598ab83ea2f7}" rowspan="4" colspan="1" auto="true">
+                        <labels>
+                          <label description="Calls" languagecode="1033" />
+                        </labels>
+                        <control indicationOfSubgrid="true" id="Subgrid_new_4" classid="{E7A81278-8635-4D9E-8D4D-59480B391C5B}">
+                          <parameters>
+                            <RecordsPerPage>20</RecordsPerPage>
+                            <AutoExpand>Auto</AutoExpand>
+                            <EnableQuickFind>false</EnableQuickFind>
+                            <EnableViewPicker>false</EnableViewPicker>
+                            <EnableChartPicker>true</EnableChartPicker>
+                            <ChartGridMode>All</ChartGridMode>
+                            <RelationshipName>soap_soap_servicecall_soap_equipment_soap_equipmentid</RelationshipName>
+                            <TargetEntityType>soap_servicecall</TargetEntityType>
+                            <ViewId>{1AB2A488-53D0-4F4C-BDC7-C23C5C523190}</ViewId>
+                            <ViewIds>{1AB2A488-53D0-4F4C-BDC7-C23C5C523190}</ViewIds>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                    <row />
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <header id="{5643c20d-f46f-4eb6-8a3b-b706dc1dc0da}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{55b35adc-51c4-44f8-ba1a-110c35ce1b65}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{cc0fe67d-b239-4c70-8dea-dbfb666f7469}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{ad43bd73-ddd2-45b6-9a60-854af23c4f94}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{2dbb36f6-d7b1-495a-926b-8323178e081e}" locklevel="0" colspan="1" rowspan="1">
+              <labels>
+                <label description="Customer" languagecode="1033" />
+              </labels>
+              <control id="header_soap_customerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="soap_customerid" disabled="false" />
+            </cell>
+            <cell id="{18281b15-52cd-4ed4-9859-ca29b0c2df89}" locklevel="0" colspan="1" rowspan="1">
+              <labels>
+                <label description="Active" languagecode="1033" />
+              </labels>
+              <control id="header_soap_isactive" classid="{67FAC785-CD58-4F9F-ABB3-4B7DDC6ED5ED}" datafieldname="soap_isactive" disabled="false" />
+            </cell>
+          </row>
+        </rows>
+      </header>
+      <footer id="{b7bfd94e-f7d8-4e83-a199-f3f5134fc5da}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{dbc6b048-02d1-4547-a923-c12484bb3716}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{78748cf6-8d71-4dd9-8e18-ad19961d5473}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{a475dac1-6c37-48e8-93a4-5b29acb9b261}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </footer>
+      <DisplayConditions Order="0" FallbackForm="true">
+        <Everyone />
+      </DisplayConditions>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Information" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

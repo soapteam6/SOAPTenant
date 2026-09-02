@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{10980378-e856-4a4b-aa1d-7f25f48f1167}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="soap_name" select="1" icon="1" preview="1">
+        <row name="result" id="soap_accessoryid">
+          <cell name="soap_name" width="300" />
+          <cell name="soap_item" width="100" />
+          <cell name="soap_itemdescription" width="135" />
+          <cell name="soap_quantity" width="100" />
+          <cell name="soap_cost" width="100" />
+          <cell name="soap_oemnumber" width="121" />
+          <cell name="soap_acceserialnumber" width="156" />
+          <cell name="soap_prefmfgnumber" width="141" />
+          <cell name="soap_isactive" width="100" />
+          <cell name="soap_consumed" width="100" />
+          <cell name="soap_permanent" width="100" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="soap_accessory">
+          <attribute name="soap_accessoryid" />
+          <attribute name="soap_name" />
+          <order attribute="soap_name" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <attribute name="soap_itemdescription" />
+          <attribute name="soap_item" />
+          <attribute name="soap_quantity" />
+          <attribute name="soap_cost" />
+          <attribute name="soap_oemnumber" />
+          <attribute name="soap_prefmfgnumber" />
+          <attribute name="soap_isactive" />
+          <attribute name="soap_acceserialnumber" />
+          <attribute name="soap_consumed" />
+          <attribute name="soap_permanent" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Active EA Accessories" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

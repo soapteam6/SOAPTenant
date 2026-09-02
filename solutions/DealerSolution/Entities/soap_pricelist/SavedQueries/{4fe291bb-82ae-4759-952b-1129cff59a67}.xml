@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{4fe291bb-82ae-4759-952b-1129cff59a67}</savedqueryid>
+    <layoutxml>
+      <grid name="soap_pricelists" jump="soap_name" select="1" icon="1" preview="0">
+        <row name="soap_pricelist" id="soap_pricelistid">
+          <cell name="soap_name" width="300" />
+          <cell name="soap_description" width="106" />
+          <cell name="soap_effectivedate" width="121" />
+          <cell name="soap_enddate" width="100" />
+          <cell name="soap_pricingmethod" width="128" />
+          <cell name="soap_percent" width="100" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>64</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="soap_pricelist">
+          <attribute name="soap_pricelistid" />
+          <attribute name="soap_name" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <attribute name="soap_description" />
+          <attribute name="soap_effectivedate" />
+          <attribute name="soap_enddate" />
+          <attribute name="soap_percent" />
+          <attribute name="soap_pricingmethod" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Price List Lookup View" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

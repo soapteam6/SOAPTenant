@@ -1,0 +1,218 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{2b4e6608-676a-f111-a825-00224806fd03}</formid>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form headerdensity="HighWithControls" shownavigationbar="false">
+      <tabs>
+        <tab verticallayout="true" id="{83159e46-ade3-4dea-a4a4-9291892a61ff}" IsUserDefined="1" labelid="{bbff0d70-bdee-4407-91ff-f7744fc29c6a}" name="Equipment">
+          <labels>
+            <label description="Equipment" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showlabel="false" showbar="false" IsUserDefined="0" id="{aa82b560-61a0-43e6-bb8b-a434cb2a8b34}" columns="111" labelid="{23e272bd-8bca-4b65-bee6-e6ce0da78cb8}" name="Equipment" visible="false">
+                  <labels>
+                    <label description="General" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{1dbdfaad-152e-4b0b-8e40-8daa7fafe6b9}" labelid="{e02c934e-f6fe-4f2d-85e0-7f1d79b2d2ae}">
+                        <labels>
+                          <label description="Name" languagecode="1033" />
+                        </labels>
+                        <control id="soap_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="soap_name" />
+                      </cell>
+                      <cell id="{29fe25a6-9de4-4689-a54a-82e8aaf29b30}" locklevel="0" colspan="1" rowspan="1" labelid="{4e6b040c-90ee-4be9-bb48-7fb9c6a41d8d}">
+                        <labels>
+                          <label description="Address" languagecode="1033" />
+                        </labels>
+                        <control id="soap_address" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="soap_address" disabled="false" />
+                      </cell>
+                      <cell id="{0cb4454b-46f6-4597-ba16-e9667a66fc9e}" locklevel="0" colspan="1" rowspan="1" labelid="{6c9c7cf0-f835-45ed-9a26-5fbf385d035c}">
+                        <labels>
+                          <label description="Sales Rep Name" languagecode="1033" />
+                        </labels>
+                        <control id="soap_salesrepname" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="soap_salesrepname" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{c1b203f8-88ef-40b0-8f2e-839f228fd44c}" locklevel="0" colspan="1" rowspan="1" labelid="{f89ca085-cf39-435f-a8ad-e2ca39684b7a}">
+                        <labels>
+                          <label description="Customer Number" languagecode="1033" />
+                        </labels>
+                        <control id="soap_customernumber" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="soap_customernumber" disabled="false" />
+                      </cell>
+                      <cell id="{3e8706be-fd91-45d2-afee-1deb35916257}" locklevel="0" colspan="1" rowspan="1" labelid="{4326f57c-7ead-4bd0-93ec-dde8bbb409eb}">
+                        <labels>
+                          <label description="City" languagecode="1033" />
+                        </labels>
+                        <control id="soap_city" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="soap_city" disabled="false" />
+                      </cell>
+                      <cell id="{4a50a573-1906-44c4-8cdc-265647b68ea0}" locklevel="0" colspan="1" rowspan="1" labelid="{6085a0dd-92bc-4d20-9ea8-0730be16f8bb}">
+                        <labels>
+                          <label description="Sales Rep Email" languagecode="1033" />
+                        </labels>
+                        <control id="soap_salesrepemail" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="soap_salesrepemail" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{f023a9cc-386c-497f-81f3-099b58b96d87}" locklevel="0" colspan="1" rowspan="1" labelid="{0fc2f2b9-f30a-4f49-9a36-6a8f9faafa18}">
+                        <labels>
+                          <label description="Customer Type" languagecode="1033" />
+                        </labels>
+                        <control id="soap_customertype" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="soap_customertype" disabled="false" />
+                      </cell>
+                      <cell id="{78ecba8c-41d0-4aee-8d1e-740b7d8c151a}" locklevel="0" colspan="1" rowspan="1" labelid="{c262c357-5730-4a3d-b753-672a7557ade9}">
+                        <labels>
+                          <label description="State" languagecode="1033" />
+                        </labels>
+                        <control id="soap_state" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="soap_state" disabled="false" />
+                      </cell>
+                      <cell locklevel="0" id="{89398f6d-7241-4641-af20-752e17c3ff33}" labelid="{8dcfa1a8-2add-4d00-abc4-5c462cecf0f9}">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{573f94f4-fe23-4044-8e84-ee376b0c75fc}" locklevel="0" colspan="1" rowspan="1" labelid="{ed9d001f-1d76-4ece-9d6d-8691bb54dccd}">
+                        <labels>
+                          <label description="Customer ID (EA)" languagecode="1033" />
+                        </labels>
+                        <control id="soap_customercode" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="soap_customercode" disabled="false" />
+                      </cell>
+                      <cell id="{c7c68d9a-3d2e-4ff3-bdb9-73df9803747c}" locklevel="0" colspan="1" rowspan="1" labelid="{25f01e71-a4b5-4e84-b0cb-25bcc28fda6e}">
+                        <labels>
+                          <label description="Zip" languagecode="1033" />
+                        </labels>
+                        <control id="soap_zip" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="soap_zip" disabled="false" />
+                      </cell>
+                      <cell locklevel="0" id="{20da7f45-c165-457d-8d28-91e7c970e334}" labelid="{633f1db1-ef45-4378-93e3-53764d07301a}">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{23019c12-2c41-4f15-9372-5c1784b514a4}" visible="false" labelid="{dcc43aeb-d68d-479d-9113-0843fafebea3}">
+                        <labels>
+                          <label description="Owner" languagecode="1033" />
+                        </labels>
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" disabled="false" />
+                      </cell>
+                      <cell locklevel="0" id="{73c2e309-a448-4dc5-a387-c08b32e13205}" labelid="{5631a5c1-36b8-40c9-82b4-66130e6c0cfb}">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                      </cell>
+                      <cell locklevel="0" id="{a343870c-41f4-4dbb-aefb-b42ea3473386}" labelid="{87cef0bf-0fb6-452a-97f6-714dfa836a45}">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="null_section_3" id="131e9a0e-d8f4-4190-ba22-6def0d8bf0f5" IsUserDefined="0" locklevel="0" showlabel="false" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115" labelid="{3d9f5314-07a6-43f3-8374-3abd0efdf43f}">
+                  <labels>
+                    <label description="Equipment" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row />
+                    <row>
+                      <cell locklevel="0" id="{0a9a896f-c054-4304-a6ea-56789134e59e}" rowspan="4" colspan="1" auto="false" labelid="{040c8014-bc93-433d-9b1a-3d09393b90cf}">
+                        <labels>
+                          <label description="Equipment" languagecode="1033" />
+                        </labels>
+                        <control indicationOfSubgrid="true" id="Subgrid_Equipment" classid="{E7A81278-8635-4D9E-8D4D-59480B391C5B}">
+                          <parameters>
+                            <RecordsPerPage>4</RecordsPerPage>
+                            <AutoExpand>Fixed</AutoExpand>
+                            <EnableQuickFind>false</EnableQuickFind>
+                            <EnableViewPicker>false</EnableViewPicker>
+                            <EnableChartPicker>true</EnableChartPicker>
+                            <ChartGridMode>All</ChartGridMode>
+                            <RelationshipName>soap_soap_equipment_soap_customer_soap_customerid</RelationshipName>
+                            <TargetEntityType>soap_equipment</TargetEntityType>
+                            <ViewId>{12932F5A-8F94-4ABB-89FE-81B517A9B90F}</ViewId>
+                            <ViewIds>{12932F5A-8F94-4ABB-89FE-81B517A9B90F}</ViewIds>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                    <row />
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <header id="{4bb79189-ea72-4795-9a26-bb7b1ad41c7d}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{586b83b4-dc2d-4a51-a4c1-bf03d7de83a4}" showlabel="false" labelid="{829949cf-e7aa-4f29-8753-46bf9fa9f601}">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{fd692f07-0f2c-4e78-aed2-2a0436c99cf4}" showlabel="false" labelid="{81384a95-1620-4377-b582-48a86cf11f6d}">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{006ee29d-9496-4c87-bf64-1e1b77f1b1ee}" showlabel="false" labelid="{e2339264-dfbe-419c-b5c8-4b19dc574367}">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell locklevel="0" id="{14c2a88a-fb29-422f-8da5-45511275f354}" labelid="{38f37370-88fa-4b79-a7f7-9ca596bb56a2}">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </header>
+      <footer id="{d738be2a-b1d8-4b65-8e7b-090fd3dc7eed}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{3d45978c-bbe9-40df-bb53-5e293a22619f}" showlabel="false" labelid="{1ce5d708-2404-41dc-863a-e68dc7693c78}">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{b75419d8-818a-49a2-bdd0-84d6cdaaf920}" showlabel="false" labelid="{33d7e679-e645-4eb1-8829-a96efcdb3948}">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{37dbe77a-f317-46bf-820c-d00bfe9acf5b}" showlabel="false" labelid="{d8d61ea8-a9c0-4501-a0da-59ceaeb3c6e1}">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </footer>
+      <DisplayConditions Order="3" FallbackForm="true">
+        <Role Id="{627090ff-40a3-4053-8790-584edc5be201}" />
+        <Role Id="{119f245c-3cc8-4b62-b31c-d1a046ced15d}" />
+      </DisplayConditions>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Equipment" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Equipment" languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

@@ -1,0 +1,9 @@
+<dvtablesearchentity dvtablesearchentityid="28d9ef62-b469-f111-a82a-000d3a34db39">
+  <dvtablesearch>
+    <dvtablesearchid>818fb482-385f-f111-a82c-000d3a5b5ebf</dvtablesearchid>
+  </dvtablesearch>
+  <entitylogicalname>soap_meterreading</entitylogicalname>
+  <iscustomizable>1</iscustomizable>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+</dvtablesearchentity>

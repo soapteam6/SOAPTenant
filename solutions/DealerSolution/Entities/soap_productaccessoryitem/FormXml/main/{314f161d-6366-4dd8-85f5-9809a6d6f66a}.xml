@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{314f161d-6366-4dd8-85f5-9809a6d6f66a}</formid>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form headerdensity="HighWithControls">
+      <tabs>
+        <tab verticallayout="true" id="{71f0cc1e-9b65-4596-8521-310ad99c373e}" IsUserDefined="1">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showlabel="false" showbar="false" IsUserDefined="0" id="{b0f2dc50-9edf-4a05-b793-122677270456}">
+                  <labels>
+                    <label description="General" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{5f339637-a549-49c7-8c44-9fb712d2bc4f}">
+                        <labels>
+                          <label description="Name" languagecode="1033" />
+                        </labels>
+                        <control id="soap_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="soap_name" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{6e5ca1de-32bd-48ea-809a-8753994ab390}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Product Accessory Group" languagecode="1033" />
+                        </labels>
+                        <control id="soap_productaccessorygroupid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="soap_productaccessorygroupid" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{36b88ad1-c42a-4148-9e95-691816988b64}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Related Product" languagecode="1033" />
+                        </labels>
+                        <control id="soap_relatedproductid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="soap_relatedproductid" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <header id="{19a031a8-6dac-4d53-a07d-8051fc912ea9}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{cdd40e29-63a5-487a-927e-a63d0eda8f4a}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{6eb95836-9d7f-4c2e-b131-4b73b3ec9764}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{bd4dc6cf-3f79-4555-8263-5f59737a0379}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{a3bef051-decb-4244-bd58-fe1423d1503a}" colspan="1" rowspan="1">
+              <labels>
+                <label description="Owner" languagecode="1033" />
+              </labels>
+              <control id="header_ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+            </cell>
+          </row>
+        </rows>
+      </header>
+      <footer id="{a2c7b15c-0eb9-43c1-8cfa-9a0f3ec0fed0}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{091c190f-c9c4-4f8e-86b0-bb5a1a7c3f31}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{a814f1fc-a215-477a-a258-077ea5016361}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{07ddbfbf-f831-470e-b559-462f646d8dc0}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </footer>
+      <DisplayConditions Order="0" FallbackForm="true">
+        <Everyone />
+      </DisplayConditions>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Information" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

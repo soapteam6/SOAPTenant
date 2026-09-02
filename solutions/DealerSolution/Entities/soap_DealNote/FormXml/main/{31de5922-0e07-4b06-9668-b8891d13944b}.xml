@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{31de5922-0e07-4b06-9668-b8891d13944b}</formid>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab verticallayout="true" id="{176205C2-EBDD-4658-9813-8085285E1B01}" IsUserDefined="1">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showlabel="false" showbar="false" IsUserDefined="0" id="{144F78A6-22E2-4C09-8DAB-7E9290FF23D5}">
+                  <labels>
+                    <label description="General" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{67DD575A-2367-4418-ACB0-429A97042750}">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                        <control id="soap_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="soap_Name" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{325667C5-6762-4833-B837-94186382D3C5}">
+                        <labels>
+                          <label description="Owner" languagecode="1033" />
+                        </labels>
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{9e3af9f5-e7ff-48c8-be2d-8fd0d59273d4}">
+                        <labels>
+                          <label description="Body" languagecode="1033" />
+                        </labels>
+                        <control id="soap_body" classid="{e0dece4b-6fc8-4a8f-a065-082708572369}" datafieldname="soap_body" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{9eba95ce-6afe-44aa-9537-38f8ea12a130}">
+                        <labels>
+                          <label description="Note Type" languagecode="1033" />
+                        </labels>
+                        <control id="soap_notetype" classid="{3ef39988-22bb-4f0b-bbbe-64b5a3748aee}" datafieldname="soap_notetype" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{64e11df0-7761-41ce-8a08-ccf14e0345f0}">
+                        <labels>
+                          <label description="Context" languagecode="1033" />
+                        </labels>
+                        <control id="soap_context" classid="{e0dece4b-6fc8-4a8f-a065-082708572369}" datafieldname="soap_context" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{1028091c-2144-4617-a0bf-19b5e23e2bb5}">
+                        <labels>
+                          <label description="Pinned" languagecode="1033" />
+                        </labels>
+                        <control id="soap_pinned" classid="{67fac785-cd58-4f9f-abb3-4b7ddc6ed5ed}" datafieldname="soap_pinned" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{7fcd7d9a-144b-4b40-81c4-ce2f7a03978a}">
+                        <labels>
+                          <label description="Amount Delta" languagecode="1033" />
+                        </labels>
+                        <control id="soap_amountdelta" classid="{533b9e00-756b-4312-95a0-dc888637ac78}" datafieldname="soap_amountdelta" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{fdcfb676-edc5-4c79-a3f5-54a9d8f989b0}">
+                        <labels>
+                          <label description="Pct Delta" languagecode="1033" />
+                        </labels>
+                        <control id="soap_pctdelta" classid="{c3efe0c3-0ec6-42be-8349-cbd9079dfd8e}" datafieldname="soap_pctdelta" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{01641bb5-4a12-4ec7-96a2-9d2c9bdcdabb}">
+                        <labels>
+                          <label description="Quote" languagecode="1033" />
+                        </labels>
+                        <control id="soap_quote" classid="{270bd3db-d9af-4782-9025-509e298dec0a}" datafieldname="soap_quote" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{13400004-dbf8-46f4-914d-bf22a0365d62}">
+                        <labels>
+                          <label description="Account" languagecode="1033" />
+                        </labels>
+                        <control id="soap_account" classid="{270bd3db-d9af-4782-9025-509e298dec0a}" datafieldname="soap_account" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{4c253e78-09f7-4937-b086-f36c089d5b67}">
+                        <labels>
+                          <label description="Opportunity" languagecode="1033" />
+                        </labels>
+                        <control id="soap_opportunity" classid="{270bd3db-d9af-4782-9025-509e298dec0a}" datafieldname="soap_opportunity" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{c7234a52-7985-40c3-96b1-ca06b69f956f}">
+                        <labels>
+                          <label description="Quote Line" languagecode="1033" />
+                        </labels>
+                        <control id="soap_quoteline" classid="{270bd3db-d9af-4782-9025-509e298dec0a}" datafieldname="soap_quoteline" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Information" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

@@ -1,0 +1,1 @@
+soap_adjustmentpercent: =((Decimal(soap_priceperunit)-Decimal(soap_cost))/Decimal(soap_cost))*100

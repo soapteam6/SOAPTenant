@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WebResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <WebResourceId>{082d19ef-b57b-f111-ab0e-6045bd05bb6f}</WebResourceId>
+  <Name>soap_salesorder_icon.svg</Name>
+  <DisplayName>soap_salesorder_icon.svg</DisplayName>
+  <WebResourceType>11</WebResourceType>
+  <IntroducedVersion>1.0.0.12</IntroducedVersion>
+  <IsEnabledForMobileClient>1</IsEnabledForMobileClient>
+  <IsAvailableForMobileOffline>0</IsAvailableForMobileOffline>
+  <IsCustomizable>1</IsCustomizable>
+  <CanBeDeleted>1</CanBeDeleted>
+  <IsHidden>0</IsHidden>
+  <FileName>/WebResources/soap_salesorder_iconsvg082D19EF-B57B-F111-AB0E-6045BD05BB6F</FileName>
+</WebResource>

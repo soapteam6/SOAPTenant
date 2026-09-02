@@ -1,0 +1,3 @@
+soap_leasefactor: =soap_leaserateid.soap_leaserate
+soap_lpnts: =Value(soap_totalamount) * 0.12
+soap_totwpts: =Value(soap_totalamount) + soap_lpnts

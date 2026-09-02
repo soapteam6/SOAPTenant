@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{16a6a228-51bd-4a0b-93dc-eaf122d0337a}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="soap_name" select="1" icon="1" preview="1">
+        <row name="result" id="soap_quotedetailid">
+          <cell name="soap_name" width="300" />
+          <cell name="soap_priceperunit" width="120" />
+          <cell name="soap_cost" width="100" />
+          <cell name="soap_quantity" width="100" />
+          <cell name="soap_amount" width="100" />
+          <cell name="soap_linenumber" width="116" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="soap_quotedetail">
+          <attribute name="soap_quotedetailid" />
+          <attribute name="soap_name" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <attribute name="soap_cost" />
+          <attribute name="soap_quantity" />
+          <attribute name="soap_linenumber" />
+          <attribute name="soap_priceperunit" />
+          <attribute name="soap_amount" />
+          <order attribute="soap_linenumber" descending="false" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Active Quote Lines" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>
