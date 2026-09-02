@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{4dee8385-f9ca-4ad5-909a-86a002a28b95}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="soap_name" select="1" icon="1" preview="1">
+        <row name="result" id="soap_documenttemplateid">
+          <cell name="soap_name" width="300" />
+          <cell name="soap_documenttype" width="150" />
+          <cell name="soap_defaultforitstype" width="150" />
+          <cell name="soap_order" width="150" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="soap_documenttemplate">
+          <attribute name="soap_documenttemplateid" />
+          <attribute name="soap_name" />
+          <attribute name="createdon" />
+          <order attribute="soap_name" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <attribute name="soap_documenttype" />
+          <attribute name="soap_defaultforitstype" />
+          <attribute name="soap_order" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Active Document Templates" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

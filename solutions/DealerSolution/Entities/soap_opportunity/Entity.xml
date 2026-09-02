@@ -839,6 +839,82 @@
             <Description description="" languagecode="1033" />
           </Descriptions>
         </attribute>
+        <attribute PhysicalName="soap_DealStatus">
+          <Type>picklist</Type>
+          <Name>soap_dealstatus</Name>
+          <LogicalName>soap_dealstatus</LogicalName>
+          <RequiredLevel>none</RequiredLevel>
+          <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
+          <ImeMode>auto</ImeMode>
+          <ValidForUpdateApi>1</ValidForUpdateApi>
+          <ValidForReadApi>1</ValidForReadApi>
+          <ValidForCreateApi>1</ValidForCreateApi>
+          <IsCustomField>1</IsCustomField>
+          <IsAuditEnabled>1</IsAuditEnabled>
+          <IsSecured>0</IsSecured>
+          <IntroducedVersion>1.0.0.27</IntroducedVersion>
+          <IsCustomizable>1</IsCustomizable>
+          <IsRenameable>1</IsRenameable>
+          <CanModifySearchSettings>1</CanModifySearchSettings>
+          <CanModifyRequirementLevelSettings>1</CanModifyRequirementLevelSettings>
+          <CanModifyAdditionalSettings>1</CanModifyAdditionalSettings>
+          <SourceType>0</SourceType>
+          <IsGlobalFilterEnabled>0</IsGlobalFilterEnabled>
+          <IsSortableEnabled>0</IsSortableEnabled>
+          <CanModifyGlobalFilterSettings>1</CanModifyGlobalFilterSettings>
+          <CanModifyIsSortableSettings>1</CanModifyIsSortableSettings>
+          <IsDataSourceSecret>0</IsDataSourceSecret>
+          <AutoNumberFormat></AutoNumberFormat>
+          <IsSearchable>0</IsSearchable>
+          <IsFilterable>0</IsFilterable>
+          <IsRetrievable>0</IsRetrievable>
+          <IsLocalizable>0</IsLocalizable>
+          <AppDefaultValue>-1</AppDefaultValue>
+          <optionset Name="soap_opportunity_soap_dealstatus">
+            <OptionSetType>picklist</OptionSetType>
+            <IntroducedVersion>1.0.0.27</IntroducedVersion>
+            <IsCustomizable>1</IsCustomizable>
+            <ExternalTypeName></ExternalTypeName>
+            <displaynames>
+              <displayname description="Deal Status" languagecode="1033" />
+            </displaynames>
+            <Descriptions>
+              <Description description="" languagecode="1033" />
+            </Descriptions>
+            <options>
+              <option value="1" ExternalValue="" IsHidden="0">
+                <labels>
+                  <label description="Open" languagecode="1033" />
+                </labels>
+                <Descriptions>
+                  <Description description="" languagecode="1033" />
+                </Descriptions>
+              </option>
+              <option value="2" ExternalValue="" IsHidden="0">
+                <labels>
+                  <label description="Won" languagecode="1033" />
+                </labels>
+                <Descriptions>
+                  <Description description="" languagecode="1033" />
+                </Descriptions>
+              </option>
+              <option value="3" ExternalValue="" IsHidden="0">
+                <labels>
+                  <label description="Lost" languagecode="1033" />
+                </labels>
+                <Descriptions>
+                  <Description description="" languagecode="1033" />
+                </Descriptions>
+              </option>
+            </options>
+          </optionset>
+          <displaynames>
+            <displayname description="Deal Status" languagecode="1033" />
+          </displaynames>
+          <Descriptions>
+            <Description description="" languagecode="1033" />
+          </Descriptions>
+        </attribute>
         <attribute PhysicalName="soap_description">
           <Type>ntext</Type>
           <Name>soap_description</Name>
@@ -993,6 +1069,190 @@
                   <Description description="" languagecode="1033" />
                 </Descriptions>
               </option>
+              <option value="100000000" IsHidden="0">
+                <labels>
+                  <label description="1" languagecode="1033" />
+                </labels>
+                <Descriptions>
+                  <Description description="1" languagecode="1033" />
+                </Descriptions>
+              </option>
+              <option value="100000001" IsHidden="0">
+                <labels>
+                  <label description="2" languagecode="1033" />
+                </labels>
+                <Descriptions>
+                  <Description description="2" languagecode="1033" />
+                </Descriptions>
+              </option>
+              <option value="100000002" IsHidden="0">
+                <labels>
+                  <label description="3" languagecode="1033" />
+                </labels>
+                <Descriptions>
+                  <Description description="3" languagecode="1033" />
+                </Descriptions>
+              </option>
+              <option value="100000003" IsHidden="0">
+                <labels>
+                  <label description="1" languagecode="1033" />
+                </labels>
+                <Descriptions>
+                  <Description description="1" languagecode="1033" />
+                </Descriptions>
+              </option>
+              <option value="100000004" IsHidden="0">
+                <labels>
+                  <label description="2" languagecode="1033" />
+                </labels>
+                <Descriptions>
+                  <Description description="2" languagecode="1033" />
+                </Descriptions>
+              </option>
+              <option value="100000005" IsHidden="0">
+                <labels>
+                  <label description="3" languagecode="1033" />
+                </labels>
+                <Descriptions>
+                  <Description description="3" languagecode="1033" />
+                </Descriptions>
+              </option>
+              <option value="100000006" IsHidden="0">
+                <labels>
+                  <label description="4" languagecode="1033" />
+                </labels>
+                <Descriptions>
+                  <Description description="4" languagecode="1033" />
+                </Descriptions>
+              </option>
+              <option value="100000007" IsHidden="0">
+                <labels>
+                  <label description="1" languagecode="1033" />
+                </labels>
+                <Descriptions>
+                  <Description description="1" languagecode="1033" />
+                </Descriptions>
+              </option>
+              <option value="100000008" IsHidden="0">
+                <labels>
+                  <label description="2" languagecode="1033" />
+                </labels>
+                <Descriptions>
+                  <Description description="2" languagecode="1033" />
+                </Descriptions>
+              </option>
+              <option value="100000009" IsHidden="0">
+                <labels>
+                  <label description="3" languagecode="1033" />
+                </labels>
+                <Descriptions>
+                  <Description description="3" languagecode="1033" />
+                </Descriptions>
+              </option>
+              <option value="100000010" IsHidden="0">
+                <labels>
+                  <label description="4" languagecode="1033" />
+                </labels>
+                <Descriptions>
+                  <Description description="4" languagecode="1033" />
+                </Descriptions>
+              </option>
+              <option value="100000011" IsHidden="0">
+                <labels>
+                  <label description="1" languagecode="1033" />
+                </labels>
+                <Descriptions>
+                  <Description description="1" languagecode="1033" />
+                </Descriptions>
+              </option>
+              <option value="100000012" IsHidden="0">
+                <labels>
+                  <label description="2" languagecode="1033" />
+                </labels>
+                <Descriptions>
+                  <Description description="2" languagecode="1033" />
+                </Descriptions>
+              </option>
+              <option value="100000013" IsHidden="0">
+                <labels>
+                  <label description="3" languagecode="1033" />
+                </labels>
+                <Descriptions>
+                  <Description description="3" languagecode="1033" />
+                </Descriptions>
+              </option>
+              <option value="100000014" IsHidden="0">
+                <labels>
+                  <label description="4" languagecode="1033" />
+                </labels>
+                <Descriptions>
+                  <Description description="4" languagecode="1033" />
+                </Descriptions>
+              </option>
+              <option value="100000015" IsHidden="0">
+                <labels>
+                  <label description="1" languagecode="1033" />
+                </labels>
+                <Descriptions>
+                  <Description description="1" languagecode="1033" />
+                </Descriptions>
+              </option>
+              <option value="100000016" IsHidden="0">
+                <labels>
+                  <label description="2" languagecode="1033" />
+                </labels>
+                <Descriptions>
+                  <Description description="2" languagecode="1033" />
+                </Descriptions>
+              </option>
+              <option value="100000017" IsHidden="0">
+                <labels>
+                  <label description="3" languagecode="1033" />
+                </labels>
+                <Descriptions>
+                  <Description description="3" languagecode="1033" />
+                </Descriptions>
+              </option>
+              <option value="100000018" IsHidden="0">
+                <labels>
+                  <label description="4" languagecode="1033" />
+                </labels>
+                <Descriptions>
+                  <Description description="4" languagecode="1033" />
+                </Descriptions>
+              </option>
+              <option value="100000019" IsHidden="0">
+                <labels>
+                  <label description="1" languagecode="1033" />
+                </labels>
+                <Descriptions>
+                  <Description description="1" languagecode="1033" />
+                </Descriptions>
+              </option>
+              <option value="100000020" IsHidden="0">
+                <labels>
+                  <label description="2" languagecode="1033" />
+                </labels>
+                <Descriptions>
+                  <Description description="2" languagecode="1033" />
+                </Descriptions>
+              </option>
+              <option value="100000021" IsHidden="0">
+                <labels>
+                  <label description="3" languagecode="1033" />
+                </labels>
+                <Descriptions>
+                  <Description description="3" languagecode="1033" />
+                </Descriptions>
+              </option>
+              <option value="100000022" IsHidden="0">
+                <labels>
+                  <label description="4" languagecode="1033" />
+                </labels>
+                <Descriptions>
+                  <Description description="4" languagecode="1033" />
+                </Descriptions>
+              </option>
             </options>
           </optionset>
           <displaynames>
@@ -1115,7 +1375,7 @@
           <IsFilterable>0</IsFilterable>
           <IsRetrievable>0</IsRetrievable>
           <IsLocalizable>0</IsLocalizable>
-          <AppDefaultValue>0</AppDefaultValue>
+          <AppDefaultValue>1</AppDefaultValue>
           <optionset Name="soap_opportunity_soap_includeinforecast">
             <OptionSetType>bit</OptionSetType>
             <IntroducedVersion>1.0.0.24</IntroducedVersion>
@@ -1880,6 +2140,46 @@
             <Description description="Duplicate detection from the Outlook Plugin" languagecode="1033" />
           </Descriptions>
         </attribute>
+        <attribute PhysicalName="soap_StageEnteredOn">
+          <Type>datetime</Type>
+          <Name>soap_stageenteredon</Name>
+          <LogicalName>soap_stageenteredon</LogicalName>
+          <RequiredLevel>none</RequiredLevel>
+          <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
+          <ImeMode>auto</ImeMode>
+          <ValidForUpdateApi>1</ValidForUpdateApi>
+          <ValidForReadApi>1</ValidForReadApi>
+          <ValidForCreateApi>1</ValidForCreateApi>
+          <IsCustomField>1</IsCustomField>
+          <IsAuditEnabled>1</IsAuditEnabled>
+          <IsSecured>0</IsSecured>
+          <IntroducedVersion>1.0</IntroducedVersion>
+          <IsCustomizable>1</IsCustomizable>
+          <IsRenameable>1</IsRenameable>
+          <CanModifySearchSettings>1</CanModifySearchSettings>
+          <CanModifyRequirementLevelSettings>1</CanModifyRequirementLevelSettings>
+          <CanModifyAdditionalSettings>1</CanModifyAdditionalSettings>
+          <SourceType>0</SourceType>
+          <IsGlobalFilterEnabled>0</IsGlobalFilterEnabled>
+          <IsSortableEnabled>0</IsSortableEnabled>
+          <CanModifyGlobalFilterSettings>1</CanModifyGlobalFilterSettings>
+          <CanModifyIsSortableSettings>1</CanModifyIsSortableSettings>
+          <IsDataSourceSecret>0</IsDataSourceSecret>
+          <AutoNumberFormat></AutoNumberFormat>
+          <IsSearchable>0</IsSearchable>
+          <IsFilterable>0</IsFilterable>
+          <IsRetrievable>0</IsRetrievable>
+          <IsLocalizable>0</IsLocalizable>
+          <Format>datetime</Format>
+          <CanChangeDateTimeBehavior>1</CanChangeDateTimeBehavior>
+          <Behavior>1</Behavior>
+          <displaynames>
+            <displayname description="Stage Entered On" languagecode="1033" />
+          </displaynames>
+          <Descriptions>
+            <Description description="" languagecode="1033" />
+          </Descriptions>
+        </attribute>
         <attribute PhysicalName="soap_totalcontractvalue">
           <Type>money</Type>
           <Name>soap_totalcontractvalue</Name>
@@ -2294,7 +2594,7 @@
       <CanCreateViews>1</CanCreateViews>
       <CanModifyAdditionalSettings>1</CanModifyAdditionalSettings>
       <CanEnableSyncToExternalSearchIndex>1</CanEnableSyncToExternalSearchIndex>
-      <IconVectorName>soap_opportunity_icon.svg</IconVectorName>
+      <IconVectorName>soap_Folder</IconVectorName>
       <EnforceStateTransitions>0</EnforceStateTransitions>
       <CanChangeHierarchicalRelationship>1</CanChangeHierarchicalRelationship>
       <EntityHelpUrlEnabled>0</EntityHelpUrlEnabled>

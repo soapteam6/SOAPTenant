@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Deal Manager</title>
+  <style>
+    html, body { margin: 0; padding: 0; height: 100%; overflow: hidden; }
+    #app-frame { width: 100%; height: 100%; border: none; display: block; }
+  </style>
+</head>
+<body>
+  <iframe id="app-frame" title="Deal Manager" allow="clipboard-write; fullscreen"></iframe>
+
+  <script>
+    (function () {
+      // =====================================================================
+      // Self-configuring wrapper for the DEAL MANAGER code app. No deep-link
+      // and no environment variables: the App ID is looked up at runtime from
+      // the canvasapps table by the code app's STABLE unique name, and the
+      // environment id comes from the Xrm global context — so this survives
+      // transport to another environment/tenant with no edits.
+      // =====================================================================
+
+      var APP_UNIQUE_NAME = "soap_dealmanager_ad441";
+      var APP_DISPLAY_NAME = "Deal Manager";
+
+      // Last-resort fallback App ID (this environment) if the reads fail.
+      var FALLBACK_APP_ID = "d6228b10-d1aa-448b-a5ff-f61db34c976a";
+      var PLAY_HOST = "https://apps.powerapps.com";
+
+      var xrm = window.Xrm || (window.parent && window.parent.Xrm) || null;
+
+      // ---- resolve THIS environment's App ID from the canvasapps table ------
+      // App ID == canvasappid. Filter by the stable unique name; fall back to
+      // the display name. Requires the user to have read on the Canvas App table.
+      function queryCanvas(filter) {
+        return xrm.WebApi.retrieveMultipleRecords("canvasapp", "?$select=canvasappid&$top=1&$filter=" + filter)
+          .then(function (res) {
+            var e = res && res.entities && res.entities[0];
+            return (e && e.canvasappid) || "";
+          })
+          .catch(function () { return ""; });
+      }
+      function lookupAppId() {
+        if (!xrm || !xrm.WebApi || !xrm.WebApi.retrieveMultipleRecords) return Promise.resolve("");
+        return queryCanvas("name eq '" + APP_UNIQUE_NAME + "'").then(function (id) {
+          return id || queryCanvas("displayname eq '" + APP_DISPLAY_NAME.replace(/'/g, "''") + "'");
+        });
+      }
+
+      // ---- derive env id from the global context ---------------------------
+      var environmentId = "";
+      try {
+        var gc = xrm && xrm.Utility && xrm.Utility.getGlobalContext();
+        environmentId = (gc && gc.organizationSettings && gc.organizationSettings.bapEnvironmentId) || "";
+      } catch (e) { /* leave blank — a missing env id surfaces as a clear player error */ }
+
+      // ---- build the play URL once the App ID resolves ---------------------
+      lookupAppId().then(function (id) {
+        var codeAppId = id || FALLBACK_APP_ID;
+        var url = PLAY_HOST + "/play/e/" + environmentId + "/app/" + codeAppId;
+        document.getElementById("app-frame").src = url;
+      });
+    })();
+  </script>
+</body>
+</html>

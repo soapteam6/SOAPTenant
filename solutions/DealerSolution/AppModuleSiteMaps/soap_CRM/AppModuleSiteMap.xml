@@ -22,13 +22,11 @@
         <Titles>
           <Title LCID="1033" Title="Sales Management" />
         </Titles>
-        <SubArea Id="subarea_5398068e" Icon="/_imgs/imagestrips/transparent_spacer.gif" Entity="soap_opportunity" Client="All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web" AvailableOffline="true" PassParams="false" Sku="All,OnPremise,Live,SPLA" />
         <SubArea Id="subarea_5859691a" ResourceId="SitemapDesigner.NewSubArea" VectorIcon="/WebResources/soap_Folder" Icon="/WebResources/soap_Folder" Url="$webresource:soap_opportunity_view_html" Client="All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web" AvailableOffline="true" PassParams="false" Sku="All,OnPremise,Live,SPLA">
           <Titles>
             <Title LCID="1033" Title="Deals" />
           </Titles>
         </SubArea>
-        <SubArea Id="subarea_da21363a" Icon="/_imgs/imagestrips/transparent_spacer.gif" Entity="soap_dealgroup" Client="All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web" AvailableOffline="true" PassParams="false" Sku="All,OnPremise,Live,SPLA" />
         <SubArea Id="subarea_e6e12fea" ResourceId="SitemapDesigner.NewSubArea" VectorIcon="/WebResources/soap_KnowledgeArticle" Icon="/WebResources/soap_KnowledgeArticle" Url="$webresource:soap_quote_view_html" Client="All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web" AvailableOffline="true" PassParams="false" Sku="All,OnPremise,Live,SPLA">
           <Titles>
             <Title LCID="1033" Title="Quotes" />
@@ -56,11 +54,16 @@
       </Titles>
       <Group Id="group_bd43c234" ResourceId="SitemapDesigner.NewGroup" DescriptionResourceId="SitemapDesigner.NewGroup" IntroducedVersion="7.0.0.0" IsProfile="false" ToolTipResourseId="SitemapDesigner.Unknown">
         <Titles>
-          <Title LCID="1033" Title="Product Manager" />
+          <Title LCID="1033" Title="App Settings" />
         </Titles>
         <SubArea Id="subarea_d9db8039" ResourceId="SitemapDesigner.NewSubArea" VectorIcon="/WebResources/soap_ProductCatalog" Icon="/WebResources/soap_ProductCatalog" Url="$webresource:soap_product_manager_html" Client="All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web" AvailableOffline="true" PassParams="false" Sku="All,OnPremise,Live,SPLA">
           <Titles>
             <Title LCID="1033" Title="Products" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="subarea_9e5f42ef" ResourceId="SitemapDesigner.NewSubArea" VectorIcon="/WebResources/soap_Work" Icon="/WebResources/soap_Work" Url="$webresource:soap_deal_manager_html" Client="All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web" AvailableOffline="true" PassParams="false" Sku="All,OnPremise,Live,SPLA">
+          <Titles>
+            <Title LCID="1033" Title="Deal Manager" />
           </Titles>
         </SubArea>
       </Group>

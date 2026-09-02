@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CanvasApp xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>soap_dealmanager_ad441</Name>
+  <AppVersion>2026-09-01T17:38:30Z</AppVersion>
+  <Status>Ready</Status>
+  <CreatedByClientVersion>0.0.0.0</CreatedByClientVersion>
+  <MinClientVersion>0.0.0.0</MinClientVersion>
+  <Tags>{}</Tags>
+  <IsCdsUpgraded>0</IsCdsUpgraded>
+  <GalleryItemId xsi:nil="true"></GalleryItemId>
+  <BackgroundColor>RGBA(255,255,255,1)</BackgroundColor>
+  <DisplayName>Deal Manager</DisplayName>
+  <Description></Description>
+  <CommitMessage xsi:nil="true"></CommitMessage>
+  <Publisher xsi:nil="true"></Publisher>
+  <AuthorizationReferences>[]</AuthorizationReferences>
+  <ConnectionReferences>{}</ConnectionReferences>
+  <DatabaseReferences>{"default.cds":{"databaseDetails":{"referenceType":"Environmental","environmentName":"default.cds","overrideValues":{"status":"NotSpecified","environmentVariableName":""}},"dataSources":{"leasingcompanies":{"entitySetName":"soap_leasingcompanies","logicalName":"soap_leasingcompany"},"leasetypes":{"entitySetName":"soap_leasetypes","logicalName":"soap_leasetype"},"leaserates":{"entitySetName":"soap_leaserates","logicalName":"soap_leaserate"},"offerings":{"entitySetName":"soap_offerings","logicalName":"soap_offering"},"salesstages":{"entitySetName":"soap_salesstages","logicalName":"soap_salesstage"},"dealsources":{"entitySetName":"soap_dealsources","logicalName":"soap_dealsource"},"competitors":{"entitySetName":"soap_competitors","logicalName":"soap_competitor"},"dealtags":{"entitySetName":"soap_dealtags","logicalName":"soap_dealtag"},"deals":{"entitySetName":"soap_opportunities","logicalName":"soap_opportunity"},"gridviews":{"entitySetName":"soap_gridviews","logicalName":"soap_gridview"},"gridviewpreferences":{"entitySetName":"soap_gridviewpreferences","logicalName":"soap_gridviewpreference"},"users":{"entitySetName":"systemusers","logicalName":"systemuser"},"ratetiers":{"entitySetName":"soap_ratetiers","logicalName":"soap_ratetier"}}}}</DatabaseReferences>
+  <AppComponents>[]</AppComponents>
+  <AppComponentDependencies>[]</AppComponentDependencies>
+  <CanConsumeAppPass>1</CanConsumeAppPass>
+  <CanvasAppType>4</CanvasAppType>
+  <BypassConsent>0</BypassConsent>
+  <AdminControlBypassConsent>0</AdminControlBypassConsent>
+  <EmbeddedApp xsi:nil="true"></EmbeddedApp>
+  <IntroducedVersion>1.0</IntroducedVersion>
+  <CdsDependencies>{"cdsdependencies":[{"logicalname":"soap_leasingcompany","componenttype":1},{"logicalname":"soap_leasetype","componenttype":1},{"logicalname":"soap_leaserate","componenttype":1},{"logicalname":"soap_offering","componenttype":1},{"logicalname":"soap_salesstage","componenttype":1},{"logicalname":"soap_dealsource","componenttype":1},{"logicalname":"soap_competitor","componenttype":1},{"logicalname":"soap_dealtag","componenttype":1},{"logicalname":"soap_opportunity","componenttype":1},{"logicalname":"soap_gridview","componenttype":1},{"logicalname":"soap_gridviewpreference","componenttype":1},{"logicalname":"systemuser","componenttype":1},{"logicalname":"soap_ratetier","componenttype":1}]}</CdsDependencies>
+  <IsCustomizable>1</IsCustomizable>
+  <CodeAppPackageUris>
+    <CodeAppPackageUri>/CanvasApps/soap_dealmanager_ad441_CodeAppPackages/index.html_ContentType_text/html</CodeAppPackageUri>
+    <CodeAppPackageUri>/CanvasApps/soap_dealmanager_ad441_CodeAppPackages/assets/brother_logo-C3TZdmgl.png_ContentType_image/png</CodeAppPackageUri>
+    <CodeAppPackageUri>/CanvasApps/soap_dealmanager_ad441_CodeAppPackages/assets/canon_logo-MmvHaoku.png_ContentType_image/png</CodeAppPackageUri>
+    <CodeAppPackageUri>/CanvasApps/soap_dealmanager_ad441_CodeAppPackages/assets/hp_logo-zYF6RGOI.png_ContentType_image/png</CodeAppPackageUri>
+    <CodeAppPackageUri>/CanvasApps/soap_dealmanager_ad441_CodeAppPackages/assets/index-DBKcgr7g.js_ContentType_application/javascript</CodeAppPackageUri>
+    <CodeAppPackageUri>/CanvasApps/soap_dealmanager_ad441_CodeAppPackages/assets/index-quO1Mmqo.css_ContentType_text/css</CodeAppPackageUri>
+    <CodeAppPackageUri>/CanvasApps/soap_dealmanager_ad441_CodeAppPackages/assets/inter-latin-ext-wght-italic-0pjOp8NU.woff2_ContentType_font/woff2</CodeAppPackageUri>
+    <CodeAppPackageUri>/CanvasApps/soap_dealmanager_ad441_CodeAppPackages/assets/inter-latin-ext-wght-normal-DO1Apj_S.woff2_ContentType_font/woff2</CodeAppPackageUri>
+    <CodeAppPackageUri>/CanvasApps/soap_dealmanager_ad441_CodeAppPackages/assets/inter-latin-wght-italic-DpCbqKDY.woff2_ContentType_font/woff2</CodeAppPackageUri>
+    <CodeAppPackageUri>/CanvasApps/soap_dealmanager_ad441_CodeAppPackages/assets/inter-latin-wght-normal-Dx4kXJAl.woff2_ContentType_font/woff2</CodeAppPackageUri>
+    <CodeAppPackageUri>/CanvasApps/soap_dealmanager_ad441_CodeAppPackages/assets/kip_logo-RlDgi_qf.png_ContentType_image/png</CodeAppPackageUri>
+    <CodeAppPackageUri>/CanvasApps/soap_dealmanager_ad441_CodeAppPackages/assets/konica_logo-CzSojrQA.png_ContentType_image/png</CodeAppPackageUri>
+    <CodeAppPackageUri>/CanvasApps/soap_dealmanager_ad441_CodeAppPackages/assets/kyocera_logo-YIzAq3yS.png_ContentType_image/png</CodeAppPackageUri>
+    <CodeAppPackageUri>/CanvasApps/soap_dealmanager_ad441_CodeAppPackages/assets/lexmark_logo-PzHCr4Cj.png_ContentType_image/png</CodeAppPackageUri>
+    <CodeAppPackageUri>/CanvasApps/soap_dealmanager_ad441_CodeAppPackages/assets/ricoh_logo-DXh4XF2U.png_ContentType_image/png</CodeAppPackageUri>
+    <CodeAppPackageUri>/CanvasApps/soap_dealmanager_ad441_CodeAppPackages/assets/verkada_logo-CI-EpdKf.png_ContentType_image/png</CodeAppPackageUri>
+    <CodeAppPackageUri>/CanvasApps/soap_dealmanager_ad441_CodeAppPackages/assets/xerox_logo-DzQHKD1f.png_ContentType_image/png</CodeAppPackageUri>
+    <CodeAppPackageUri>/CanvasApps/soap_dealmanager_ad441_CodeAppPackages/vite.svg_ContentType_image/svg+xml</CodeAppPackageUri>
+  </CodeAppPackageUris>
+</CanvasApp>
