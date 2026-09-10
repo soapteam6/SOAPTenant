@@ -66,6 +66,11 @@
             <Title LCID="1033" Title="Deal Manager" />
           </Titles>
         </SubArea>
+        <SubArea Id="subarea_43c4bb71" ResourceId="SitemapDesigner.NewSubArea" VectorIcon="/WebResources/soap_DocumentManagement" Icon="/WebResources/soap_DocumentManagement" Url="$webresource:soap_document_manager_html" Client="All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web" AvailableOffline="true" PassParams="false" Sku="All,OnPremise,Live,SPLA">
+          <Titles>
+            <Title LCID="1033" Title="Document Manager" />
+          </Titles>
+        </SubArea>
       </Group>
       <Group Id="group_423b3fd9" ResourceId="SitemapDesigner.NewGroup" DescriptionResourceId="SitemapDesigner.NewGroup" IntroducedVersion="7.0.0.0" IsProfile="false" ToolTipResourseId="SitemapDesigner.Unknown">
         <Titles>
