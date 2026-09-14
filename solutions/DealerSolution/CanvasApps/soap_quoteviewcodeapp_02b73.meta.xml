@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <CanvasApp xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Name>soap_quoteviewcodeapp_02b73</Name>
-  <AppVersion>2026-09-10T00:36:33Z</AppVersion>
+  <AppVersion>2026-09-10T19:22:16Z</AppVersion>
   <Status>Ready</Status>
   <CreatedByClientVersion>0.0.0.0</CreatedByClientVersion>
   <MinClientVersion>0.0.0.0</MinClientVersion>
@@ -28,12 +28,11 @@
   <IsCustomizable>1</IsCustomizable>
   <CodeAppPackageUris>
     <CodeAppPackageUri>/CanvasApps/soap_quoteviewcodeapp_02b73_CodeAppPackages/index.html_ContentType_text/html</CodeAppPackageUri>
-    <CodeAppPackageUri>/CanvasApps/soap_quoteviewcodeapp_02b73_CodeAppPackages/PowerAppsAppDefaultLogo.png_ContentType_image/png</CodeAppPackageUri>
     <CodeAppPackageUri>/CanvasApps/soap_quoteviewcodeapp_02b73_CodeAppPackages/assets/brother_logo-C3TZdmgl.png_ContentType_image/png</CodeAppPackageUri>
     <CodeAppPackageUri>/CanvasApps/soap_quoteviewcodeapp_02b73_CodeAppPackages/assets/canon_logo-MmvHaoku.png_ContentType_image/png</CodeAppPackageUri>
     <CodeAppPackageUri>/CanvasApps/soap_quoteviewcodeapp_02b73_CodeAppPackages/assets/hp_logo-zYF6RGOI.png_ContentType_image/png</CodeAppPackageUri>
-    <CodeAppPackageUri>/CanvasApps/soap_quoteviewcodeapp_02b73_CodeAppPackages/assets/index-B-7GlRsq.js_ContentType_application/javascript</CodeAppPackageUri>
-    <CodeAppPackageUri>/CanvasApps/soap_quoteviewcodeapp_02b73_CodeAppPackages/assets/index-BPTiHXIK.css_ContentType_text/css</CodeAppPackageUri>
+    <CodeAppPackageUri>/CanvasApps/soap_quoteviewcodeapp_02b73_CodeAppPackages/assets/index-B72hzOLE.js_ContentType_application/javascript</CodeAppPackageUri>
+    <CodeAppPackageUri>/CanvasApps/soap_quoteviewcodeapp_02b73_CodeAppPackages/assets/index-a0BVGDQx.css_ContentType_text/css</CodeAppPackageUri>
     <CodeAppPackageUri>/CanvasApps/soap_quoteviewcodeapp_02b73_CodeAppPackages/assets/inter-latin-ext-wght-italic-0pjOp8NU.woff2_ContentType_font/woff2</CodeAppPackageUri>
     <CodeAppPackageUri>/CanvasApps/soap_quoteviewcodeapp_02b73_CodeAppPackages/assets/inter-latin-ext-wght-normal-DO1Apj_S.woff2_ContentType_font/woff2</CodeAppPackageUri>
     <CodeAppPackageUri>/CanvasApps/soap_quoteviewcodeapp_02b73_CodeAppPackages/assets/inter-latin-wght-italic-DpCbqKDY.woff2_ContentType_font/woff2</CodeAppPackageUri>
@@ -47,5 +46,4 @@
     <CodeAppPackageUri>/CanvasApps/soap_quoteviewcodeapp_02b73_CodeAppPackages/assets/xerox_logo-DzQHKD1f.png_ContentType_image/png</CodeAppPackageUri>
     <CodeAppPackageUri>/CanvasApps/soap_quoteviewcodeapp_02b73_CodeAppPackages/vite.svg_ContentType_image/svg+xml</CodeAppPackageUri>
   </CodeAppPackageUris>
-  <BackgroundImageUri>/CanvasApps/soap_quoteviewcodeapp_02b73_BackgroundImageUri.png</BackgroundImageUri>
 </CanvasApp>

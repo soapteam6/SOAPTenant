@@ -251,6 +251,7 @@
   <EntityRelationship Name="soap_associatedcontact_contactroleid_soap_contactrole" />
   <EntityRelationship Name="soap_associatedcontact_quoteid_soap_quote" />
   <EntityRelationship Name="soap_customer_accountid_account" />
+  <EntityRelationship Name="soap_customer_billtocustomerid_soap_customer" />
   <EntityRelationship Name="soap_dealgroup_competitorid_soap_competitor" />
   <EntityRelationship Name="soap_dealgroup_primarycontactid_contact" />
   <EntityRelationship Name="soap_dealgroup_tag_tag" />
@@ -424,6 +425,7 @@
   <EntityRelationship Name="TransactionCurrency_soap_accessory" />
   <EntityRelationship Name="TransactionCurrency_soap_accountcompinfo" />
   <EntityRelationship Name="TransactionCurrency_soap_asset" />
+  <EntityRelationship Name="TransactionCurrency_soap_customer" />
   <EntityRelationship Name="TransactionCurrency_soap_dealgroup" />
   <EntityRelationship Name="TransactionCurrency_soap_DealNote" />
   <EntityRelationship Name="TransactionCurrency_soap_discountpromotion" />
