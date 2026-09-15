@@ -1983,6 +1983,18 @@
             <displayname description="Equipment EA ID" languagecode="1033" />
           </displaynames>
         </EntityKey>
+        <EntityKey>
+          <Name>soap_EquipmentNumber</Name>
+          <LogicalName>soap_equipmentnumber</LogicalName>
+          <IntroducedVersion>1.0.0.31</IntroducedVersion>
+          <IsCustomizable>0</IsCustomizable>
+          <EntityKeyAttributes>
+            <AttributeName>soap_equipmentnumber</AttributeName>
+          </EntityKeyAttributes>
+          <displaynames>
+            <displayname description="Equipment Number" languagecode="1033" />
+          </displaynames>
+        </EntityKey>
       </EntityKeys>
       <EntitySetName>soap_equipments</EntitySetName>
       <IsDuplicateCheckSupported>0</IsDuplicateCheckSupported>
