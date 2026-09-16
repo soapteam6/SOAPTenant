@@ -55,7 +55,7 @@ namespace SoapCRMPlugins
             // For update operation, we need to merge with pre-image to get complete entity
             if (context.MessageName.ToLower() == "update" && context.PreEntityImages.Contains("PreImage"))
             {
-                MergeEntityFields(accountEntity, preImage, "address1_postalcode", "soap_isnamed", "soap_territoryid");
+                MergeEntityFields(accountEntity, preImage, "address1_postalcode", "soap_isnamed", "soap_territoryid", "parentaccountid");
             }
 
 
@@ -152,9 +152,36 @@ namespace SoapCRMPlugins
                 return;
             }
 
-            // Query the territory entity to get the owner           
+            // IF parent account is set, then do not change the owner of the account
+            EntityReference parentAccountRef = accountEntity.Contains("parentaccountid") ? accountEntity.GetAttributeValue<EntityReference>("parentaccountid") : null;
 
-            if (territory != null && territory.Id != Guid.Empty && territory.Contains("ownerid"))
+            // Query the territory entity to get the owner           
+            if (parentAccountRef != null)
+            {
+                // If the account has a parent account, inherit the owner from the parent account
+                localPluginContext.Trace($"AccountTerritoryPlugin: Parent account found ({parentAccountRef.Id}). Taking owner from parent.");
+
+                Entity parentAccount = service.Retrieve(parentAccountRef.LogicalName, parentAccountRef.Id, new ColumnSet("ownerid"));
+
+                if (parentAccount != null && parentAccount.Contains("ownerid"))
+                {
+                    EntityReference parentOwner = parentAccount.GetAttributeValue<EntityReference>("ownerid");
+                    if (parentOwner != null)
+                    {
+                        localPluginContext.Trace($"AccountTerritoryPlugin: Setting owner to parent account owner {parentOwner.Id}");
+                        accountEntity["ownerid"] = parentOwner;
+                    }
+                    else
+                    {
+                        localPluginContext.Trace("AccountTerritoryPlugin: Parent account has null owner");
+                    }
+                }
+                else
+                {
+                    localPluginContext.Trace("AccountTerritoryPlugin: Parent account not found or has no owner");
+                }
+            }
+            else if (territory != null && territory.Id != Guid.Empty && territory.Contains("ownerid"))
             {
                 EntityReference systemUser = territory.GetAttributeValue<EntityReference>("ownerid");
                 if (systemUser != null)

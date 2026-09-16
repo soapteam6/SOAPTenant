@@ -17,6 +17,8 @@ Runs automatically **when an Account is created or updated**, specifically react
    - If still nothing is found, it falls back to a generic "Out of Territory" catch-all (00000).
 4. **Ownership follows territory.** Once a territory is determined, the account is automatically reassigned to the salesperson who owns that territory.
 5. **No match found.** If no territory can be determined at all, the account's territory is cleared rather than left incorrect.
+6. **Named accounts skip owner reassignment.** If the "Named Account" flag (`soap_isnamed`) is set, the territory can still be recalculated, but the account's owner is **not** changed automatically — the plugin exits before touching ownership.
+7. **Parent account owner takes priority.** If the account has a parent account, the owner is instead inherited from the parent account's owner, rather than from the territory's owner.
 
 ## Why It Matters
 Ensures every account is routed to the right regional sales owner automatically and consistently, reduces manual data entry errors, and still allows specific accounts to be protected from automatic reassignment when business rules require it (e.g., a named/strategic account with a dedicated owner).
