@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{b90682da-e0aa-4e29-a027-dec5c73ecef8}</formid>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab verticallayout="true" id="{9A3DD449-C119-47F8-953C-F8AFE5CF1531}" IsUserDefined="1">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showlabel="false" showbar="false" IsUserDefined="0" id="{25242CCD-0D03-4CAC-8284-B32A68B8CA2F}">
+                  <labels>
+                    <label description="General" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{016C8B9D-F528-444B-BFDB-770376FE6CF3}">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                        <control id="soap_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="soap_Name" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{7EE4B1D1-E307-4D09-A293-0D5D070484D6}">
+                        <labels>
+                          <label description="Owner" languagecode="1033" />
+                        </labels>
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{bfa6b440-68f7-4bcf-8e0e-bb24f3859cd7}">
+                        <labels>
+                          <label description="Leasing Company" languagecode="1033" />
+                        </labels>
+                        <control id="soap_leasingcompany" classid="{270bd3db-d9af-4782-9025-509e298dec0a}" datafieldname="soap_leasingcompany" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{2b376215-c0f4-4f52-835b-0312b07d157d}">
+                        <labels>
+                          <label description="Min Value" languagecode="1033" />
+                        </labels>
+                        <control id="soap_minvalue" classid="{533b9e00-756b-4312-95a0-dc888637ac78}" datafieldname="soap_minvalue" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{e256630b-9c5c-4460-b636-24b90f385ac7}">
+                        <labels>
+                          <label description="Max Value" languagecode="1033" />
+                        </labels>
+                        <control id="soap_maxvalue" classid="{533b9e00-756b-4312-95a0-dc888637ac78}" datafieldname="soap_maxvalue" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Information" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

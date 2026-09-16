@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{68513988-1eed-40f1-8e92-2e3037a071a3}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="soap_name" select="1" icon="1" preview="1">
+        <row name="result" id="soap_leaseid">
+          <cell name="soap_name" width="300" />
+          <cell name="soap_applicationcode" width="125" />
+          <cell name="soap_billingfrequency" width="142" />
+          <cell name="soap_commencementdate" width="162" />
+          <cell name="soap_contractstatus" width="126" />
+          <cell name="soap_eacustomerid" width="100" />
+          <cell name="soap_lastpaymentdate" width="147" />
+          <cell name="soap_leasetype" width="104" />
+          <cell name="soap_nextduedate" width="124" />
+          <cell name="soap_purchaseoption" width="133" />
+          <cell name="soap_term" width="100" />
+          <cell name="soap_terminationdate" width="139" />
+          <cell name="soap_statuscodedesc" width="177" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="soap_lease">
+          <attribute name="soap_leaseid" />
+          <attribute name="soap_name" />
+          <order attribute="soap_name" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <attribute name="soap_applicationcode" />
+          <attribute name="soap_billingfrequency" />
+          <attribute name="soap_commencementdate" />
+          <attribute name="soap_contractstatus" />
+          <attribute name="soap_eacustomerid" />
+          <attribute name="soap_lastpaymentdate" />
+          <attribute name="soap_leasetype" />
+          <attribute name="soap_nextduedate" />
+          <attribute name="soap_purchaseoption" />
+          <attribute name="soap_term" />
+          <attribute name="soap_terminationdate" />
+          <attribute name="soap_statuscodedesc" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Active Leases" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

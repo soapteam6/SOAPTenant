@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{e044ec35-56ea-4df1-bae4-dcd6bc1f1b26}</formid>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab verticallayout="true" id="{C42439E9-F0D3-489A-98E8-808D8C5343EB}" IsUserDefined="1">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showlabel="false" showbar="false" IsUserDefined="0" id="{1CF91131-B280-4FC9-A489-34B85349F80F}">
+                  <labels>
+                    <label description="General" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{446AE1BC-9008-4FD8-B1FD-44A4C3DDAD7E}">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                        <control id="soap_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="soap_Name" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{E00716F1-0C6D-4251-8181-9402FDF3A761}">
+                        <labels>
+                          <label description="Owner" languagecode="1033" />
+                        </labels>
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{10e6f574-d314-4245-919d-3837edb32244}">
+                        <labels>
+                          <label description="Team" languagecode="1033" />
+                        </labels>
+                        <control id="soap_team" classid="{270bd3db-d9af-4782-9025-509e298dec0a}" datafieldname="soap_team" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Information" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

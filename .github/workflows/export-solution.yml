@@ -3,6 +3,9 @@ name: Export Solution from DEV
 on:
   workflow_dispatch:
     inputs:
+      solution_version:
+        description: 'Solution version (1.0.0.42)'
+        required: true
       commit_message:
         description: 'commit message'
         required: true
@@ -24,15 +27,26 @@ jobs:
 
       - name: Bump solution version in Dataverse
         run: |
+          VERSION="${{ inputs.solution_version }}"
+
+          if ! echo "$VERSION" | grep -qE '^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+$'; then
+            echo "::error::Neplatný formát verze: '$VERSION' (očekávám N.N.N.N)"
+            exit 1
+          fi
+          
           ${{ env.POWERPLATFORMTOOLS_PACPATH }} auth create \
             --url ${{ secrets.SOURCE_ENV_URL }} \
             --applicationId ${{ secrets.SOURCE_CLIENT_ID }} \
             --clientSecret ${{ secrets.SOURCE_CLIENT_SECRET }} \
             --tenant ${{ secrets.SOURCE_TENANT_ID }}
- 
+
+          echo "Aktuální verze v DEV:"
+          ${{ env.POWERPLATFORMTOOLS_PACPATH }} solution online-version \
+            --solution-name DealerSolution
+
           ${{ env.POWERPLATFORMTOOLS_PACPATH }} solution online-version \
             --solution-name DealerSolution \
-            --solution-version 1.0.0.${{ github.run_number }}
+            --solution-version "$VERSION"
  
           ${{ env.POWERPLATFORMTOOLS_PACPATH }} auth clear
  

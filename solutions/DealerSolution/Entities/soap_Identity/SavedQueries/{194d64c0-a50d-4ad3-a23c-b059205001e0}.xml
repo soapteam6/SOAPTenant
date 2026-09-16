@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{194d64c0-a50d-4ad3-a23c-b059205001e0}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="soap_name" select="1" icon="1" preview="1">
+        <row name="result" id="soap_identityid">
+          <cell name="soap_name" width="300" />
+          <cell name="soap_legalname" width="150" />
+          <cell name="soap_tagline" width="150" />
+          <cell name="soap_addressline1" width="150" />
+          <cell name="soap_addressline2" width="150" />
+          <cell name="soap_city" width="150" />
+          <cell name="soap_state" width="150" />
+          <cell name="soap_postalcode" width="150" />
+          <cell name="soap_country" width="150" />
+          <cell name="soap_phone" width="150" />
+          <cell name="soap_fax" width="150" />
+          <cell name="soap_email" width="150" />
+          <cell name="soap_website" width="150" />
+          <cell name="soap_defaultindentity" width="150" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="soap_identity">
+          <attribute name="soap_identityid" />
+          <attribute name="soap_name" />
+          <attribute name="createdon" />
+          <order attribute="soap_name" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <attribute name="soap_legalname" />
+          <attribute name="soap_tagline" />
+          <attribute name="soap_addressline1" />
+          <attribute name="soap_addressline2" />
+          <attribute name="soap_city" />
+          <attribute name="soap_state" />
+          <attribute name="soap_postalcode" />
+          <attribute name="soap_country" />
+          <attribute name="soap_phone" />
+          <attribute name="soap_fax" />
+          <attribute name="soap_email" />
+          <attribute name="soap_website" />
+          <attribute name="soap_defaultindentity" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Active Identities" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

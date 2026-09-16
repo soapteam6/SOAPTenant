@@ -50,7 +50,7 @@
                       </Sequence.Variables>
                       <Assign x:TypeArguments="mxs:Entity" To="[CreatedEntities(&quot;primaryEntity#Temp&quot;)]" Value="[New Entity(&quot;soap_quote&quot;)]" />
                       <Assign x:TypeArguments="s:Guid" To="[CreatedEntities(&quot;primaryEntity#Temp&quot;).Id]" Value="[InputEntities(&quot;primaryEntity&quot;).Id]" />
-                      <mxswa:GetEntityProperty Attribute="soap_totalservice" Entity="[InputEntities(&quot;primaryEntity&quot;)]" EntityName="soap_quote" Value="[SetAttributeValueStep4_3]">
+                      <mxswa:GetEntityProperty Attribute="soap_servicepayment" Entity="[InputEntities(&quot;primaryEntity&quot;)]" EntityName="soap_quote" Value="[SetAttributeValueStep4_3]">
                         <mxswa:GetEntityProperty.TargetType>
                           <InArgument x:TypeArguments="s:Type">
                             <mxswa:ReferenceLiteral x:TypeArguments="s:Type" Value="mxs:Money" />

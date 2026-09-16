@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{9a9eb9cf-b9c0-4905-b6e6-925274018e00}</formid>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab verticallayout="true" id="{A56F7D52-F7D6-4134-BDFB-63B24C5500A2}" IsUserDefined="1">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showlabel="false" showbar="false" IsUserDefined="0" id="{ECA0635D-994B-43A6-922D-BA81B758A853}">
+                  <labels>
+                    <label description="General" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{284F1EA7-54D3-4282-876E-2F42DD186842}">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                        <control id="soap_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="soap_Name" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{4C9981B0-4AB0-4592-93BE-47DB1125B267}">
+                        <labels>
+                          <label description="Owner" languagecode="1033" />
+                        </labels>
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{7e5a9a1e-2796-4a67-b992-a490d9556ac8}">
+                        <labels>
+                          <label description="Key" languagecode="1033" />
+                        </labels>
+                        <control id="soap_key" classid="{4273edbd-ac1d-40d3-9fb2-095c621b552d}" datafieldname="soap_key" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{fa528954-c8bf-42f6-8f3b-e1ad7167286f}">
+                        <labels>
+                          <label description="Source Record" languagecode="1033" />
+                        </labels>
+                        <control id="soap_sourcerecord" classid="{4273edbd-ac1d-40d3-9fb2-095c621b552d}" datafieldname="soap_sourcerecord" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{5e7feccd-e5e7-4ea1-b69a-98f7aeb3e3c2}">
+                        <labels>
+                          <label description="Icon" languagecode="1033" />
+                        </labels>
+                        <control id="soap_icon" classid="{4273edbd-ac1d-40d3-9fb2-095c621b552d}" datafieldname="soap_icon" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{48b850c2-0d0c-4c1e-8515-8e65a6396d4e}">
+                        <labels>
+                          <label description="Order" languagecode="1033" />
+                        </labels>
+                        <control id="soap_order" classid="{c6d124ca-7eda-4a60-aea9-7fb8d318b68f}" datafieldname="soap_order" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{bde695d4-d591-4308-bbbf-505b3c7931f6}">
+                        <labels>
+                          <label description="Description" languagecode="1033" />
+                        </labels>
+                        <control id="soap_description" classid="{4273edbd-ac1d-40d3-9fb2-095c621b552d}" datafieldname="soap_description" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Information" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

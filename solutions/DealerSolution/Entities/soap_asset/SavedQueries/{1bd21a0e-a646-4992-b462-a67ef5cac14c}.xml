@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{1bd21a0e-a646-4992-b462-a67ef5cac14c}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="soap_name" select="1" icon="1" preview="1">
+        <row name="result" id="soap_assetid">
+          <cell name="soap_name" width="300" />
+          <cell name="soap_assetcost" width="101" />
+          <cell name="soap_assetcode" width="100" />
+          <cell name="soap_assetrent" width="102" />
+          <cell name="soap_assetstatus" width="109" />
+          <cell name="soap_description" width="106" />
+          <cell name="soap_eaequipmentid" width="102" />
+          <cell name="soap_model" width="100" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="soap_asset">
+          <attribute name="soap_assetid" />
+          <attribute name="soap_name" />
+          <order attribute="soap_name" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <attribute name="soap_assetcost" />
+          <attribute name="soap_assetcode" />
+          <attribute name="soap_assetrent" />
+          <attribute name="soap_assetstatus" />
+          <attribute name="soap_description" />
+          <attribute name="soap_eaequipmentid" />
+          <attribute name="soap_model" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Active Assets" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

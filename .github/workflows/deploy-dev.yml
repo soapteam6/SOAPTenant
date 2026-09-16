@@ -18,8 +18,10 @@ jobs:
         client:
           - RPG_DEV
           - EDGE_DEV
-          - FRAISER_DEV
+          - FRASER_DEV
           - CW_DEV
+          - BLUE_DEV
+          - ULTREX_DEV
       fail-fast: false
 
     steps:
