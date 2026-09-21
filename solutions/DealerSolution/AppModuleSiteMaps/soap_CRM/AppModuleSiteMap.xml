@@ -46,6 +46,11 @@
         <SubArea Id="subarea_2825da8f" Icon="/_imgs/imagestrips/transparent_spacer.gif" Entity="soap_serviceagreement" Client="All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web" AvailableOffline="true" PassParams="false" Sku="All,OnPremise,Live,SPLA" />
         <SubArea Id="subarea_33a3f749" Icon="/_imgs/imagestrips/transparent_spacer.gif" Entity="soap_servicecall" Client="All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web" AvailableOffline="true" PassParams="false" Sku="All,OnPremise,Live,SPLA" />
         <SubArea Id="subarea_aa01efc8" Icon="/_imgs/imagestrips/transparent_spacer.gif" Entity="soap_servicecontract" Client="All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web" AvailableOffline="true" PassParams="false" Sku="All,OnPremise,Live,SPLA" />
+        <SubArea Id="subarea_0288d939" ResourceId="SitemapDesigner.NewSubArea" VectorIcon="/WebResources/soap_DocumentSet" Icon="/WebResources/soap_DocumentSet" Url="$webresource:soap_account_explorer_html" Client="All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web" AvailableOffline="true" PassParams="false" Sku="All,OnPremise,Live,SPLA">
+          <Titles>
+            <Title LCID="1033" Title="Account Explorer" />
+          </Titles>
+        </SubArea>
       </Group>
     </Area>
     <Area Id="area_2d6ea9af" ResourceId="SitemapDesigner.NewTitle" DescriptionResourceId="SitemapDesigner.NewTitle" ShowGroups="true" IntroducedVersion="7.0.0.0">

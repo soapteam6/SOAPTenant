@@ -1143,10 +1143,13 @@
           <IsRetrievable>0</IsRetrievable>
           <IsLocalizable>0</IsLocalizable>
           <Format>text</Format>
-          <MaxLength>2000</MaxLength>
+          <MaxLength>20000</MaxLength>
           <displaynames>
             <displayname description="Notes" languagecode="1033" />
           </displaynames>
+          <Descriptions>
+            <Description description="" languagecode="1033" />
+          </Descriptions>
         </attribute>
         <attribute PhysicalName="soap_parentcustomerid">
           <Type>lookup</Type>

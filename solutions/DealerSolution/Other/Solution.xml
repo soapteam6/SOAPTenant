@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ImportExportXml version="9.2.26082.162" SolutionPackageVersion="9.2" languagecode="1033" generatedBy="CrmLive" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" OrganizationVersion="9.2.26082.162" OrganizationSchemaType="Standard" CRMServerServiceabilityVersion="9.2.26082.00162">
+<ImportExportXml version="9.2.26083.167" SolutionPackageVersion="9.2" languagecode="1033" generatedBy="CrmLive" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" OrganizationVersion="9.2.26083.167" OrganizationSchemaType="Standard" CRMServerServiceabilityVersion="9.2.26083.00167">
   <SolutionManifest>
     <UniqueName>DealerSolution</UniqueName>
     <LocalizedNames>
       <LocalizedName description="SoapSolution" languagecode="1033" />
     </LocalizedNames>
     <Descriptions />
-    <Version>1.0.0.33</Version>
+    <Version>1.0.0.34</Version>
     <Managed>0</Managed>
     <Publisher>
       <UniqueName>Soap</UniqueName>
@@ -158,6 +158,7 @@
       <RootComponent type="300" schemaName="cr0b4_configuratorcanvasapp_67512" behavior="0" />
       <RootComponent type="300" schemaName="soap_dealmanager_ad441" behavior="0" />
       <RootComponent type="300" schemaName="soap_documentmanagercodeapp_f36ad" behavior="0" />
+      <RootComponent type="300" schemaName="soap_eciexplorercodeapp_d8bd3" behavior="0" />
       <RootComponent type="300" schemaName="soap_opportunityview_28fed" behavior="0" />
       <RootComponent type="300" schemaName="soap_productmanagercodeapp_e9e5e" behavior="0" />
       <RootComponent type="300" schemaName="soap_quoteviewcodeapp_02b73" behavior="0" />
@@ -167,6 +168,7 @@
       <RootComponent type="432" schemaName="soap_brand" behavior="0" />
       <RootComponent type="432" schemaName="soap_identity" behavior="0" />
       <RootComponent type="432" schemaName="soap_product" behavior="0" />
+      <RootComponent type="61" schemaName="soap_account_explorer_html" behavior="0" />
       <RootComponent type="61" schemaName="soap_account.js" behavior="0" />
       <RootComponent type="61" schemaName="soap_accountcompinfo_icon.svg" behavior="0" />
       <RootComponent type="61" schemaName="soap_accountcompinfo.js" behavior="0" />
@@ -284,7 +286,7 @@
     </RootComponents>
     <MissingDependencies>
       <MissingDependency>
-        <Required type="1" schemaName="systemuser" displayName="SystemUser" parentSchemaName="" solution="msdyn_PowerAdminSettingsEmail (2.2.3503.2)" />
+        <Required type="1" schemaName="systemuser" displayName="SystemUser" parentSchemaName="" solution="msdyn_PowerAdminSettingsEmail (2.2.3510.1)" />
         <Dependent type="1" schemaName="systemuser" displayName="SystemUser" />
       </MissingDependency>
       <MissingDependency>
@@ -296,6 +298,12 @@
       <MissingDependency>
         <Required type="1" schemaName="team" displayName="Team" parentSchemaName="" solution="msdynce_AppCommonPatch (9.0.1904.4006)" />
         <Dependent type="1" schemaName="team" displayName="Team" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="territory" displayName="Territory" solution="msdynce_AppCommon (9.0.4.0066)">
+          <package appName="msdynce_AppCommon" version="9.0.26081.10001">msdynce_AppCommonAnchor (9.0.26081.10001)</package>
+        </Required>
+        <Dependent type="300" schemaName="soap_eciexplorercodeapp_d8bd3" displayName="EciExplorerCodeApp" />
       </MissingDependency>
       <MissingDependency>
         <Required type="60" displayName="account contact card" parentDisplayName="Contact" solution="msdynce_AppCommon (9.0.4.0066)" id="{29de27bc-a257-4f29-99cf-bab4a84e688f}">
@@ -320,38 +328,38 @@
         <Dependent type="60" displayName="Information" parentDisplayName="Account Competitive Information" id="{d1edb2de-1875-444e-94e0-bf45bac12090}" />
       </MissingDependency>
       <MissingDependency>
-        <Required type="66" schemaName="MscrmControls.Canvas.CanvasControl" displayName="MscrmControls.Canvas.CanvasControl" solution="BaseCustomControlsCore (9.0.2608.2010)">
-          <package appName="Base Custom Controls" version="9.0.2608.2010">BaseCustomControlsCore (9.0.2608.2010)</package>
+        <Required type="66" schemaName="MscrmControls.Canvas.CanvasControl" displayName="MscrmControls.Canvas.CanvasControl" solution="BaseCustomControlsCore (9.0.2608.3006)">
+          <package appName="Base Custom Controls" version="9.0.2608.3006">BaseCustomControlsCore (9.0.2608.3006)</package>
         </Required>
         <Dependent type="60" displayName="Information" parentDisplayName="Quote" id="{4330b64a-d09c-4958-839d-1d63e26b6d2b}" />
       </MissingDependency>
       <MissingDependency>
-        <Required type="66" schemaName="MscrmControls.CardFeedContainer.CardFeedContainer" displayName="MscrmControls.CardFeedContainer.CardFeedContainer" solution="BaseCustomControlsCore (9.0.2608.2010)">
-          <package appName="Base Custom Controls" version="9.0.2608.2010">BaseCustomControlsCore (9.0.2608.2010)</package>
+        <Required type="66" schemaName="MscrmControls.CardFeedContainer.CardFeedContainer" displayName="MscrmControls.CardFeedContainer.CardFeedContainer" solution="BaseCustomControlsCore (9.0.2608.3006)">
+          <package appName="Base Custom Controls" version="9.0.2608.3006">BaseCustomControlsCore (9.0.2608.3006)</package>
         </Required>
         <Dependent type="60" displayName="Account" parentDisplayName="Account" id="{8448b78f-8f42-454e-8e2a-f8196b0419af}" />
       </MissingDependency>
       <MissingDependency>
-        <Required type="66" schemaName="MscrmControls.FieldControls.ToggleControl" displayName="MscrmControls.FieldControls.ToggleControl" solution="BaseCustomControlsCore (9.0.2608.2010)">
-          <package appName="Base Custom Controls" version="9.0.2608.2010">BaseCustomControlsCore (9.0.2608.2010)</package>
+        <Required type="66" schemaName="MscrmControls.FieldControls.ToggleControl" displayName="MscrmControls.FieldControls.ToggleControl" solution="BaseCustomControlsCore (9.0.2608.3006)">
+          <package appName="Base Custom Controls" version="9.0.2608.3006">BaseCustomControlsCore (9.0.2608.3006)</package>
         </Required>
         <Dependent type="60" displayName="Information" parentDisplayName="Sales Order" id="{10e9ec36-6add-4a66-99c4-749e2b2904c1}" />
       </MissingDependency>
       <MissingDependency>
-        <Required type="66" schemaName="MscrmControls.FieldControls.ToggleControl" displayName="MscrmControls.FieldControls.ToggleControl" solution="BaseCustomControlsCore (9.0.2608.2010)">
-          <package appName="Base Custom Controls" version="9.0.2608.2010">BaseCustomControlsCore (9.0.2608.2010)</package>
+        <Required type="66" schemaName="MscrmControls.FieldControls.ToggleControl" displayName="MscrmControls.FieldControls.ToggleControl" solution="BaseCustomControlsCore (9.0.2608.3006)">
+          <package appName="Base Custom Controls" version="9.0.2608.3006">BaseCustomControlsCore (9.0.2608.3006)</package>
         </Required>
         <Dependent type="60" displayName="Information" parentDisplayName="Quote" id="{4330b64a-d09c-4958-839d-1d63e26b6d2b}" />
       </MissingDependency>
       <MissingDependency>
-        <Required type="66" schemaName="MscrmControls.FieldControls.ToggleControl" displayName="MscrmControls.FieldControls.ToggleControl" solution="BaseCustomControlsCore (9.0.2608.2010)">
-          <package appName="Base Custom Controls" version="9.0.2608.2010">BaseCustomControlsCore (9.0.2608.2010)</package>
+        <Required type="66" schemaName="MscrmControls.FieldControls.ToggleControl" displayName="MscrmControls.FieldControls.ToggleControl" solution="BaseCustomControlsCore (9.0.2608.3006)">
+          <package appName="Base Custom Controls" version="9.0.2608.3006">BaseCustomControlsCore (9.0.2608.3006)</package>
         </Required>
         <Dependent type="60" displayName="Account" parentDisplayName="Account" id="{8448b78f-8f42-454e-8e2a-f8196b0419af}" />
       </MissingDependency>
       <MissingDependency>
-        <Required type="66" schemaName="MscrmControls.ModelForm.ModelFormControl" displayName="MscrmControls.ModelForm.ModelFormControl" solution="BaseCustomControlsCore (9.0.2608.2010)">
-          <package appName="Base Custom Controls" version="9.0.2608.2010">BaseCustomControlsCore (9.0.2608.2010)</package>
+        <Required type="66" schemaName="MscrmControls.ModelForm.ModelFormControl" displayName="MscrmControls.ModelForm.ModelFormControl" solution="BaseCustomControlsCore (9.0.2608.3006)">
+          <package appName="Base Custom Controls" version="9.0.2608.3006">BaseCustomControlsCore (9.0.2608.3006)</package>
         </Required>
         <Dependent type="60" displayName="Account" parentDisplayName="Account" id="{8448b78f-8f42-454e-8e2a-f8196b0419af}" />
       </MissingDependency>

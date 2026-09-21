@@ -11,7 +11,7 @@
       <grid name="resultset" jump="soap_name" select="1" icon="1" preview="1">
         <row name="result" id="soap_equipmentid">
           <cell name="soap_name" width="300" />
-          <cell name="createdon" width="125" />
+          <cell name="soap_serialnumber" width="123" />
         </row>
       </grid>
     </layoutxml>
@@ -21,14 +21,25 @@
         <entity name="soap_equipment">
           <attribute name="soap_equipmentid" />
           <attribute name="soap_name" />
-          <attribute name="createdon" />
           <order attribute="soap_name" descending="false" />
           <filter type="and">
             <condition attribute="statecode" operator="eq" value="0" />
           </filter>
           <filter type="or" isquickfindfields="1">
             <condition attribute="soap_name" operator="like" value="{0}" />
+            <condition attribute="soap_billcode" operator="like" value="{0}" />
+            <condition attribute="soap_equipmentcode" operator="eq" value="{1}" />
+            <condition attribute="soap_equipmentnumber" operator="like" value="{0}" />
+            <condition attribute="soap_extid" operator="like" value="{0}" />
+            <condition attribute="soap_ipaddress" operator="like" value="{0}" />
+            <condition attribute="soap_itemdescription" operator="like" value="{0}" />
+            <condition attribute="soap_macaddress" operator="like" value="{0}" />
+            <condition attribute="soap_make" operator="like" value="{0}" />
+            <condition attribute="soap_model" operator="like" value="{0}" />
+            <condition attribute="soap_modelcategory" operator="like" value="{0}" />
+            <condition attribute="soap_serialnumber" operator="like" value="{0}" />
           </filter>
+          <attribute name="soap_serialnumber" />
         </entity>
       </fetch>
     </fetchxml>

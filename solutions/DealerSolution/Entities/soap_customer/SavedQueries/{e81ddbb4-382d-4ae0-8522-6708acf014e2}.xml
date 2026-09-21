@@ -11,7 +11,6 @@
       <grid name="resultset" jump="soap_name" select="1" icon="1" preview="1">
         <row name="result" id="soap_customerid">
           <cell name="soap_name" width="300" />
-          <cell name="createdon" width="125" />
         </row>
       </grid>
     </layoutxml>
@@ -21,13 +20,18 @@
         <entity name="soap_customer">
           <attribute name="soap_customerid" />
           <attribute name="soap_name" />
-          <attribute name="createdon" />
           <order attribute="soap_name" descending="false" />
           <filter type="and">
             <condition attribute="statecode" operator="eq" value="0" />
           </filter>
           <filter type="or" isquickfindfields="1">
             <condition attribute="soap_name" operator="like" value="{0}" />
+            <condition attribute="soap_address" operator="like" value="{0}" />
+            <condition attribute="soap_city" operator="like" value="{0}" />
+            <condition attribute="soap_customercode" operator="like" value="{0}" />
+            <condition attribute="soap_customernumber" operator="like" value="{0}" />
+            <condition attribute="soap_emailaddress" operator="like" value="{0}" />
+            <condition attribute="soap_phone" operator="like" value="{0}" />
           </filter>
         </entity>
       </fetch>

@@ -5,7 +5,7 @@
   <PluginTypeId>f8c9f7aa-973d-44fc-a9f4-af9784baf919</PluginTypeId>
   <PrimaryEntity>account</PrimaryEntity>
   <AsyncAutoDelete>0</AsyncAutoDelete>
-  <FilteringAttributes>address1_postalcode,soap_territoryid</FilteringAttributes>
+  <FilteringAttributes>address1_postalcode,parentaccountid,soap_isnamed,soap_territoryid</FilteringAttributes>
   <InvocationSource>1</InvocationSource>
   <Mode>0</Mode>
   <Rank>1</Rank>
@@ -18,7 +18,7 @@
   <SdkMessageProcessingStepImages>
     <SdkMessageProcessingStepImage Name="PreImage">
       <SdkMessageProcessingStepImageId>{32911fa8-e45f-f111-a826-000d3a5a5a08}</SdkMessageProcessingStepImageId>
-      <Attributes>address1_postalcode,soap_isnamed</Attributes>
+      <Attributes>address1_postalcode,parentaccountid,soap_isnamed</Attributes>
       <EntityAlias>PreImage</EntityAlias>
       <ImageType>0</ImageType>
       <MessagePropertyName>Target</MessagePropertyName>

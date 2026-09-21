@@ -1,0 +1,7 @@
+<!-- App mark. Provenance, the plum's origin, and why this file is also the favicon: src/eci-cascade.css -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 170 170" width="170" height="170" role="img" aria-label="Account Explorer">
+  <rect x="0" y="0" width="81" height="81" fill="#FFFFFF"/>
+  <rect x="89" y="0" width="81" height="81" fill="#8F2877"/>
+  <rect x="0" y="89" width="81" height="81" fill="#E7E7E7"/>
+  <rect x="89" y="89" width="81" height="81" fill="#ABABAB"/>
+</svg>
