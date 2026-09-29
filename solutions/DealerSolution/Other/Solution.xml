@@ -6,7 +6,7 @@
       <LocalizedName description="SoapSolution" languagecode="1033" />
     </LocalizedNames>
     <Descriptions />
-    <Version>1.0.0.35</Version>
+    <Version>1.0.0.36</Version>
     <Managed>0</Managed>
     <Publisher>
       <UniqueName>Soap</UniqueName>
@@ -380,14 +380,6 @@
           <package appName="Base Custom Controls" version="9.0.2608.4008">BaseCustomControlsCore (9.0.2608.4008)</package>
         </Required>
         <Dependent type="60" displayName="Account" parentDisplayName="Account" id="{8448b78f-8f42-454e-8e2a-f8196b0419af}" />
-      </MissingDependency>
-      <MissingDependency>
-        <Required type="connectionreference" displayName="soap_sharedoffice365_bsrch" solution="Active" id.connectionreferencelogicalname="soap_sharedoffice365_bsrch" />
-        <Dependent type="29" displayName="Approvals - Notify (child flow)" id="{5e5be910-31b9-f111-aaac-70a8a5b02d7a}" />
-      </MissingDependency>
-      <MissingDependency>
-        <Required type="connectionreference" displayName="soap_sharedteams_bsrch" solution="Active" id.connectionreferencelogicalname="soap_sharedteams_bsrch" />
-        <Dependent type="29" displayName="Approvals - Notify (child flow)" id="{5e5be910-31b9-f111-aaac-70a8a5b02d7a}" />
       </MissingDependency>
       <MissingDependency>
         <Required type="SettingDefinition" displayName="AppChannel" solution="msdyn_AppFrameworkInfraExtensions (1.0.0.20)" id.uniquename="AppChannel">
