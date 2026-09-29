@@ -1,0 +1,652 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_commondataserviceforapps": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "soap_sharedcommondataserviceforapps_a209b"
+        },
+        "api": {
+          "name": "shared_commondataserviceforapps"
+        }
+      },
+      "shared_office365": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "soap_sharedoffice365_bsrch"
+        },
+        "api": {
+          "name": "shared_office365"
+        }
+      },
+      "shared_teams": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "soap_sharedteams_bsrch"
+        },
+        "api": {
+          "name": "shared_teams"
+        }
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        }
+      },
+      "triggers": {
+        "manual": {
+          "metadata": {
+            "operationMetadataId": "0d671cd9-1ac8-4bce-85f6-72d5eb9d39a9"
+          },
+          "type": "Request",
+          "kind": "Button",
+          "inputs": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "text": {
+                  "title": "ApprovalId",
+                  "type": "string",
+                  "x-ms-dynamically-added": true,
+                  "description": "Please enter your input",
+                  "x-ms-content-hint": "TEXT"
+                },
+                "text_1": {
+                  "title": "Kind",
+                  "type": "string",
+                  "x-ms-dynamically-added": true,
+                  "description": "Please enter your input",
+                  "x-ms-content-hint": "TEXT"
+                }
+              },
+              "required": [
+                "text",
+                "text_1"
+              ]
+            }
+          }
+        }
+      },
+      "actions": {
+        "List_global_settings": {
+          "runAfter": {
+            "Get_approval": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "ad5e25d8-7fe2-424c-8710-7fe123372d0a"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_commondataserviceforapps",
+              "operationId": "ListRecords",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "entityName": "soap_appsettingses",
+              "$filter": "soap_key eq 'approvals' and statecode eq 0",
+              "$orderby": "createdon asc",
+              "$top": 1
+            },
+            "authentication": {
+              "type": "Raw",
+              "value": "@json(decodeBase64(triggerOutputs().headers['X-MS-APIM-Tokens']))['$ConnectionKey']"
+            }
+          }
+        },
+        "Get_approval": {
+          "runAfter": {},
+          "metadata": {
+            "operationMetadataId": "fe9326f9-e66b-40cb-a18e-0d65f656aeca"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_commondataserviceforapps",
+              "operationId": "GetItem",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "entityName": "soap_approvals",
+              "recordId": "@triggerBody()['text']"
+            },
+            "authentication": {
+              "type": "Raw",
+              "value": "@json(decodeBase64(triggerOutputs().headers['X-MS-APIM-Tokens']))['$ConnectionKey']"
+            }
+          }
+        },
+        "Global": {
+          "runAfter": {
+            "List_global_settings": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "cf4de015-6bfe-4af4-bdf6-d0a6cf821e2c"
+          },
+          "type": "Compose",
+          "inputs": "@json(coalesce(first(outputs('List_global_settings')?['body/value'])?['soap_configuration'], '{\"notify\":{\"email\":true,\"teams\":true},\"adminRoles\":[],\"fallback\":[]}'))"
+        },
+        "Record_URL": {
+          "runAfter": {
+            "Global": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "37902fb3-ab5c-4881-810d-cd051a7f5fe2"
+          },
+          "type": "Compose",
+          "inputs": "@coalesce(outputs('Get_approval')?['body/soap_recordurl'], '')"
+        },
+        "Link": {
+          "runAfter": {
+            "Record_URL": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "48c24416-24a3-4526-9ead-cfdba9b1be92"
+          },
+          "type": "Compose",
+          "inputs": "@if(and(contains(outputs('Record_URL'), '/main.aspx?'), contains(outputs('Record_URL'), 'appid=')), concat(first(split(outputs('Record_URL'), '/main.aspx')), '/main.aspx?appid=', first(split(last(split(outputs('Record_URL'), 'appid=')), '&')), '&pagetype=webresource&webresourceName=soap_approvals_html&data=', outputs('Get_approval')?['body/soap_approvalid']), 'https://apps.powerapps.com')"
+        },
+        "Which_kind": {
+          "runAfter": {
+            "Link": [
+              "Succeeded"
+            ]
+          },
+          "cases": {
+            "approvers": {
+              "case": "approvers",
+              "actions": {
+                "List_steps_to_notify": {
+                  "runAfter": {},
+                  "metadata": {
+                    "operationMetadataId": "3c26ac58-17cb-43f1-8bcf-54c80763ba86"
+                  },
+                  "type": "OpenApiConnection",
+                  "inputs": {
+                    "host": {
+                      "connectionName": "shared_commondataserviceforapps",
+                      "operationId": "ListRecords",
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                    },
+                    "parameters": {
+                      "entityName": "soap_approvalsteps",
+                      "$filter": "_soap_approval_value eq @{outputs('Get_approval')?['body/soap_approvalid']} and soap_status eq 1 and soap_notifiedon eq null"
+                    },
+                    "authentication": {
+                      "type": "Raw",
+                      "value": "@json(decodeBase64(triggerOutputs().headers['X-MS-APIM-Tokens']))['$ConnectionKey']"
+                    }
+                  }
+                },
+                "Each_step": {
+                  "foreach": "@outputs('List_steps_to_notify')?['body/value']",
+                  "actions": {
+                    "List_recipients": {
+                      "runAfter": {},
+                      "metadata": {
+                        "operationMetadataId": "bb8efe1d-96fe-4bca-9e66-48096b95863b"
+                      },
+                      "type": "OpenApiConnection",
+                      "inputs": {
+                        "host": {
+                          "connectionName": "shared_commondataserviceforapps",
+                          "operationId": "ListRecords",
+                          "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                        },
+                        "parameters": {
+                          "entityName": "systemusers",
+                          "fetchXml": "<fetch distinct=\"true\">\n  <entity name=\"systemuser\">\n    <attribute name=\"internalemailaddress\" />\n    <filter>\n      <condition attribute=\"isdisabled\" operator=\"eq\" value=\"0\" />\n      <condition attribute=\"accessmode\" operator=\"in\">\n        <value>0</value>\n        <value>1</value>\n        <value>2</value>\n      </condition>\n      <condition attribute=\"applicationid\" operator=\"null\" />\n      <condition attribute=\"systemuserid\" operator=\"ne\" value=\"@{outputs('Get_approval')?['body/_createdby_value']}\" />\n      <filter type=\"or\">\n        <condition attribute=\"systemuserid\" operator=\"eq\" value=\"@{coalesce(items('Each_step')?['_soap_assignee_value'], '00000000-0000-0000-0000-000000000000')}\" />\n        <condition entityname=\"r\" attribute=\"parentrootroleid\" operator=\"eq\" value=\"@{coalesce(items('Each_step')?['soap_assigneeroleid'], '00000000-0000-0000-0000-000000000000')}\" />\n      </filter>\n    </filter>\n    <link-entity name=\"systemuserroles\" from=\"systemuserid\" to=\"systemuserid\" link-type=\"outer\" alias=\"ur\">\n      <link-entity name=\"role\" from=\"roleid\" to=\"roleid\" link-type=\"outer\" alias=\"r\" />\n    </link-entity>\n  </entity>\n</fetch>"
+                        },
+                        "authentication": {
+                          "type": "Raw",
+                          "value": "@json(decodeBase64(triggerOutputs().headers['X-MS-APIM-Tokens']))['$ConnectionKey']"
+                        }
+                      }
+                    },
+                    "Select_emails": {
+                      "runAfter": {
+                        "List_recipients": [
+                          "Succeeded"
+                        ]
+                      },
+                      "metadata": {
+                        "operationMetadataId": "3cdef505-e8b9-48d8-af8c-416ac1ae39d3"
+                      },
+                      "type": "Select",
+                      "inputs": {
+                        "from": "@outputs('List_recipients')?['body/value']",
+                        "select": "@item()?['internalemailaddress']"
+                      }
+                    },
+                    "Emails": {
+                      "runAfter": {
+                        "Select_emails": [
+                          "Succeeded"
+                        ]
+                      },
+                      "metadata": {
+                        "operationMetadataId": "660d4bfd-1104-4278-9cea-ac181ced982e"
+                      },
+                      "type": "Query",
+                      "inputs": {
+                        "from": "@union(body('Select_emails'), body('Select_emails'))",
+                        "where": "@not(empty(item()))"
+                      }
+                    },
+                    "Email_on": {
+                      "actions": {
+                        "Send_an_email_(V2)": {
+                          "runAfter": {},
+                          "metadata": {
+                            "operationMetadataId": "b1d6832c-b883-497c-a06c-2c76d912ea89"
+                          },
+                          "type": "OpenApiConnection",
+                          "inputs": {
+                            "host": {
+                              "connectionName": "shared_office365",
+                              "operationId": "SendEmailV2",
+                              "apiId": "/providers/Microsoft.PowerApps/apis/shared_office365"
+                            },
+                            "parameters": {
+                              "emailMessage/To": "@join(body('Emails'), ';')",
+                              "emailMessage/Subject": "Approval needed: @{outputs('Get_approval')?['body/soap_name']}",
+                              "emailMessage/Body": "<p><b>@{items('Each_step')?['soap_stagename']}</b> is waiting on you.</p>\n<p>@{outputs('Get_approval')?['body/soap_summary']}</p>\n<p>Requested by @{outputs('Get_approval')?['body/_createdby_value@OData.Community.Display.V1.FormattedValue']},\n   due @{formatDateTime(items('Each_step')?['soap_dueon'], 'ddd d MMM')}</p>\n<p>@{coalesce(outputs('Get_approval')?['body/soap_requestcomment'], '')}</p>\n<p><a href=\"@{outputs('Link')}\">Open in Approvals</a></p>\n<p style=\"color:#666\">Decide in the Approvals app. Replying to this email records nothing.</p>",
+                              "emailMessage/Importance": "Normal"
+                            },
+                            "authentication": {
+                              "type": "Raw",
+                              "value": "@json(decodeBase64(triggerOutputs().headers['X-MS-APIM-Tokens']))['$ConnectionKey']"
+                            }
+                          }
+                        }
+                      },
+                      "runAfter": {
+                        "Emails": [
+                          "Succeeded"
+                        ]
+                      },
+                      "expression": {
+                        "equals": [
+                          "@and(equals(outputs('Global')?['notify']?['email'], true), greater(length(body('Emails')), 0))",
+                          "@true"
+                        ]
+                      },
+                      "metadata": {
+                        "operationMetadataId": "f39b9732-6ebd-4069-99e2-f3ea0124bc5d"
+                      },
+                      "type": "If"
+                    },
+                    "Teams_on": {
+                      "actions": {
+                        "Card": {
+                          "runAfter": {},
+                          "metadata": {
+                            "operationMetadataId": "2fe14814-e467-47ce-aa09-f0381ace5d74"
+                          },
+                          "type": "Compose",
+                          "inputs": {
+                            "type": "AdaptiveCard",
+                            "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+                            "version": "1.4",
+                            "body": [
+                              {
+                                "type": "TextBlock",
+                                "text": "Approval needed",
+                                "weight": "Bolder",
+                                "color": "Warning",
+                                "size": "Small"
+                              },
+                              {
+                                "type": "TextBlock",
+                                "text": "@{outputs('Get_approval')?['body/soap_name']}",
+                                "weight": "Bolder",
+                                "size": "Medium",
+                                "wrap": true
+                              },
+                              {
+                                "type": "FactSet",
+                                "facts": [
+                                  {
+                                    "title": "Change",
+                                    "value": "@{outputs('Get_approval')?['body/soap_summary']}"
+                                  },
+                                  {
+                                    "title": "Stage",
+                                    "value": "@{items('Each_step')?['soap_stagename']}"
+                                  },
+                                  {
+                                    "title": "Due",
+                                    "value": "@{formatDateTime(items('Each_step')?['soap_dueon'], 'ddd d MMM')}"
+                                  }
+                                ]
+                              }
+                            ],
+                            "actions": [
+                              {
+                                "type": "Action.OpenUrl",
+                                "title": "Open in Approvals",
+                                "url": "@{outputs('Link')}"
+                              }
+                            ]
+                          }
+                        },
+                        "Each_recipient": {
+                          "foreach": "@body('Emails')",
+                          "actions": {
+                            "Post_card_in_a_chat_or_channel": {
+                              "runAfter": {},
+                              "metadata": {
+                                "operationMetadataId": "696d9c96-0ab0-43b5-a9ca-e3d04a881461"
+                              },
+                              "type": "OpenApiConnection",
+                              "inputs": {
+                                "host": {
+                                  "connectionName": "shared_teams",
+                                  "operationId": "PostCardToConversation",
+                                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_teams"
+                                },
+                                "parameters": {
+                                  "poster": "Flow bot",
+                                  "location": "Chat with Flow bot",
+                                  "body/recipient": "@{items('Each_recipient')};",
+                                  "body/messageBody": "@string(outputs('Card'))"
+                                },
+                                "authentication": {
+                                  "type": "Raw",
+                                  "value": "@json(decodeBase64(triggerOutputs().headers['X-MS-APIM-Tokens']))['$ConnectionKey']"
+                                }
+                              }
+                            }
+                          },
+                          "runAfter": {
+                            "Card": [
+                              "Succeeded"
+                            ]
+                          },
+                          "metadata": {
+                            "operationMetadataId": "786de6d1-e3db-429d-a1c1-3f1485f97da3"
+                          },
+                          "type": "Foreach"
+                        }
+                      },
+                      "runAfter": {
+                        "Email_on": [
+                          "Succeeded"
+                        ]
+                      },
+                      "expression": {
+                        "equals": [
+                          "@and(equals(outputs('Global')?['notify']?['teams'], true), greater(length(body('Emails')), 0))",
+                          "@true"
+                        ]
+                      },
+                      "metadata": {
+                        "operationMetadataId": "56dd3eac-a39c-4c03-8ca3-4486e8b7a5d0"
+                      },
+                      "type": "If"
+                    },
+                    "Mark_notified": {
+                      "runAfter": {
+                        "Teams_on": [
+                          "Succeeded"
+                        ]
+                      },
+                      "metadata": {
+                        "operationMetadataId": "1b28d087-a3a9-4463-b3cc-eb17a2905de7"
+                      },
+                      "type": "OpenApiConnection",
+                      "inputs": {
+                        "host": {
+                          "connectionName": "shared_commondataserviceforapps",
+                          "operationId": "UpdateOnlyRecord",
+                          "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                        },
+                        "parameters": {
+                          "entityName": "soap_approvalsteps",
+                          "recordId": "@items('Each_step')?['soap_approvalstepid']",
+                          "item/soap_notifiedon": "@utcNow()"
+                        },
+                        "authentication": {
+                          "type": "Raw",
+                          "value": "@json(decodeBase64(triggerOutputs().headers['X-MS-APIM-Tokens']))['$ConnectionKey']"
+                        }
+                      }
+                    }
+                  },
+                  "runAfter": {
+                    "List_steps_to_notify": [
+                      "Succeeded"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "3161e14b-c89e-408a-93e1-9ef9aacdab94"
+                  },
+                  "type": "Foreach"
+                }
+              }
+            },
+            "requester": {
+              "case": "requester",
+              "actions": {
+                "Get_requester": {
+                  "runAfter": {},
+                  "metadata": {
+                    "operationMetadataId": "dcdbb309-f468-4b08-80da-6249146a4cc3"
+                  },
+                  "type": "OpenApiConnection",
+                  "inputs": {
+                    "host": {
+                      "connectionName": "shared_commondataserviceforapps",
+                      "operationId": "GetItem",
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                    },
+                    "parameters": {
+                      "entityName": "systemusers",
+                      "recordId": "@outputs('Get_approval')?['body/_createdby_value']"
+                    },
+                    "authentication": {
+                      "type": "Raw",
+                      "value": "@json(decodeBase64(triggerOutputs().headers['X-MS-APIM-Tokens']))['$ConnectionKey']"
+                    }
+                  }
+                },
+                "Ended_as": {
+                  "runAfter": {
+                    "Get_requester": [
+                      "Succeeded"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "49610adb-29c7-4e74-88ee-88553bd48989"
+                  },
+                  "type": "Compose",
+                  "inputs": "@if(equals(outputs('Get_approval')?['body/soap_status'], 2), 'approved', if(equals(outputs('Get_approval')?['body/soap_status'], 3), 'rejected', if(equals(outputs('Get_approval')?['body/soap_status'], 5), 'expired', 'cancelled')))"
+                },
+                "Requester_email_on": {
+                  "actions": {
+                    "Send_an_email_(V2)_2": {
+                      "runAfter": {},
+                      "metadata": {
+                        "operationMetadataId": "a76591a0-660e-4780-8ce1-d6d011330ed5"
+                      },
+                      "type": "OpenApiConnection",
+                      "inputs": {
+                        "host": {
+                          "connectionName": "shared_office365",
+                          "operationId": "SendEmailV2",
+                          "apiId": "/providers/Microsoft.PowerApps/apis/shared_office365"
+                        },
+                        "parameters": {
+                          "emailMessage/To": "@outputs('Get_requester')?['body/internalemailaddress']",
+                          "emailMessage/Subject": "Your request was @{outputs('Ended_as')}: @{outputs('Get_approval')?['body/soap_name']}",
+                          "emailMessage/Body": "<p>Your request was <b>@{outputs('Ended_as')}</b>.</p>\n<p>@{outputs('Get_approval')?['body/soap_summary']}</p>\n<p><a href=\"@{outputs('Link')}\">Open in Approvals</a></p>\n",
+                          "emailMessage/Importance": "Normal"
+                        },
+                        "authentication": {
+                          "type": "Raw",
+                          "value": "@json(decodeBase64(triggerOutputs().headers['X-MS-APIM-Tokens']))['$ConnectionKey']"
+                        }
+                      }
+                    }
+                  },
+                  "runAfter": {
+                    "Ended_as": [
+                      "Succeeded"
+                    ]
+                  },
+                  "expression": {
+                    "equals": [
+                      "@outputs('Global')?['notify']?['email']",
+                      "@true"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "1919a5d9-404c-4851-b448-0f107fc1e7d3"
+                  },
+                  "type": "If"
+                },
+                "Requester_Teams_on": {
+                  "actions": {
+                    "Requester_card": {
+                      "runAfter": {},
+                      "metadata": {
+                        "operationMetadataId": "233ccc3e-823f-44f9-8dc6-46d5d71734cd"
+                      },
+                      "type": "Compose",
+                      "inputs": {
+                        "type": "AdaptiveCard",
+                        "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+                        "version": "1.4",
+                        "body": [
+                          {
+                            "type": "TextBlock",
+                            "text": "Your request was @{outputs('Ended_as')}",
+                            "weight": "Bolder",
+                            "size": "Small"
+                          },
+                          {
+                            "type": "TextBlock",
+                            "text": "@{outputs('Get_approval')?['body/soap_name']}",
+                            "weight": "Bolder",
+                            "size": "Medium",
+                            "wrap": true
+                          },
+                          {
+                            "type": "FactSet",
+                            "facts": [
+                              {
+                                "title": "Change",
+                                "value": "@{outputs('Get_approval')?['body/soap_summary']}"
+                              }
+                            ]
+                          }
+                        ],
+                        "actions": [
+                          {
+                            "type": "Action.OpenUrl",
+                            "title": "Open in Approvals",
+                            "url": "@{outputs('Link')}"
+                          }
+                        ]
+                      }
+                    },
+                    "Post_card_in_a_chat_or_channel_2": {
+                      "runAfter": {
+                        "Requester_card": [
+                          "Succeeded"
+                        ]
+                      },
+                      "metadata": {
+                        "operationMetadataId": "6564ee59-ba74-45bf-9bbd-c58617367be7"
+                      },
+                      "type": "OpenApiConnection",
+                      "inputs": {
+                        "host": {
+                          "connectionName": "shared_teams",
+                          "operationId": "PostCardToConversation",
+                          "apiId": "/providers/Microsoft.PowerApps/apis/shared_teams"
+                        },
+                        "parameters": {
+                          "poster": "Flow bot",
+                          "location": "Chat with Flow bot",
+                          "body/recipient": "@{\toutputs('Get_requester')?['body/internalemailaddress']};",
+                          "body/messageBody": "@string(outputs('Requester_card'))"
+                        },
+                        "authentication": {
+                          "type": "Raw",
+                          "value": "@json(decodeBase64(triggerOutputs().headers['X-MS-APIM-Tokens']))['$ConnectionKey']"
+                        }
+                      }
+                    }
+                  },
+                  "runAfter": {
+                    "Requester_email_on": [
+                      "Succeeded"
+                    ]
+                  },
+                  "expression": {
+                    "equals": [
+                      "@outputs('Global')?['notify']?['teams']",
+                      "@true"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "f7923a89-f7ad-4010-a16f-9ea8dbd5a7f6"
+                  },
+                  "type": "If"
+                }
+              }
+            }
+          },
+          "default": {
+            "actions": {}
+          },
+          "expression": "@triggerBody()['text_1']",
+          "metadata": {
+            "operationMetadataId": "3ee58a83-f503-4fcf-aa9a-4802043735a3"
+          },
+          "type": "Switch"
+        },
+        "Respond_to_a_Power_App_or_flow": {
+          "runAfter": {
+            "Which_kind": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "c18084d7-f5ed-44db-aa1a-72c5cba04d9a"
+          },
+          "type": "Response",
+          "kind": "PowerApp",
+          "inputs": {
+            "statusCode": 200,
+            "body": {},
+            "schema": {
+              "type": "object",
+              "properties": {}
+            }
+          }
+        }
+      }
+    },
+    "templateName": ""
+  },
+  "schemaVersion": "1.0.0.0"
+}

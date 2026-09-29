@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{d4577bd8-8d4f-450b-99c1-22f4e9ae3d36}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="soap_name" select="1" icon="1" preview="1">
+        <row name="result" id="soap_approvalid">
+          <cell name="soap_name" width="300" />
+          <cell name="soap_typekey" width="150" />
+          <cell name="soap_status" width="150" />
+          <cell name="soap_targettable" width="150" />
+          <cell name="soap_targetid" width="150" />
+          <cell name="soap_targetname" width="150" />
+          <cell name="soap_quoteid" width="150" />
+          <cell name="soap_opportunityid" width="150" />
+          <cell name="soap_accountid" width="150" />
+          <cell name="soap_requestcomment" width="150" />
+          <cell name="soap_facts" width="150" />
+          <cell name="soap_currentvalue" width="150" />
+          <cell name="soap_requestedvalue" width="150" />
+          <cell name="soap_summary" width="150" />
+          <cell name="soap_recordurl" width="150" />
+          <cell name="soap_currentstage" width="150" />
+          <cell name="soap_outcome" width="150" />
+          <cell name="soap_completedon" width="150" />
+          <cell name="soap_appliedon" width="150" />
+          <cell name="soap_applyerror" width="150" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="soap_approval">
+          <attribute name="soap_approvalid" />
+          <attribute name="soap_name" />
+          <attribute name="createdon" />
+          <order attribute="soap_name" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <attribute name="soap_typekey" />
+          <attribute name="soap_status" />
+          <attribute name="soap_targettable" />
+          <attribute name="soap_targetid" />
+          <attribute name="soap_targetname" />
+          <attribute name="soap_quoteid" />
+          <attribute name="soap_opportunityid" />
+          <attribute name="soap_accountid" />
+          <attribute name="soap_requestcomment" />
+          <attribute name="soap_facts" />
+          <attribute name="soap_currentvalue" />
+          <attribute name="soap_requestedvalue" />
+          <attribute name="soap_summary" />
+          <attribute name="soap_recordurl" />
+          <attribute name="soap_currentstage" />
+          <attribute name="soap_outcome" />
+          <attribute name="soap_completedon" />
+          <attribute name="soap_appliedon" />
+          <attribute name="soap_applyerror" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Active Approvals" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

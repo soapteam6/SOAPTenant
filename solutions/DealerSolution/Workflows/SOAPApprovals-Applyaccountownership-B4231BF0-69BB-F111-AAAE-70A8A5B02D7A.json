@@ -1,0 +1,435 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_commondataserviceforapps": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "soap_sharedcommondataserviceforapps_a209b"
+        },
+        "api": {
+          "name": "shared_commondataserviceforapps"
+        }
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        }
+      },
+      "triggers": {
+        "When_a_row_is_added,_modified_or_deleted": {
+          "metadata": {
+            "operationMetadataId": "774c9e51-2437-4088-b483-1251096218aa"
+          },
+          "type": "OpenApiConnectionWebhook",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_commondataserviceforapps",
+              "operationId": "SubscribeWebhookTrigger",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "subscriptionRequest/message": 3,
+              "subscriptionRequest/entityname": "soap_approval",
+              "subscriptionRequest/scope": 4,
+              "subscriptionRequest/filteringattributes": "soap_status",
+              "subscriptionRequest/filterexpression": "soap_status eq 2 and soap_typekey eq 'account-ownership' and soap_appliedon eq null"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        }
+      },
+      "actions": {
+        "Facts": {
+          "runAfter": {},
+          "metadata": {
+            "operationMetadataId": "5fc85551-e55d-4bf4-afa4-96a5badecbec"
+          },
+          "type": "Compose",
+          "inputs": "@json(triggerOutputs()?['body/soap_facts'])"
+        },
+        "Try": {
+          "actions": {
+            "Mark_applied": {
+              "runAfter": {},
+              "metadata": {
+                "operationMetadataId": "9e71d8de-4a28-44ea-b930-4c72a923bfeb"
+              },
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "connectionName": "shared_commondataserviceforapps",
+                  "operationId": "UpdateOnlyRecord",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                },
+                "parameters": {
+                  "entityName": "soap_approvals",
+                  "recordId": "@triggerOutputs()?['body/soap_approvalid']",
+                  "item/soap_appliedon": "@utcNow()",
+                  "item/soap_applyerror": "@null"
+                },
+                "authentication": "@parameters('$authentication')"
+              }
+            },
+            "Find_root": {
+              "runAfter": {
+                "Mark_applied": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "4333d100-8a4f-425b-9586-84b41742a32e"
+              },
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "connectionName": "shared_commondataserviceforapps",
+                  "operationId": "ListRecords",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                },
+                "parameters": {
+                  "entityName": "accounts",
+                  "fetchXml": "<fetch top=\"1\">\n  <entity name=\"account\">\n    <attribute name=\"accountid\" />\n    <filter>\n      <condition attribute=\"accountid\" operator=\"eq-or-above\" value=\"@{triggerOutputs()?['body/soap_targetid']}\" />\n      <condition attribute=\"parentaccountid\" operator=\"null\" />\n    </filter>\n  </entity>\n</fetch>\n"
+                },
+                "authentication": "@parameters('$authentication')"
+              }
+            },
+            "Root": {
+              "runAfter": {
+                "Find_root": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "8a0ab1e3-8114-442d-8ef4-da63ef964d44"
+              },
+              "type": "Compose",
+              "inputs": "@coalesce(first(outputs('Find_root')?['body/value'])?['accountid'], triggerOutputs()?['body/soap_targetid'])\r\n"
+            },
+            "New_owner": {
+              "runAfter": {
+                "Root": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "48615e2f-1a73-45ae-8e1d-2118b3cf2c70"
+              },
+              "type": "Compose",
+              "inputs": "@toLower(outputs('Facts')?['values']?['requestedOwner'])\r\n"
+            },
+            "List_family": {
+              "runAfter": {
+                "New_owner": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "3f12d5c0-f82a-43cd-aa8a-be9afad9da75"
+              },
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "connectionName": "shared_commondataserviceforapps",
+                  "operationId": "ListRecords",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                },
+                "parameters": {
+                  "entityName": "accounts",
+                  "fetchXml": "<fetch>\n  <entity name=\"account\">\n    <attribute name=\"accountid\" />\n    <attribute name=\"ownerid\" />\n    <filter>\n      <condition attribute=\"accountid\" operator=\"eq-or-under\" value=\"@{outputs('Root')}\" />\n      <condition attribute=\"statecode\" operator=\"eq\" value=\"0\" />\n    </filter>\n  </entity>\n</fetch>\n"
+                },
+                "authentication": "@parameters('$authentication')"
+              }
+            },
+            "Each_account": {
+              "foreach": "@outputs('List_family')?['body/value']",
+              "actions": {
+                "Old_owner": {
+                  "runAfter": {},
+                  "metadata": {
+                    "operationMetadataId": "061757f0-a471-47e0-9927-6d55013a6541"
+                  },
+                  "type": "Compose",
+                  "inputs": "@toLower(items('Each_account')?['_ownerid_value'])\r\n"
+                },
+                "Open_deals": {
+                  "runAfter": {
+                    "Old_owner": [
+                      "Succeeded"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "54139083-729a-4b49-8944-e2009b11e7c6"
+                  },
+                  "type": "OpenApiConnection",
+                  "inputs": {
+                    "host": {
+                      "connectionName": "shared_commondataserviceforapps",
+                      "operationId": "ListRecords",
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                    },
+                    "parameters": {
+                      "entityName": "soap_opportunities",
+                      "$filter": "_soap_accountid_value eq @{items('Each_account')?['accountid']} and _ownerid_value eq @{outputs('Old_owner')} and soap_dealstatus eq 1\n"
+                    },
+                    "authentication": "@parameters('$authentication')"
+                  }
+                },
+                "Each_deal": {
+                  "foreach": "@outputs('Open_deals')?['body/value']",
+                  "actions": {
+                    "Deal_Quotes": {
+                      "runAfter": {},
+                      "metadata": {
+                        "operationMetadataId": "b9ec1569-adde-472c-bb81-b4c697e71ae6"
+                      },
+                      "type": "OpenApiConnection",
+                      "inputs": {
+                        "host": {
+                          "connectionName": "shared_commondataserviceforapps",
+                          "operationId": "ListRecords",
+                          "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                        },
+                        "parameters": {
+                          "entityName": "soap_quotes",
+                          "$filter": "_soap_opportunityid_value eq @{items('Each_deal')?['soap_opportunityid']} and _ownerid_value eq @{outputs('Old_owner')}\n"
+                        },
+                        "authentication": "@parameters('$authentication')"
+                      }
+                    },
+                    "Each_quote": {
+                      "foreach": "@outputs('Deal_quotes')?['body/value']",
+                      "actions": {
+                        "Move_quote": {
+                          "runAfter": {},
+                          "metadata": {
+                            "operationMetadataId": "3bfdca81-33cf-4adc-9115-6b185273326e"
+                          },
+                          "type": "OpenApiConnection",
+                          "inputs": {
+                            "host": {
+                              "connectionName": "shared_commondataserviceforapps",
+                              "operationId": "UpdateOnlyRecord",
+                              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                            },
+                            "parameters": {
+                              "entityName": "soap_quotes",
+                              "recordId": "@item()?['soap_quoteid']",
+                              "item/ownerid@odata.bind": "systemusers(@{outputs('New_owner')})"
+                            },
+                            "authentication": "@parameters('$authentication')"
+                          }
+                        }
+                      },
+                      "runAfter": {
+                        "Deal_Quotes": [
+                          "Succeeded"
+                        ]
+                      },
+                      "metadata": {
+                        "operationMetadataId": "f0c43289-4553-4938-97b8-978891194aac"
+                      },
+                      "type": "Foreach"
+                    },
+                    "Move_deal": {
+                      "runAfter": {
+                        "Each_quote": [
+                          "Succeeded"
+                        ]
+                      },
+                      "metadata": {
+                        "operationMetadataId": "7c9b2d8d-0716-495f-885d-7c419c6f5ce2"
+                      },
+                      "type": "OpenApiConnection",
+                      "inputs": {
+                        "host": {
+                          "connectionName": "shared_commondataserviceforapps",
+                          "operationId": "UpdateOnlyRecord",
+                          "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                        },
+                        "parameters": {
+                          "entityName": "soap_opportunities",
+                          "recordId": "@items('Each_deal')?['soap_opportunityid']",
+                          "item/ownerid@odata.bind": "systemusers(@{outputs('New_owner')})"
+                        },
+                        "authentication": "@parameters('$authentication')"
+                      }
+                    }
+                  },
+                  "runAfter": {
+                    "Open_deals": [
+                      "Succeeded"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "8bedc462-f256-4300-a088-893d87c5aab4"
+                  },
+                  "type": "Foreach"
+                },
+                "Account_contacts": {
+                  "runAfter": {
+                    "Each_deal": [
+                      "Succeeded"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "87e96e45-8213-4ea8-b097-a4b6839a7819"
+                  },
+                  "type": "OpenApiConnection",
+                  "inputs": {
+                    "host": {
+                      "connectionName": "shared_commondataserviceforapps",
+                      "operationId": "ListRecords",
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                    },
+                    "parameters": {
+                      "entityName": "contacts",
+                      "$filter": "_parentcustomerid_value eq @{items('Each_account')?['accountid']} and _ownerid_value eq @{outputs('Old_owner')}\n"
+                    },
+                    "authentication": "@parameters('$authentication')"
+                  }
+                },
+                "Each_contact": {
+                  "foreach": "@outputs('Account_contacts')?['body/value']",
+                  "actions": {
+                    "Move_contact": {
+                      "runAfter": {},
+                      "metadata": {
+                        "operationMetadataId": "a1f9a464-1e66-48b3-9aca-0576523259ec"
+                      },
+                      "type": "OpenApiConnection",
+                      "inputs": {
+                        "host": {
+                          "connectionName": "shared_commondataserviceforapps",
+                          "operationId": "UpdateOnlyRecord",
+                          "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                        },
+                        "parameters": {
+                          "entityName": "contacts",
+                          "recordId": "@items('Each_contact')?['contactid']",
+                          "item/ownerid@odata.bind": "systemusers(@{outputs('New_owner')})"
+                        },
+                        "authentication": "@parameters('$authentication')"
+                      }
+                    }
+                  },
+                  "runAfter": {
+                    "Account_contacts": [
+                      "Succeeded"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "9ead00c9-d752-48e7-b202-0f80f8fce732"
+                  },
+                  "type": "Foreach"
+                },
+                "Move_account": {
+                  "runAfter": {
+                    "Each_contact": [
+                      "Succeeded"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "49b20acb-ae7b-49d5-8cbd-6deaffa40f16"
+                  },
+                  "type": "OpenApiConnection",
+                  "inputs": {
+                    "host": {
+                      "connectionName": "shared_commondataserviceforapps",
+                      "operationId": "UpdateOnlyRecord",
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                    },
+                    "parameters": {
+                      "entityName": "accounts",
+                      "recordId": "@items('Each_account')?['accountid']",
+                      "item/soap_isnamed": true,
+                      "item/ownerid@odata.bind": "systemusers(@{outputs('New_owner')})"
+                    },
+                    "authentication": "@parameters('$authentication')"
+                  }
+                }
+              },
+              "runAfter": {
+                "List_family": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "047b0519-0142-4c83-991a-ec4c2adb7bb0"
+              },
+              "type": "Foreach"
+            }
+          },
+          "runAfter": {
+            "Facts": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "4c9d1660-5a88-4d78-9bcb-0212a2e3f356"
+          },
+          "type": "Scope"
+        },
+        "Catch": {
+          "actions": {
+            "Failed_actions": {
+              "runAfter": {},
+              "metadata": {
+                "operationMetadataId": "00461beb-fb91-4709-9e35-6d1e0aa73ba7"
+              },
+              "type": "Query",
+              "inputs": {
+                "from": "@result('Try')",
+                "where": "@equals(item()?['status'], 'Failed')"
+              }
+            },
+            "Mark_failed": {
+              "runAfter": {
+                "Failed_actions": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "a1948137-d758-4ffa-983c-2b9b5d7c5e36"
+              },
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "connectionName": "shared_commondataserviceforapps",
+                  "operationId": "UpdateOnlyRecord",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                },
+                "parameters": {
+                  "entityName": "soap_approvals",
+                  "recordId": "@triggerOutputs()?['body/soap_approvalid']",
+                  "item/soap_applyerror": "@take(string(coalesce(first(body('Failed_actions'))?['error']?['message'], 'The change could not be applied.')), 1000)"
+                },
+                "authentication": "@parameters('$authentication')"
+              }
+            }
+          },
+          "runAfter": {
+            "Try": [
+              "Failed",
+              "TimedOut"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "ddb104da-374c-4139-a0eb-b6b682f908b0"
+          },
+          "type": "Scope"
+        }
+      }
+    },
+    "templateName": ""
+  },
+  "schemaVersion": "1.0.0.0"
+}

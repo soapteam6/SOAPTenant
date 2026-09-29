@@ -1,0 +1,184 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_commondataserviceforapps": {
+        "impersonation": {},
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "soap_sharedcommondataserviceforapps_a209b"
+        },
+        "api": {
+          "name": "shared_commondataserviceforapps"
+        }
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        }
+      },
+      "triggers": {
+        "When_a_row_is_added,_modified_or_deleted": {
+          "metadata": {
+            "operationMetadataId": "774c9e51-2437-4088-b483-1251096218aa"
+          },
+          "type": "OpenApiConnectionWebhook",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_commondataserviceforapps",
+              "operationId": "SubscribeWebhookTrigger",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "subscriptionRequest/message": 3,
+              "subscriptionRequest/entityname": "soap_approval",
+              "subscriptionRequest/scope": 4,
+              "subscriptionRequest/filteringattributes": "soap_status",
+              "subscriptionRequest/filterexpression": "soap_status eq 2 and soap_typekey eq 'quote-line-cost' and soap_appliedon eq null"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        }
+      },
+      "actions": {
+        "Facts": {
+          "runAfter": {},
+          "metadata": {
+            "operationMetadataId": "5fc85551-e55d-4bf4-afa4-96a5badecbec"
+          },
+          "type": "Compose",
+          "inputs": "@json(triggerOutputs()?['body/soap_facts'])"
+        },
+        "Try": {
+          "actions": {
+            "Each_line": {
+              "foreach": "@outputs('Facts')?['lines']",
+              "actions": {
+                "Update_a_row": {
+                  "runAfter": {},
+                  "metadata": {
+                    "operationMetadataId": "1aceb8ce-9f93-4ba5-b59b-2d548c4da73a"
+                  },
+                  "type": "OpenApiConnection",
+                  "inputs": {
+                    "host": {
+                      "connectionName": "shared_commondataserviceforapps",
+                      "operationId": "UpdateOnlyRecord",
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                    },
+                    "parameters": {
+                      "entityName": "soap_quotedetails",
+                      "recordId": "@items('Each_line')?['lineId']",
+                      "item/soap_cost": "@items('Each_line')?['requestedCost']",
+                      "item/soap_costapprovalid": "@triggerOutputs()?['body/soap_approvalid']\r\n",
+                      "item/soap_costoverride": "@\titems('Each_line')?['requestedCost']"
+                    },
+                    "authentication": "@parameters('$authentication')"
+                  }
+                }
+              },
+              "runAfter": {},
+              "metadata": {
+                "operationMetadataId": "90854cfd-0c94-4d84-94fd-f3c8ab95ec2e"
+              },
+              "type": "Foreach"
+            },
+            "Mark_applied": {
+              "runAfter": {
+                "Each_line": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "9e71d8de-4a28-44ea-b930-4c72a923bfeb"
+              },
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "connectionName": "shared_commondataserviceforapps",
+                  "operationId": "UpdateOnlyRecord",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                },
+                "parameters": {
+                  "entityName": "soap_approvals",
+                  "recordId": "@triggerOutputs()?['body/soap_approvalid']",
+                  "item/soap_appliedon": "@utcNow()",
+                  "item/soap_applyerror": "@null"
+                },
+                "authentication": "@parameters('$authentication')"
+              }
+            }
+          },
+          "runAfter": {
+            "Facts": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "4c9d1660-5a88-4d78-9bcb-0212a2e3f356"
+          },
+          "type": "Scope"
+        },
+        "Catch": {
+          "actions": {
+            "Failed_actions": {
+              "runAfter": {},
+              "metadata": {
+                "operationMetadataId": "00461beb-fb91-4709-9e35-6d1e0aa73ba7"
+              },
+              "type": "Query",
+              "inputs": {
+                "from": "@result('Try')",
+                "where": "@equals(item()?['status'], 'Failed')"
+              }
+            },
+            "Mark_failed": {
+              "runAfter": {
+                "Failed_actions": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "a1948137-d758-4ffa-983c-2b9b5d7c5e36"
+              },
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "connectionName": "shared_commondataserviceforapps",
+                  "operationId": "UpdateOnlyRecord",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                },
+                "parameters": {
+                  "entityName": "soap_approvals",
+                  "recordId": "@triggerOutputs()?['body/soap_approvalid']",
+                  "item/soap_applyerror": "@take(string(coalesce(first(body('Failed_actions'))?['error']?['message'], 'The change could not be applied.')), 1000)"
+                },
+                "authentication": "@parameters('$authentication')"
+              }
+            }
+          },
+          "runAfter": {
+            "Try": [
+              "Failed",
+              "TimedOut"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "ddb104da-374c-4139-a0eb-b6b682f908b0"
+          },
+          "type": "Scope"
+        }
+      }
+    },
+    "templateName": null
+  },
+  "schemaVersion": "1.0.0.0"
+}

@@ -10,7 +10,7 @@
   </style>
 </head>
 <body>
-  <iframe id="app-frame" title="DocumentManager" allow="clipboard-write; fullscreen"></iframe>
+  <iframe id="app-frame" title="App Settings" allow="clipboard-write; fullscreen"></iframe>
 
   <script>
     (function () {
@@ -23,7 +23,7 @@
       // =====================================================================
 
       var APP_UNIQUE_NAME = "soap_documentmanagercodeapp_f36ad";
-      var APP_DISPLAY_NAME = "Document Manager";
+      var APP_DISPLAY_NAME = "App Settings";
 
       // Last-resort fallback App ID (this environment) if the reads fail.
       var FALLBACK_APP_ID = "d6228b10-d1aa-448b-a5ff-f61db34c976a";

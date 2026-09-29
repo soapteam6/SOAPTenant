@@ -2,6 +2,9 @@
 <EntityRelationships xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <EntityRelationship Name="business_unit_soap_accessory" />
   <EntityRelationship Name="business_unit_soap_accountcompinfo" />
+  <EntityRelationship Name="business_unit_soap_approval" />
+  <EntityRelationship Name="business_unit_soap_approvalstep" />
+  <EntityRelationship Name="business_unit_soap_appsettings" />
   <EntityRelationship Name="business_unit_soap_asset" />
   <EntityRelationship Name="business_unit_soap_associatedcontact" />
   <EntityRelationship Name="business_unit_soap_brand" />
@@ -28,6 +31,7 @@
   <EntityRelationship Name="business_unit_soap_leaserate" />
   <EntityRelationship Name="business_unit_soap_leasetype" />
   <EntityRelationship Name="business_unit_soap_leasingcompany" />
+  <EntityRelationship Name="business_unit_soap_lostreason" />
   <EntityRelationship Name="business_unit_soap_meterreading" />
   <EntityRelationship Name="business_unit_soap_offering" />
   <EntityRelationship Name="business_unit_soap_opportunity" />
@@ -51,6 +55,7 @@
   <EntityRelationship Name="business_unit_soap_quotedetail" />
   <EntityRelationship Name="business_unit_soap_quoteproductline" />
   <EntityRelationship Name="business_unit_soap_ratetier" />
+  <EntityRelationship Name="business_unit_soap_report" />
   <EntityRelationship Name="business_unit_soap_salesorder" />
   <EntityRelationship Name="business_unit_soap_salesorderdetail" />
   <EntityRelationship Name="business_unit_soap_salesorderproductline" />
@@ -65,6 +70,12 @@
   <EntityRelationship Name="lk_soap_accessory_modifiedby" />
   <EntityRelationship Name="lk_soap_accountcompinfo_createdby" />
   <EntityRelationship Name="lk_soap_accountcompinfo_modifiedby" />
+  <EntityRelationship Name="lk_soap_approval_createdby" />
+  <EntityRelationship Name="lk_soap_approval_modifiedby" />
+  <EntityRelationship Name="lk_soap_approvalstep_createdby" />
+  <EntityRelationship Name="lk_soap_approvalstep_modifiedby" />
+  <EntityRelationship Name="lk_soap_appsettings_createdby" />
+  <EntityRelationship Name="lk_soap_appsettings_modifiedby" />
   <EntityRelationship Name="lk_soap_asset_createdby" />
   <EntityRelationship Name="lk_soap_asset_modifiedby" />
   <EntityRelationship Name="lk_soap_associatedcontact_createdby" />
@@ -117,6 +128,8 @@
   <EntityRelationship Name="lk_soap_leasetype_modifiedby" />
   <EntityRelationship Name="lk_soap_leasingcompany_createdby" />
   <EntityRelationship Name="lk_soap_leasingcompany_modifiedby" />
+  <EntityRelationship Name="lk_soap_lostreason_createdby" />
+  <EntityRelationship Name="lk_soap_lostreason_modifiedby" />
   <EntityRelationship Name="lk_soap_meterreading_createdby" />
   <EntityRelationship Name="lk_soap_meterreading_modifiedby" />
   <EntityRelationship Name="lk_soap_offering_createdby" />
@@ -163,6 +176,8 @@
   <EntityRelationship Name="lk_soap_quoteproductline_modifiedby" />
   <EntityRelationship Name="lk_soap_ratetier_createdby" />
   <EntityRelationship Name="lk_soap_ratetier_modifiedby" />
+  <EntityRelationship Name="lk_soap_report_createdby" />
+  <EntityRelationship Name="lk_soap_report_modifiedby" />
   <EntityRelationship Name="lk_soap_salesorder_createdby" />
   <EntityRelationship Name="lk_soap_salesorder_modifiedby" />
   <EntityRelationship Name="lk_soap_salesorderdetail_createdby" />
@@ -183,6 +198,9 @@
   <EntityRelationship Name="lk_soap_zipcode_modifiedby" />
   <EntityRelationship Name="owner_soap_accessory" />
   <EntityRelationship Name="owner_soap_accountcompinfo" />
+  <EntityRelationship Name="owner_soap_approval" />
+  <EntityRelationship Name="owner_soap_approvalstep" />
+  <EntityRelationship Name="owner_soap_appsettings" />
   <EntityRelationship Name="owner_soap_asset" />
   <EntityRelationship Name="owner_soap_associatedcontact" />
   <EntityRelationship Name="owner_soap_brand" />
@@ -209,6 +227,7 @@
   <EntityRelationship Name="owner_soap_leaserate" />
   <EntityRelationship Name="owner_soap_leasetype" />
   <EntityRelationship Name="owner_soap_leasingcompany" />
+  <EntityRelationship Name="owner_soap_lostreason" />
   <EntityRelationship Name="owner_soap_meterreading" />
   <EntityRelationship Name="owner_soap_offering" />
   <EntityRelationship Name="owner_soap_opportunity" />
@@ -232,6 +251,7 @@
   <EntityRelationship Name="owner_soap_quotedetail" />
   <EntityRelationship Name="owner_soap_quoteproductline" />
   <EntityRelationship Name="owner_soap_ratetier" />
+  <EntityRelationship Name="owner_soap_report" />
   <EntityRelationship Name="owner_soap_salesorder" />
   <EntityRelationship Name="owner_soap_salesorderdetail" />
   <EntityRelationship Name="owner_soap_salesorderproductline" />
@@ -245,6 +265,9 @@
   <EntityRelationship Name="soap_account_migratedownerid_systemuser" />
   <EntityRelationship Name="soap_account_territoryid_soap_territory" />
   <EntityRelationship Name="soap_accountcompinfo_competitorid_soap_competitor" />
+  <EntityRelationship Name="soap_approvalstep_Approval_soap_approval" />
+  <EntityRelationship Name="soap_approvalstep_Assignee_systemuser" />
+  <EntityRelationship Name="soap_approvalstep_DecidedBy_systemuser" />
   <EntityRelationship Name="soap_asset_eacustomerid_soap_customer" />
   <EntityRelationship Name="soap_asset_eaequipmentid_soap_equipment" />
   <EntityRelationship Name="soap_asset_leaseid_soap_lease" />
@@ -279,6 +302,7 @@
   <EntityRelationship Name="soap_opportunity_contactid_contact" />
   <EntityRelationship Name="soap_opportunity_dealgroupid_soap_dealgroup" />
   <EntityRelationship Name="soap_opportunity_dealsourceid_soap_dealsource" />
+  <EntityRelationship Name="soap_opportunity_LostLookup_soap_lostreason" />
   <EntityRelationship Name="soap_opportunity_offeringtypeid_soap_offering" />
   <EntityRelationship Name="soap_opportunity_originatingleadid_soap_lead" />
   <EntityRelationship Name="soap_opportunity_PrimaryQuote_soap_quote" />
@@ -364,6 +388,9 @@
   <EntityRelationship Name="soap_zipcode_territoryid_soap_territory" />
   <EntityRelationship Name="team_soap_accessory" />
   <EntityRelationship Name="team_soap_accountcompinfo" />
+  <EntityRelationship Name="team_soap_approval" />
+  <EntityRelationship Name="team_soap_approvalstep" />
+  <EntityRelationship Name="team_soap_appsettings" />
   <EntityRelationship Name="team_soap_asset" />
   <EntityRelationship Name="team_soap_associatedcontact" />
   <EntityRelationship Name="team_soap_brand" />
@@ -390,6 +417,7 @@
   <EntityRelationship Name="team_soap_leaserate" />
   <EntityRelationship Name="team_soap_leasetype" />
   <EntityRelationship Name="team_soap_leasingcompany" />
+  <EntityRelationship Name="team_soap_lostreason" />
   <EntityRelationship Name="team_soap_meterreading" />
   <EntityRelationship Name="team_soap_offering" />
   <EntityRelationship Name="team_soap_opportunity" />
@@ -413,6 +441,7 @@
   <EntityRelationship Name="team_soap_quotedetail" />
   <EntityRelationship Name="team_soap_quoteproductline" />
   <EntityRelationship Name="team_soap_ratetier" />
+  <EntityRelationship Name="team_soap_report" />
   <EntityRelationship Name="team_soap_salesorder" />
   <EntityRelationship Name="team_soap_salesorderdetail" />
   <EntityRelationship Name="team_soap_salesorderproductline" />
@@ -446,6 +475,9 @@
   <EntityRelationship Name="TransactionCurrency_soap_servicecontract" />
   <EntityRelationship Name="user_soap_accessory" />
   <EntityRelationship Name="user_soap_accountcompinfo" />
+  <EntityRelationship Name="user_soap_approval" />
+  <EntityRelationship Name="user_soap_approvalstep" />
+  <EntityRelationship Name="user_soap_appsettings" />
   <EntityRelationship Name="user_soap_asset" />
   <EntityRelationship Name="user_soap_associatedcontact" />
   <EntityRelationship Name="user_soap_brand" />
@@ -472,6 +504,7 @@
   <EntityRelationship Name="user_soap_leaserate" />
   <EntityRelationship Name="user_soap_leasetype" />
   <EntityRelationship Name="user_soap_leasingcompany" />
+  <EntityRelationship Name="user_soap_lostreason" />
   <EntityRelationship Name="user_soap_meterreading" />
   <EntityRelationship Name="user_soap_offering" />
   <EntityRelationship Name="user_soap_opportunity" />
@@ -495,6 +528,7 @@
   <EntityRelationship Name="user_soap_quotedetail" />
   <EntityRelationship Name="user_soap_quoteproductline" />
   <EntityRelationship Name="user_soap_ratetier" />
+  <EntityRelationship Name="user_soap_report" />
   <EntityRelationship Name="user_soap_salesorder" />
   <EntityRelationship Name="user_soap_salesorderdetail" />
   <EntityRelationship Name="user_soap_salesorderproductline" />

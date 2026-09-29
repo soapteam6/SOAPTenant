@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{e55e2ff9-5dc0-4037-b234-bfe69912c038}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="soap_name" select="1" icon="1" preview="1">
+        <row name="result" id="soap_approvalstepid">
+          <cell name="soap_name" width="300" />
+          <cell name="soap_approval" width="150" />
+          <cell name="soap_stageorder" width="150" />
+          <cell name="soap_stagename" width="150" />
+          <cell name="soap_stagekind" width="150" />
+          <cell name="soap_mode" width="150" />
+          <cell name="soap_assignee" width="150" />
+          <cell name="soap_assigneeroleid" width="150" />
+          <cell name="soap_assigneerolename" width="150" />
+          <cell name="soap_status" width="150" />
+          <cell name="soap_dueon" width="150" />
+          <cell name="soap_fields" width="150" />
+          <cell name="soap_action" width="150" />
+          <cell name="soap_actioncomment" width="150" />
+          <cell name="soap_actionresponses" width="150" />
+          <cell name="soap_actiontargetid" width="150" />
+          <cell name="soap_decidedby" width="150" />
+          <cell name="soap_decidedon" width="150" />
+          <cell name="soap_reassignedfromid" width="150" />
+          <cell name="soap_notifiedon" width="150" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="soap_approvalstep">
+          <attribute name="soap_approvalstepid" />
+          <attribute name="soap_name" />
+          <attribute name="createdon" />
+          <order attribute="soap_name" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <attribute name="soap_approval" />
+          <attribute name="soap_stageorder" />
+          <attribute name="soap_stagename" />
+          <attribute name="soap_stagekind" />
+          <attribute name="soap_mode" />
+          <attribute name="soap_assignee" />
+          <attribute name="soap_assigneeroleid" />
+          <attribute name="soap_assigneerolename" />
+          <attribute name="soap_status" />
+          <attribute name="soap_dueon" />
+          <attribute name="soap_fields" />
+          <attribute name="soap_action" />
+          <attribute name="soap_actioncomment" />
+          <attribute name="soap_actionresponses" />
+          <attribute name="soap_actiontargetid" />
+          <attribute name="soap_decidedby" />
+          <attribute name="soap_decidedon" />
+          <attribute name="soap_reassignedfromid" />
+          <attribute name="soap_notifiedon" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Active Approval Steps" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

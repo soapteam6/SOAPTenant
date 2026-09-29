@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CanvasApp xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>soap_reporthubcodeapp_fbb98</Name>
+  <AppVersion>2026-09-22T20:43:35Z</AppVersion>
+  <Status>Ready</Status>
+  <CreatedByClientVersion>0.0.0.0</CreatedByClientVersion>
+  <MinClientVersion>0.0.0.0</MinClientVersion>
+  <Tags>{}</Tags>
+  <IsCdsUpgraded>0</IsCdsUpgraded>
+  <GalleryItemId xsi:nil="true"></GalleryItemId>
+  <BackgroundColor>RGBA(255,255,255,1)</BackgroundColor>
+  <DisplayName>ReportHubCodeApp</DisplayName>
+  <Description>The report menu</Description>
+  <CommitMessage xsi:nil="true"></CommitMessage>
+  <Publisher xsi:nil="true"></Publisher>
+  <AuthorizationReferences>[]</AuthorizationReferences>
+  <ConnectionReferences>{}</ConnectionReferences>
+  <DatabaseReferences>{"default.cds":{"databaseDetails":{"referenceType":"Environmental","environmentName":"default.cds","overrideValues":{"status":"NotSpecified","environmentVariableName":""}},"dataSources":{"reports":{"entitySetName":"soap_reports","logicalName":"soap_report"},"securityroles":{"entitySetName":"roles","logicalName":"role"}}}}</DatabaseReferences>
+  <AppComponents>[]</AppComponents>
+  <AppComponentDependencies>[]</AppComponentDependencies>
+  <CanConsumeAppPass>1</CanConsumeAppPass>
+  <CanvasAppType>4</CanvasAppType>
+  <BypassConsent>0</BypassConsent>
+  <AdminControlBypassConsent>0</AdminControlBypassConsent>
+  <EmbeddedApp xsi:nil="true"></EmbeddedApp>
+  <IntroducedVersion>1.0</IntroducedVersion>
+  <CdsDependencies>{"cdsdependencies":[{"logicalname":"soap_report","componenttype":1},{"logicalname":"role","componenttype":1}]}</CdsDependencies>
+  <IsCustomizable>1</IsCustomizable>
+  <CodeAppPackageUris>
+    <CodeAppPackageUri>/CanvasApps/soap_reporthubcodeapp_fbb98_CodeAppPackages/index.html_ContentType_text/html</CodeAppPackageUri>
+    <CodeAppPackageUri>/CanvasApps/soap_reporthubcodeapp_fbb98_CodeAppPackages/assets/brother_logo-C3TZdmgl.png_ContentType_image/png</CodeAppPackageUri>
+    <CodeAppPackageUri>/CanvasApps/soap_reporthubcodeapp_fbb98_CodeAppPackages/assets/canon_logo-MmvHaoku.png_ContentType_image/png</CodeAppPackageUri>
+    <CodeAppPackageUri>/CanvasApps/soap_reporthubcodeapp_fbb98_CodeAppPackages/assets/hp_logo-zYF6RGOI.png_ContentType_image/png</CodeAppPackageUri>
+    <CodeAppPackageUri>/CanvasApps/soap_reporthubcodeapp_fbb98_CodeAppPackages/assets/index-DgHEvjLf.css_ContentType_text/css</CodeAppPackageUri>
+    <CodeAppPackageUri>/CanvasApps/soap_reporthubcodeapp_fbb98_CodeAppPackages/assets/index-LsslUCyt.js_ContentType_application/javascript</CodeAppPackageUri>
+    <CodeAppPackageUri>/CanvasApps/soap_reporthubcodeapp_fbb98_CodeAppPackages/assets/inter-latin-ext-wght-italic-0pjOp8NU.woff2_ContentType_font/woff2</CodeAppPackageUri>
+    <CodeAppPackageUri>/CanvasApps/soap_reporthubcodeapp_fbb98_CodeAppPackages/assets/inter-latin-ext-wght-normal-DO1Apj_S.woff2_ContentType_font/woff2</CodeAppPackageUri>
+    <CodeAppPackageUri>/CanvasApps/soap_reporthubcodeapp_fbb98_CodeAppPackages/assets/inter-latin-wght-italic-DpCbqKDY.woff2_ContentType_font/woff2</CodeAppPackageUri>
+    <CodeAppPackageUri>/CanvasApps/soap_reporthubcodeapp_fbb98_CodeAppPackages/assets/inter-latin-wght-normal-Dx4kXJAl.woff2_ContentType_font/woff2</CodeAppPackageUri>
+    <CodeAppPackageUri>/CanvasApps/soap_reporthubcodeapp_fbb98_CodeAppPackages/assets/kip_logo-RlDgi_qf.png_ContentType_image/png</CodeAppPackageUri>
+    <CodeAppPackageUri>/CanvasApps/soap_reporthubcodeapp_fbb98_CodeAppPackages/assets/konica_logo-CzSojrQA.png_ContentType_image/png</CodeAppPackageUri>
+    <CodeAppPackageUri>/CanvasApps/soap_reporthubcodeapp_fbb98_CodeAppPackages/assets/kyocera_logo-YIzAq3yS.png_ContentType_image/png</CodeAppPackageUri>
+    <CodeAppPackageUri>/CanvasApps/soap_reporthubcodeapp_fbb98_CodeAppPackages/assets/lexmark_logo-PzHCr4Cj.png_ContentType_image/png</CodeAppPackageUri>
+    <CodeAppPackageUri>/CanvasApps/soap_reporthubcodeapp_fbb98_CodeAppPackages/assets/ricoh_logo-DXh4XF2U.png_ContentType_image/png</CodeAppPackageUri>
+    <CodeAppPackageUri>/CanvasApps/soap_reporthubcodeapp_fbb98_CodeAppPackages/assets/verkada_logo-CI-EpdKf.png_ContentType_image/png</CodeAppPackageUri>
+    <CodeAppPackageUri>/CanvasApps/soap_reporthubcodeapp_fbb98_CodeAppPackages/assets/xerox_logo-DzQHKD1f.png_ContentType_image/png</CodeAppPackageUri>
+  </CodeAppPackageUris>
+</CanvasApp>

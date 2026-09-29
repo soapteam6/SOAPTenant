@@ -1,0 +1,207 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{54e58f29-e424-462d-a1ec-09935f638c79}</formid>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab verticallayout="true" id="{F54731A7-F046-401E-BFCC-90C590D20A21}" IsUserDefined="1">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showlabel="false" showbar="false" IsUserDefined="0" id="{86620BD1-B570-4590-9107-4DCEF735B0CF}">
+                  <labels>
+                    <label description="General" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{FE84E52C-1199-4811-AA37-3DC332A6D4F3}">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                        <control id="soap_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="soap_Name" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{61D8CEBE-CC8D-4919-9382-1BE405FE62DF}">
+                        <labels>
+                          <label description="Owner" languagecode="1033" />
+                        </labels>
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{b79690a4-81b3-4870-b387-834d8fce9957}">
+                        <labels>
+                          <label description="Type Key" languagecode="1033" />
+                        </labels>
+                        <control id="soap_typekey" classid="{4273edbd-ac1d-40d3-9fb2-095c621b552d}" datafieldname="soap_typekey" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{4d488ebe-dce9-4d6f-8cc9-42c617fbed4e}">
+                        <labels>
+                          <label description="Status" languagecode="1033" />
+                        </labels>
+                        <control id="soap_status" classid="{3ef39988-22bb-4f0b-bbbe-64b5a3748aee}" datafieldname="soap_status" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{31031ff5-ddc3-454c-a0cb-db158ac87a0c}">
+                        <labels>
+                          <label description="Target Table" languagecode="1033" />
+                        </labels>
+                        <control id="soap_targettable" classid="{4273edbd-ac1d-40d3-9fb2-095c621b552d}" datafieldname="soap_targettable" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{4fcd617e-b706-45a9-9768-f003ea8031a8}">
+                        <labels>
+                          <label description="Target ID" languagecode="1033" />
+                        </labels>
+                        <control id="soap_targetid" classid="{4273edbd-ac1d-40d3-9fb2-095c621b552d}" datafieldname="soap_targetid" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{fbbf0062-ad1c-4ecd-9812-38c9ca3d2877}">
+                        <labels>
+                          <label description="Target Name" languagecode="1033" />
+                        </labels>
+                        <control id="soap_targetname" classid="{4273edbd-ac1d-40d3-9fb2-095c621b552d}" datafieldname="soap_targetname" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{43e40e95-7ebb-4c93-a317-d12c52a28268}">
+                        <labels>
+                          <label description="Quote ID" languagecode="1033" />
+                        </labels>
+                        <control id="soap_quoteid" classid="{4273edbd-ac1d-40d3-9fb2-095c621b552d}" datafieldname="soap_quoteid" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{a9d699e9-7db9-422f-8a4e-17ed3fa6b735}">
+                        <labels>
+                          <label description="Opportunity ID" languagecode="1033" />
+                        </labels>
+                        <control id="soap_opportunityid" classid="{4273edbd-ac1d-40d3-9fb2-095c621b552d}" datafieldname="soap_opportunityid" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{ada1fa93-1ac9-4abc-af3d-2bc005f451d4}">
+                        <labels>
+                          <label description="Account ID" languagecode="1033" />
+                        </labels>
+                        <control id="soap_accountid" classid="{4273edbd-ac1d-40d3-9fb2-095c621b552d}" datafieldname="soap_accountid" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{5b92fe36-0167-4e18-881a-fe6745cf7d4f}">
+                        <labels>
+                          <label description="Request Comment" languagecode="1033" />
+                        </labels>
+                        <control id="soap_requestcomment" classid="{e0dece4b-6fc8-4a8f-a065-082708572369}" datafieldname="soap_requestcomment" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{320806be-aff8-4b9a-bd16-2be8f76f9288}">
+                        <labels>
+                          <label description="Facts" languagecode="1033" />
+                        </labels>
+                        <control id="soap_facts" classid="{e0dece4b-6fc8-4a8f-a065-082708572369}" datafieldname="soap_facts" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{cfc76b68-c5dc-4945-ad46-89c8608fcda7}">
+                        <labels>
+                          <label description="Current Value" languagecode="1033" />
+                        </labels>
+                        <control id="soap_currentvalue" classid="{c3efe0c3-0ec6-42be-8349-cbd9079dfd8e}" datafieldname="soap_currentvalue" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{5cc60500-df99-4c92-9dc0-539d55554bd6}">
+                        <labels>
+                          <label description="Requested Value" languagecode="1033" />
+                        </labels>
+                        <control id="soap_requestedvalue" classid="{c3efe0c3-0ec6-42be-8349-cbd9079dfd8e}" datafieldname="soap_requestedvalue" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{05198972-0cdb-4143-825f-0c6827b5cc75}">
+                        <labels>
+                          <label description="Summary" languagecode="1033" />
+                        </labels>
+                        <control id="soap_summary" classid="{4273edbd-ac1d-40d3-9fb2-095c621b552d}" datafieldname="soap_summary" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{92316917-a420-4bca-b74e-836dda903594}">
+                        <labels>
+                          <label description="Record URL" languagecode="1033" />
+                        </labels>
+                        <control id="soap_recordurl" classid="{4273edbd-ac1d-40d3-9fb2-095c621b552d}" datafieldname="soap_recordurl" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{26451af2-964e-4fce-80fc-168a1d3108e0}">
+                        <labels>
+                          <label description="Current Stage" languagecode="1033" />
+                        </labels>
+                        <control id="soap_currentstage" classid="{c6d124ca-7eda-4a60-aea9-7fb8d318b68f}" datafieldname="soap_currentstage" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{0b34c65b-6854-4fff-94b4-fbf23cde8d88}">
+                        <labels>
+                          <label description="Outcome" languagecode="1033" />
+                        </labels>
+                        <control id="soap_outcome" classid="{e0dece4b-6fc8-4a8f-a065-082708572369}" datafieldname="soap_outcome" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{ed279a4b-b2d5-40bc-8307-060fd613718a}">
+                        <labels>
+                          <label description="Completed On" languagecode="1033" />
+                        </labels>
+                        <control id="soap_completedon" classid="{5b773807-9fb2-42db-97c3-7a91eff8adff}" datafieldname="soap_completedon" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{586eb4b4-63f6-4cb4-bf20-5528cf3f2ac3}">
+                        <labels>
+                          <label description="Applied On" languagecode="1033" />
+                        </labels>
+                        <control id="soap_appliedon" classid="{5b773807-9fb2-42db-97c3-7a91eff8adff}" datafieldname="soap_appliedon" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{8aed8506-df20-46c5-9eda-fcd7266ec13e}">
+                        <labels>
+                          <label description="Apply Error" languagecode="1033" />
+                        </labels>
+                        <control id="soap_applyerror" classid="{4273edbd-ac1d-40d3-9fb2-095c621b552d}" datafieldname="soap_applyerror" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Information" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

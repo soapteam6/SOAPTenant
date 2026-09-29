@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{d95c6901-3cfe-4579-834f-f28e209a934b}</formid>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab verticallayout="true" id="{787C94C1-B518-4F6A-BABD-B0E4259CE239}" IsUserDefined="1">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showlabel="false" showbar="false" IsUserDefined="0" id="{FF7EE0F2-32A8-433C-A55A-F913D4B10E3B}">
+                  <labels>
+                    <label description="General" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{D9CD7D54-D269-44A5-B653-C0043DF67EE3}">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                        <control id="soap_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="soap_Name" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{51347382-1F9E-4B5A-BE0F-333EE05E6E38}">
+                        <labels>
+                          <label description="Owner" languagecode="1033" />
+                        </labels>
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{cd2ab7eb-2be2-4a9d-9fc1-1bdfa1e50525}">
+                        <labels>
+                          <label description="Description" languagecode="1033" />
+                        </labels>
+                        <control id="soap_description" classid="{e0dece4b-6fc8-4a8f-a065-082708572369}" datafieldname="soap_description" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{c4c38f76-ef1d-406e-a23a-aca83b4a6b9b}">
+                        <labels>
+                          <label description="URL" languagecode="1033" />
+                        </labels>
+                        <control id="soap_url" classid="{4273edbd-ac1d-40d3-9fb2-095c621b552d}" datafieldname="soap_url" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{1cf259ce-08ac-4612-a21e-4e45827c2e91}">
+                        <labels>
+                          <label description="Icon" languagecode="1033" />
+                        </labels>
+                        <control id="soap_icon" classid="{4273edbd-ac1d-40d3-9fb2-095c621b552d}" datafieldname="soap_icon" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{cf2fb174-36f9-481a-b8e8-9c224224dc0b}">
+                        <labels>
+                          <label description="Tint" languagecode="1033" />
+                        </labels>
+                        <control id="soap_tint" classid="{4273edbd-ac1d-40d3-9fb2-095c621b552d}" datafieldname="soap_tint" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{bcd63b77-b522-4885-8127-a082e4fadf61}">
+                        <labels>
+                          <label description="Glyph Style" languagecode="1033" />
+                        </labels>
+                        <control id="soap_glyphstyle" classid="{4273edbd-ac1d-40d3-9fb2-095c621b552d}" datafieldname="soap_glyphstyle" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{0345daf7-f8dd-4465-8011-a13a985375f8}">
+                        <labels>
+                          <label description="Card Header" languagecode="1033" />
+                        </labels>
+                        <control id="soap_cardheader" classid="{4273edbd-ac1d-40d3-9fb2-095c621b552d}" datafieldname="soap_cardheader" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{a1bb9f0e-4ef3-4eeb-8c68-227c33d977c5}">
+                        <labels>
+                          <label description="Order" languagecode="1033" />
+                        </labels>
+                        <control id="soap_order" classid="{c6d124ca-7eda-4a60-aea9-7fb8d318b68f}" datafieldname="soap_order" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{61740c75-69d1-46f4-8340-0fc3063e0cd8}">
+                        <labels>
+                          <label description="Visible" languagecode="1033" />
+                        </labels>
+                        <control id="soap_visible" classid="{67fac785-cd58-4f9f-abb3-4b7ddc6ed5ed}" datafieldname="soap_visible" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{eba6fc07-edf1-4852-a96a-b9386804cb7a}">
+                        <labels>
+                          <label description="Role Ids" languagecode="1033" />
+                        </labels>
+                        <control id="soap_roleids" classid="{e0dece4b-6fc8-4a8f-a065-082708572369}" datafieldname="soap_roleids" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Information" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

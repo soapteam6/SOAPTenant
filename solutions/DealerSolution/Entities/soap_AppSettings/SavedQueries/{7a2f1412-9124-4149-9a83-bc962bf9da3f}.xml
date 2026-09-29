@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{7a2f1412-9124-4149-9a83-bc962bf9da3f}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="soap_key" select="1" icon="1" preview="1">
+        <row name="result" id="soap_appsettingsid">
+          <cell name="soap_key" width="300" />
+          <cell name="soap_configuration" width="150" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="soap_appsettings">
+          <attribute name="soap_appsettingsid" />
+          <attribute name="soap_key" />
+          <attribute name="createdon" />
+          <order attribute="soap_key" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <attribute name="soap_configuration" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Active App Settings" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

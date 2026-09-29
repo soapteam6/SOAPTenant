@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ImportExportXml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" OrganizationVersion="9.2.26083.167" OrganizationSchemaType="Standard" CRMServerServiceabilityVersion="9.2.26083.00167">
+<ImportExportXml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" OrganizationVersion="9.2.26084.171" OrganizationSchemaType="Standard" CRMServerServiceabilityVersion="9.2.26084.00171">
   <Entities />
   <Roles />
   <Workflows />
@@ -40,6 +40,14 @@
     <connectionreference connectionreferencelogicalname="soap_sharedcommondataserviceforapps_a209b">
       <connectionreferencedisplayname>Microsoft Dataverse DealerSolution-a209b</connectionreferencedisplayname>
       <connectorid>/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps</connectorid>
+      <iscustomizable>1</iscustomizable>
+      <promptingbehavior>0</promptingbehavior>
+      <statecode>0</statecode>
+      <statuscode>1</statuscode>
+    </connectionreference>
+    <connectionreference connectionreferencelogicalname="soap_sharedexcelonlinebusiness_5a0fb">
+      <connectionreferencedisplayname>Excel Online (Business) DealerSolution-5a0fb</connectionreferencedisplayname>
+      <connectorid>/providers/Microsoft.PowerApps/apis/shared_excelonlinebusiness</connectorid>
       <iscustomizable>1</iscustomizable>
       <promptingbehavior>0</promptingbehavior>
       <statecode>0</statecode>

@@ -1,0 +1,207 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{1dceae5d-2421-420e-b6c8-3b11725c2672}</formid>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab verticallayout="true" id="{3ECACADD-D9E7-4F14-A297-B6E1E14192FB}" IsUserDefined="1">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showlabel="false" showbar="false" IsUserDefined="0" id="{BAC8B066-6207-4832-BAF4-C6E587D971E9}">
+                  <labels>
+                    <label description="General" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{E2BEB78D-7F95-4DD9-9D44-FD44F6B3E690}">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                        <control id="soap_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="soap_Name" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{CAA7E212-4D87-4F60-90E2-BFB5DF786E4E}">
+                        <labels>
+                          <label description="Owner" languagecode="1033" />
+                        </labels>
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{94408bab-a2e1-4b39-8d90-966e7f62a4e8}">
+                        <labels>
+                          <label description="Approval" languagecode="1033" />
+                        </labels>
+                        <control id="soap_approval" classid="{270bd3db-d9af-4782-9025-509e298dec0a}" datafieldname="soap_approval" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{609ecc37-f7de-461d-8c77-80754ae2e805}">
+                        <labels>
+                          <label description="Stage Order" languagecode="1033" />
+                        </labels>
+                        <control id="soap_stageorder" classid="{c6d124ca-7eda-4a60-aea9-7fb8d318b68f}" datafieldname="soap_stageorder" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{c1cd9588-daca-4533-9982-7b644b225203}">
+                        <labels>
+                          <label description="Stage Name" languagecode="1033" />
+                        </labels>
+                        <control id="soap_stagename" classid="{4273edbd-ac1d-40d3-9fb2-095c621b552d}" datafieldname="soap_stagename" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{9a3fa3cd-c673-483c-a411-b212d51e51b4}">
+                        <labels>
+                          <label description="Stage Kind" languagecode="1033" />
+                        </labels>
+                        <control id="soap_stagekind" classid="{4273edbd-ac1d-40d3-9fb2-095c621b552d}" datafieldname="soap_stagekind" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{4d7357eb-cce3-45f4-b4e5-00c4b3b835a9}">
+                        <labels>
+                          <label description="Mode" languagecode="1033" />
+                        </labels>
+                        <control id="soap_mode" classid="{4273edbd-ac1d-40d3-9fb2-095c621b552d}" datafieldname="soap_mode" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{cd8cb565-2f4d-480f-b502-9bfb1af9d0da}">
+                        <labels>
+                          <label description="Assignee" languagecode="1033" />
+                        </labels>
+                        <control id="soap_assignee" classid="{270bd3db-d9af-4782-9025-509e298dec0a}" datafieldname="soap_assignee" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{16a5c826-ebf2-4939-b6be-d6cf4ee1bd9b}">
+                        <labels>
+                          <label description="Assignee Role ID" languagecode="1033" />
+                        </labels>
+                        <control id="soap_assigneeroleid" classid="{4273edbd-ac1d-40d3-9fb2-095c621b552d}" datafieldname="soap_assigneeroleid" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{6e8cc79f-894e-449a-b43e-9ad2ec630b2a}">
+                        <labels>
+                          <label description="Assignee Role Name" languagecode="1033" />
+                        </labels>
+                        <control id="soap_assigneerolename" classid="{4273edbd-ac1d-40d3-9fb2-095c621b552d}" datafieldname="soap_assigneerolename" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{885600e0-a849-4a99-97fc-9f9775e8f7d9}">
+                        <labels>
+                          <label description="Status" languagecode="1033" />
+                        </labels>
+                        <control id="soap_status" classid="{3ef39988-22bb-4f0b-bbbe-64b5a3748aee}" datafieldname="soap_status" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{58f5605d-b1a7-4cd2-9d51-010e8f4c4561}">
+                        <labels>
+                          <label description="Due On" languagecode="1033" />
+                        </labels>
+                        <control id="soap_dueon" classid="{5b773807-9fb2-42db-97c3-7a91eff8adff}" datafieldname="soap_dueon" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{54f36b52-34c9-4da4-9bed-a8bc50361078}">
+                        <labels>
+                          <label description="Fields" languagecode="1033" />
+                        </labels>
+                        <control id="soap_fields" classid="{e0dece4b-6fc8-4a8f-a065-082708572369}" datafieldname="soap_fields" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{2efb718a-8843-4e6d-a11c-5a0698ce7980}">
+                        <labels>
+                          <label description="Action" languagecode="1033" />
+                        </labels>
+                        <control id="soap_action" classid="{4273edbd-ac1d-40d3-9fb2-095c621b552d}" datafieldname="soap_action" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{08cb2e72-8f7b-44aa-8638-932b27e9652a}">
+                        <labels>
+                          <label description="Action Comment" languagecode="1033" />
+                        </labels>
+                        <control id="soap_actioncomment" classid="{e0dece4b-6fc8-4a8f-a065-082708572369}" datafieldname="soap_actioncomment" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{9f42849c-62ee-4a00-95ea-aa0deed95039}">
+                        <labels>
+                          <label description="Action Responses" languagecode="1033" />
+                        </labels>
+                        <control id="soap_actionresponses" classid="{e0dece4b-6fc8-4a8f-a065-082708572369}" datafieldname="soap_actionresponses" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{7147e0f6-337e-4752-8998-e596162c82d7}">
+                        <labels>
+                          <label description="Action Target ID" languagecode="1033" />
+                        </labels>
+                        <control id="soap_actiontargetid" classid="{4273edbd-ac1d-40d3-9fb2-095c621b552d}" datafieldname="soap_actiontargetid" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{b28ea1cb-a6f1-4b55-9397-c2e73d205438}">
+                        <labels>
+                          <label description="Decided By" languagecode="1033" />
+                        </labels>
+                        <control id="soap_decidedby" classid="{270bd3db-d9af-4782-9025-509e298dec0a}" datafieldname="soap_decidedby" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{8f581917-226a-4433-9f4e-e90ab1e2a940}">
+                        <labels>
+                          <label description="Decided On" languagecode="1033" />
+                        </labels>
+                        <control id="soap_decidedon" classid="{5b773807-9fb2-42db-97c3-7a91eff8adff}" datafieldname="soap_decidedon" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{183e4be9-4327-46e8-a95d-dda60cce33fe}">
+                        <labels>
+                          <label description="Reassigned From ID" languagecode="1033" />
+                        </labels>
+                        <control id="soap_reassignedfromid" classid="{4273edbd-ac1d-40d3-9fb2-095c621b552d}" datafieldname="soap_reassignedfromid" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{9dab8082-158f-45f1-b3de-7a1920a0dc40}">
+                        <labels>
+                          <label description="Notified On" languagecode="1033" />
+                        </labels>
+                        <control id="soap_notifiedon" classid="{5b773807-9fb2-42db-97c3-7a91eff8adff}" datafieldname="soap_notifiedon" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Information" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

@@ -1,0 +1,129 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_commondataserviceforapps": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "soap_sharedcommondataserviceforapps_a209b"
+        },
+        "api": {
+          "name": "shared_commondataserviceforapps"
+        }
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        }
+      },
+      "triggers": {
+        "When_a_row_is_added,_modified_or_deleted": {
+          "metadata": {
+            "operationMetadataId": "2857cf85-94a4-44d0-9091-3d72a2359b71"
+          },
+          "type": "OpenApiConnectionWebhook",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_commondataserviceforapps",
+              "operationId": "SubscribeWebhookTrigger",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "subscriptionRequest/message": 3,
+              "subscriptionRequest/entityname": "soap_approval",
+              "subscriptionRequest/scope": 4,
+              "subscriptionRequest/filteringattributes": "soap_status",
+              "subscriptionRequest/filterexpression": "soap_status eq 4"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        }
+      },
+      "actions": {
+        "List_open_steps": {
+          "runAfter": {},
+          "metadata": {
+            "operationMetadataId": "168a54d4-5719-499c-8bda-a5cb285d267d"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_commondataserviceforapps",
+              "operationId": "ListRecords",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "entityName": "soap_approvalsteps",
+              "$filter": "_soap_approval_value eq @{triggerOutputs()?['body/soap_approvalid']} and (soap_status eq 0 or soap_status eq 1)"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        },
+        "Apply_to_each": {
+          "foreach": "@outputs('List_open_steps')?['body/value']",
+          "actions": {
+            "Update_a_row": {
+              "runAfter": {},
+              "metadata": {
+                "operationMetadataId": "8b58a084-0776-40a3-92d1-85f6cc168b4d"
+              },
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "connectionName": "shared_commondataserviceforapps",
+                  "operationId": "UpdateOnlyRecord",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                },
+                "parameters": {
+                  "entityName": "soap_approvalsteps",
+                  "recordId": "@items('Apply_to_each')?['soap_approvalstepid']",
+                  "item/soap_status": 8
+                },
+                "authentication": "@parameters('$authentication')"
+              }
+            }
+          },
+          "runAfter": {
+            "List_open_steps": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "39f587fd-3cfc-438e-b66c-b4264ec5c4ac"
+          },
+          "type": "Foreach"
+        },
+        "Run_a_Child_Flow": {
+          "runAfter": {
+            "Apply_to_each": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "3ef657ed-7115-4e9a-abb1-de77debbb8d2"
+          },
+          "type": "Workflow",
+          "inputs": {
+            "host": {
+              "workflowReferenceName": "5e5be910-31b9-f111-aaac-70a8a5b02d7a"
+            },
+            "body": {
+              "text": "@triggerOutputs()?['body/soap_approvalid']",
+              "text_1": "requester"
+            }
+          }
+        }
+      }
+    },
+    "templateName": null
+  },
+  "schemaVersion": "1.0.0.0"
+}

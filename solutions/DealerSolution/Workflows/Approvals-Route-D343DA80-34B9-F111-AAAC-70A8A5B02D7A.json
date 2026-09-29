@@ -1,0 +1,1611 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_commondataserviceforapps": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "soap_sharedcommondataserviceforapps_a209b"
+        },
+        "api": {
+          "name": "shared_commondataserviceforapps"
+        }
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        }
+      },
+      "triggers": {
+        "When_a_row_is_added,_modified_or_deleted": {
+          "metadata": {
+            "operationMetadataId": "29880d5b-ec49-46b4-ab00-be2ba363a70b"
+          },
+          "type": "OpenApiConnectionWebhook",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_commondataserviceforapps",
+              "operationId": "SubscribeWebhookTrigger",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "subscriptionRequest/message": 1,
+              "subscriptionRequest/entityname": "soap_approval",
+              "subscriptionRequest/scope": 4,
+              "subscriptionRequest/filterexpression": "soap_status eq 0"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        }
+      },
+      "actions": {
+        "Initialize_variable": {
+          "runAfter": {},
+          "metadata": {
+            "operationMetadataId": "911c3f83-5d34-4915-b8a0-db604c27e747"
+          },
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "ApprovalId",
+                "type": "string",
+                "value": "@{triggerOutputs()?['body/soap_approvalid']}"
+              }
+            ]
+          }
+        },
+        "Initialize_variable_2": {
+          "runAfter": {
+            "Initialize_variable": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "37951286-50b1-41c3-9334-c4018e7ab6aa"
+          },
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "Requester",
+                "type": "string",
+                "value": "@{toLower(triggerOutputs()?['body/_createdby_value'])}"
+              }
+            ]
+          }
+        },
+        "Initialize_variable_3": {
+          "runAfter": {
+            "Initialize_variable_2": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "bdfcf5e0-6fa9-4745-aa52-86d4ac9906a3"
+          },
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "Order",
+                "type": "integer",
+                "value": 0
+              }
+            ]
+          }
+        },
+        "Initialize_variable_4": {
+          "runAfter": {
+            "Initialize_variable_3": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "925dc065-0c71-4c38-a48b-ca76b0d4af20"
+          },
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "FirstActive",
+                "type": "integer",
+                "value": 0
+              }
+            ]
+          }
+        },
+        "Initialize_variable_5": {
+          "runAfter": {
+            "Initialize_variable_4": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "a05817a4-d5cf-4e27-bd9e-f61624df0f5c"
+          },
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "StageMet",
+                "type": "boolean",
+                "value": "@true"
+              }
+            ]
+          }
+        },
+        "Initialize_variable_6": {
+          "runAfter": {
+            "Initialize_variable_5": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "55a04964-8210-40e9-832a-11ff374dc8e2"
+          },
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "Users",
+                "type": "array",
+                "value": []
+              }
+            ]
+          }
+        },
+        "Initialize_variable_7": {
+          "runAfter": {
+            "Initialize_variable_6": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "3870f7ab-6c60-4843-a4e6-d580c261bc9c"
+          },
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "Roles",
+                "type": "array",
+                "value": []
+              }
+            ]
+          }
+        },
+        "Initialize_variable_8": {
+          "runAfter": {
+            "Initialize_variable_7": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "d0078355-9900-460d-8c46-e7e842f50fd4"
+          },
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "Owner",
+                "type": "string"
+              }
+            ]
+          }
+        },
+        "List_type_settings": {
+          "runAfter": {
+            "Initialize_variable_9": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "15e69e57-e13a-47fd-af20-df8ed740c3c3"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_commondataserviceforapps",
+              "operationId": "ListRecords",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "entityName": "soap_appsettingses",
+              "$filter": "soap_key eq 'approval-type:@{triggerOutputs()?['body/soap_typekey']}' and statecode eq 0",
+              "$orderby": "createdon asc",
+              "$top": 1
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        },
+        "No_settings": {
+          "actions": {
+            "Terminate": {
+              "runAfter": {},
+              "metadata": {
+                "operationMetadataId": "ee29e221-0311-471e-a686-ab5264d48d42"
+              },
+              "type": "Terminate",
+              "inputs": {
+                "runStatus": "Failed",
+                "runError": {
+                  "message": "No App Settings row for approval-type:@{triggerOutputs()?['body/soap_typekey']}"
+                }
+              }
+            }
+          },
+          "runAfter": {
+            "List_type_settings": [
+              "Succeeded"
+            ]
+          },
+          "expression": {
+            "equals": [
+              "@length(outputs('List_type_settings')?['body/value'])",
+              0
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "c2fb3f5e-af87-42b7-910f-d43740eddb1a"
+          },
+          "type": "If"
+        },
+        "Parse_type": {
+          "runAfter": {
+            "No_settings": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "6f1d7f48-d63c-495a-acb3-083b9336c5cb"
+          },
+          "type": "ParseJson",
+          "inputs": {
+            "content": "@json(first(outputs('List_type_settings')?['body/value'])?['soap_configuration'])",
+            "schema": {
+              "type": "object",
+              "required": [
+                "v",
+                "type",
+                "required",
+                "label",
+                "params",
+                "stages"
+              ],
+              "properties": {
+                "v": {
+                  "type": "number"
+                },
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "quote-line-cost",
+                    "quote-margin",
+                    "account-ownership"
+                  ]
+                },
+                "required": {
+                  "type": "object",
+                  "required": [
+                    "on",
+                    "overrides"
+                  ],
+                  "properties": {
+                    "on": {
+                      "type": "boolean"
+                    },
+                    "overrides": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "required": [
+                          "roles",
+                          "on"
+                        ],
+                        "properties": {
+                          "roles": {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            }
+                          },
+                          "on": {
+                            "type": "boolean"
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "label": {
+                  "type": "string"
+                },
+                "params": {
+                  "type": "object"
+                },
+                "stages": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "required": [
+                      "id",
+                      "name",
+                      "kind",
+                      "approvers",
+                      "mode",
+                      "conditions",
+                      "dueDays",
+                      "allowReassign",
+                      "fields"
+                    ],
+                    "properties": {
+                      "id": {
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "kind": {
+                        "type": "string",
+                        "enum": [
+                          "decide",
+                          "info"
+                        ]
+                      },
+                      "approvers": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "required": [
+                            "kind"
+                          ],
+                          "properties": {
+                            "kind": {
+                              "type": "string",
+                              "enum": [
+                                "manager",
+                                "group",
+                                "users",
+                                "owner",
+                                "role"
+                              ]
+                            },
+                            "id": {
+                              "type": "string"
+                            },
+                            "ids": {
+                              "type": "array",
+                              "items": {
+                                "type": "string"
+                              }
+                            },
+                            "roles": {
+                              "type": "array",
+                              "items": {
+                                "type": "string"
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "mode": {
+                        "type": "string",
+                        "enum": [
+                          "any",
+                          "all"
+                        ]
+                      },
+                      "conditions": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "required": [
+                            "fact",
+                            "op",
+                            "value"
+                          ],
+                          "properties": {
+                            "fact": {
+                              "type": "string"
+                            },
+                            "op": {
+                              "type": "string",
+                              "enum": [
+                                "lt",
+                                "lte",
+                                "gt",
+                                "gte",
+                                "eq",
+                                "neq"
+                              ]
+                            },
+                            "value": {
+                              "type": [
+                                "number",
+                                "string"
+                              ]
+                            }
+                          }
+                        }
+                      },
+                      "dueDays": {
+                        "type": "number"
+                      },
+                      "allowReassign": {
+                        "type": "boolean"
+                      },
+                      "fields": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "required": [
+                            "key",
+                            "label",
+                            "kind",
+                            "required"
+                          ],
+                          "properties": {
+                            "key": {
+                              "type": "string"
+                            },
+                            "label": {
+                              "type": "string"
+                            },
+                            "kind": {
+                              "type": "string",
+                              "enum": [
+                                "text",
+                                "multiline",
+                                "number",
+                                "money",
+                                "percent",
+                                "date",
+                                "choice",
+                                "yesno"
+                              ]
+                            },
+                            "required": {
+                              "type": "boolean"
+                            },
+                            "options": {
+                              "type": "array",
+                              "items": {
+                                "type": "string"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "List_global_settings": {
+          "runAfter": {
+            "Parse_type": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "04595573-4042-474e-bd18-f366680bbe3d"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_commondataserviceforapps",
+              "operationId": "ListRecords",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "entityName": "soap_appsettingses",
+              "$filter": "soap_key eq 'approvals' and statecode eq 0",
+              "$orderby": "createdon asc",
+              "$top": 1
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        },
+        "Global": {
+          "runAfter": {
+            "List_global_settings": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "b5ecde1a-f193-4971-bd9a-c84492932bf7"
+          },
+          "type": "Compose",
+          "inputs": "@json(coalesce(first(outputs('List_global_settings')?['body/value'])?['soap_configuration'], '{\"notify\":{\"email\":true,\"teams\":true},\"adminRoles\":[],\"fallback\":[]}'))"
+        },
+        "Facts": {
+          "runAfter": {
+            "Global": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "3f053466-bd74-4519-ae5c-185efe2cf176"
+          },
+          "type": "Compose",
+          "inputs": "@json(coalesce(triggerOutputs()?['body/soap_facts'], '{\"values\":{}}'))"
+        },
+        "Get_requester": {
+          "runAfter": {
+            "Facts": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "c135ad41-8da5-4961-8294-dafd8a3940b5"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_commondataserviceforapps",
+              "operationId": "GetItem",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "entityName": "systemusers",
+              "recordId": "@variables('Requester')"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        },
+        "Manager": {
+          "runAfter": {
+            "Get_requester": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "46f5ed5d-38ac-4db9-8425-942c130050c6"
+          },
+          "type": "Compose",
+          "inputs": "@toLower(coalesce(outputs('Get_requester')?['body/_parentsystemuserid_value'], ''))"
+        },
+        "Target_is_a_quote": {
+          "actions": {
+            "Get_quote": {
+              "runAfter": {},
+              "metadata": {
+                "operationMetadataId": "a76fcc4a-c8fb-48cd-9802-debd03265234"
+              },
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "connectionName": "shared_commondataserviceforapps",
+                  "operationId": "GetItem",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                },
+                "parameters": {
+                  "entityName": "soap_quotes",
+                  "recordId": "@triggerOutputs()?['body/soap_targetid']"
+                },
+                "authentication": "@parameters('$authentication')"
+              }
+            },
+            "Owner": {
+              "runAfter": {
+                "Get_quote": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "7cd4673f-6697-4b2c-9285-60a562586aa1"
+              },
+              "type": "SetVariable",
+              "inputs": {
+                "name": "Owner",
+                "value": "@{toLower(coalesce(outputs('Get_quote')?['body/_ownerid_value'], ''))}"
+              }
+            }
+          },
+          "runAfter": {
+            "Manager": [
+              "Succeeded"
+            ]
+          },
+          "else": {
+            "actions": {
+              "Owner_1": {
+                "runAfter": {},
+                "metadata": {
+                  "operationMetadataId": "4fe0d867-ee9f-43ce-a89d-932819789a66"
+                },
+                "type": "SetVariable",
+                "inputs": {
+                  "name": "Owner",
+                  "value": "@{toLower(coalesce(outputs('Facts')?['values']?['currentOwner'], ''))}"
+                }
+              }
+            }
+          },
+          "expression": {
+            "equals": [
+              "@triggerOutputs()?['body/soap_targettable']",
+              "soap_quote"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "16a146da-7eec-48f4-95d6-43b10e885802"
+          },
+          "type": "If"
+        },
+        "Select_fallback_users": {
+          "runAfter": {
+            "Target_is_a_quote": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "129de5c2-7498-4e6c-b750-7c269ed56679"
+          },
+          "type": "Select",
+          "inputs": {
+            "from": "@outputs('Global')?['fallback']",
+            "select": "@if(equals(item()?['kind'], 'users'), toLower(join(coalesce(item()?['ids'], json('[]')), ',')), if(equals(item()?['kind'], 'manager'), outputs('Manager'), if(equals(item()?['kind'], 'owner'), variables('Owner'), '')))"
+          }
+        },
+        "Fallback_roles": {
+          "runAfter": {
+            "Select_fallback_roles": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "96617aee-6f48-43c4-9432-a28b32b47fe5"
+          },
+          "type": "Query",
+          "inputs": {
+            "from": "@union(split(join(body('Select_fallback_roles'), ','), ','), json('[]'))",
+            "where": "@not(empty(item()))"
+          }
+        },
+        "Each_stage": {
+          "foreach": "@body('Parse_type')?['stages']",
+          "actions": {
+            "Increment_variable": {
+              "runAfter": {},
+              "metadata": {
+                "operationMetadataId": "1fb23bfe-c7ca-41e7-8eb5-4af7b8397e7a"
+              },
+              "type": "IncrementVariable",
+              "inputs": {
+                "name": "Order",
+                "value": 1
+              }
+            },
+            "Condition_inputs": {
+              "runAfter": {
+                "Increment_variable": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "ca2d71f5-3072-45bb-90b0-2b94d43438ba"
+              },
+              "type": "Select",
+              "inputs": {
+                "from": "@items('Each_stage')?['conditions']",
+                "select": {
+                  "op": "@item()?['op']",
+                  "a": "@toLower(trim(replace(replace(string(coalesce(outputs('Facts')?['values']?[item()?['fact']], '')), '{', ''), '}', '')))",
+                  "b": "@toLower(trim(replace(replace(string(item()?['value']), '{', ''), '}', '')))",
+                  "f": "@float(if(isFloat(string(coalesce(outputs('Facts')?['values']?[item()?['fact']], ''))), string(coalesce(outputs('Facts')?['values']?[item()?['fact']], '')), '0'))",
+                  "w": "@float(if(isFloat(string(item()?['value'])), string(item()?['value']), '0'))"
+                }
+              }
+            },
+            "Condition_results": {
+              "runAfter": {
+                "Condition_inputs": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "6ed3544c-a87c-45c4-9411-7a9eaaf9bcfc"
+              },
+              "type": "Select",
+              "inputs": {
+                "from": "@body('Condition_inputs')",
+                "select": "@if(empty(item()?['a']), true, if(isFloat(item()?['b']), if(isFloat(item()?['a']), if(equals(item()?['op'], 'lt'), less(item()?['f'], item()?['w']), if(equals(item()?['op'], 'lte'), lessOrEquals(item()?['f'], item()?['w']), if(equals(item()?['op'], 'gt'), greater(item()?['f'], item()?['w']), if(equals(item()?['op'], 'gte'), greaterOrEquals(item()?['f'], item()?['w']), if(equals(item()?['op'], 'eq'), equals(item()?['f'], item()?['w']), not(equals(item()?['f'], item()?['w']))))))), true), if(equals(item()?['op'], 'neq'), not(equals(item()?['a'], item()?['b'])), equals(item()?['a'], item()?['b']))))"
+              }
+            },
+            "Set_variable": {
+              "runAfter": {
+                "Condition_results": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "0f0da994-7855-4a46-9daf-21ac13db3353"
+              },
+              "type": "SetVariable",
+              "inputs": {
+                "name": "StageMet",
+                "value": "@not(contains(body('Condition_results'), false))"
+              }
+            },
+            "Snapshot": {
+              "runAfter": {
+                "Set_variable": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "181a3876-14b3-49ea-8f9a-549b97c0bb66"
+              },
+              "type": "Compose",
+              "inputs": "@setProperty(setProperty(setProperty(setProperty(json('{\"v\":1}'), 'fields', items('Each_stage')?['fields']), 'allowReassign', items('Each_stage')?['allowReassign']), 'dueDays', items('Each_stage')?['dueDays']), 'conditionsMet', variables('StageMet'))"
+            },
+            "Step_name": {
+              "runAfter": {
+                "Snapshot": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "fbb12ac7-5472-4b64-aa63-d6a1ba52a049"
+              },
+              "type": "Compose",
+              "inputs": "@take(concat('Stage ', string(variables('Order')), ' · ', items('Each_stage')?['name'], ' · ', triggerOutputs()?['body/soap_name']), 200)"
+            },
+            "Stage_runs": {
+              "actions": {
+                "Select_rule_users": {
+                  "runAfter": {},
+                  "metadata": {
+                    "operationMetadataId": "d1b69be2-9db4-42f7-9dbe-227c55e0f218"
+                  },
+                  "type": "Select",
+                  "inputs": {
+                    "from": "@items('Each_stage')?['approvers']",
+                    "select": "@if(equals(item()?['kind'], 'users'), toLower(join(coalesce(item()?['ids'], json('[]')), ',')), if(equals(item()?['kind'], 'manager'), outputs('Manager'), if(equals(item()?['kind'], 'owner'), variables('Owner'), '')))"
+                  }
+                },
+                "Stage_users": {
+                  "runAfter": {
+                    "Select_rule_users": [
+                      "Succeeded"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "2b40a18d-e33c-4ad1-88bd-353a750df4d7"
+                  },
+                  "type": "Query",
+                  "inputs": {
+                    "from": "@union(split(join(body('Select_rule_users'), ','), ','), json('[]'))",
+                    "where": "@and(not(empty(item())), not(equals(item(), variables('Requester'))))"
+                  }
+                },
+                "Select_rule_roles": {
+                  "runAfter": {
+                    "Stage_users": [
+                      "Succeeded"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "53f50baa-a518-4a18-8b74-71e3f01b34c4"
+                  },
+                  "type": "Select",
+                  "inputs": {
+                    "from": "@items('Each_stage')?['approvers']",
+                    "select": "@if(equals(item()?['kind'], 'role'), toLower(join(coalesce(item()?['roles'], json('[]')), ',')), '')"
+                  }
+                },
+                "Stage_roles": {
+                  "runAfter": {
+                    "Select_rule_roles": [
+                      "Succeeded"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "67403d73-fd9c-495b-b507-b2f52c6cb3f0"
+                  },
+                  "type": "Query",
+                  "inputs": {
+                    "from": "@union(split(join(body('Select_rule_roles'), ','), ','), json('[]'))",
+                    "where": "@not(empty(item()))"
+                  }
+                },
+                "Users": {
+                  "runAfter": {
+                    "Stage_people": [
+                      "Succeeded"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "d98439f2-b113-48b3-8df3-828cf6b2099d"
+                  },
+                  "type": "SetVariable",
+                  "inputs": {
+                    "name": "Users",
+                    "value": "@if(and(empty(body('Stage_people')), empty(body('Stage_roles'))), body('Fallback_users'), body('Stage_people'))"
+                  }
+                },
+                "Roles": {
+                  "runAfter": {
+                    "Users": [
+                      "Succeeded"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "dab71691-901d-4f17-a54e-b643cb917432"
+                  },
+                  "type": "SetVariable",
+                  "inputs": {
+                    "name": "Roles",
+                    "value": "@if(and(empty(body('Stage_people')), empty(body('Stage_roles'))), body('Fallback_roles'), body('Stage_roles'))"
+                  }
+                },
+                "Everyone_must_approve": {
+                  "actions": {
+                    "Each_role_to_expand": {
+                      "foreach": "@variables('Roles')",
+                      "actions": {
+                        "List_role_members": {
+                          "runAfter": {},
+                          "metadata": {
+                            "operationMetadataId": "0fce8004-76f2-4ca3-9a63-6cb35085c044"
+                          },
+                          "type": "OpenApiConnection",
+                          "inputs": {
+                            "host": {
+                              "connectionName": "shared_commondataserviceforapps",
+                              "operationId": "ListRecords",
+                              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                            },
+                            "parameters": {
+                              "entityName": "systemusers",
+                              "fetchXml": "  <fetch distinct=\"true\">\n    <entity name=\"systemuser\">\n      <attribute name=\"systemuserid\" />\n      <filter><condition attribute=\"isdisabled\" operator=\"eq\" value=\"0\" />\n      <condition attribute=\"accessmode\" operator=\"in\">\n        <value>0</value>\n        <value>1</value>\n        <value>2</value>\n      </condition>\n      <condition attribute=\"applicationid\" operator=\"null\" />\n</filter>\n      <link-entity name=\"systemuserroles\" from=\"systemuserid\" to=\"systemuserid\" intersect=\"true\">\n        <link-entity name=\"role\" from=\"roleid\" to=\"roleid\">\n          <filter><condition attribute=\"parentrootroleid\" operator=\"eq\" value=\"@{items('Each_role_to_expand')}\" /></filter>\n        </link-entity>\n      </link-entity>\n    </entity>\n  </fetch>"
+                            },
+                            "authentication": "@parameters('$authentication')"
+                          }
+                        },
+                        "Member_ids": {
+                          "runAfter": {
+                            "List_role_members": [
+                              "Succeeded"
+                            ]
+                          },
+                          "metadata": {
+                            "operationMetadataId": "c46e45b3-85d9-41dd-92f7-9ac223d443db"
+                          },
+                          "type": "Select",
+                          "inputs": {
+                            "from": "@outputs('List_role_members')?['body/value']",
+                            "select": "@toLower(item()?['systemuserid'])"
+                          }
+                        },
+                        "Users_and_members": {
+                          "runAfter": {
+                            "Member_ids": [
+                              "Succeeded"
+                            ]
+                          },
+                          "metadata": {
+                            "operationMetadataId": "22ca0c4a-440b-4443-9668-f79ed88dfc00"
+                          },
+                          "type": "Compose",
+                          "inputs": "@union(variables('Users'), body('Member_ids'))"
+                        },
+                        "Users_2": {
+                          "runAfter": {
+                            "Users_and_members": [
+                              "Succeeded"
+                            ]
+                          },
+                          "metadata": {
+                            "operationMetadataId": "0b7d6d15-aed4-4994-9206-0eb2b83521aa"
+                          },
+                          "type": "SetVariable",
+                          "inputs": {
+                            "name": "Users",
+                            "value": "@outputs('Users_and_members')"
+                          }
+                        }
+                      },
+                      "runAfter": {},
+                      "metadata": {
+                        "operationMetadataId": "3f6ab016-93cd-4727-8e82-658aead73d70"
+                      },
+                      "type": "Foreach"
+                    },
+                    "Everyone_but_requester": {
+                      "runAfter": {
+                        "Each_role_to_expand": [
+                          "Succeeded"
+                        ]
+                      },
+                      "metadata": {
+                        "operationMetadataId": "ee4d1320-5217-4e4d-a612-94b8f952ee45"
+                      },
+                      "type": "Query",
+                      "inputs": {
+                        "from": "@variables('Users')",
+                        "where": "@not(equals(item(), variables('Requester')))"
+                      }
+                    },
+                    "Set_variable_2": {
+                      "runAfter": {
+                        "Everyone_but_requester": [
+                          "Succeeded"
+                        ]
+                      },
+                      "metadata": {
+                        "operationMetadataId": "8ed495ca-4bdd-48e9-8e0c-27b8843eef51"
+                      },
+                      "type": "SetVariable",
+                      "inputs": {
+                        "name": "Users",
+                        "value": "@body('Everyone_but_requester')"
+                      }
+                    },
+                    "Set_variable_3": {
+                      "runAfter": {
+                        "Set_variable_2": [
+                          "Succeeded"
+                        ]
+                      },
+                      "metadata": {
+                        "operationMetadataId": "2291fe4b-9d4d-40e8-bc35-6a938f7b803d"
+                      },
+                      "type": "SetVariable",
+                      "inputs": {
+                        "name": "Roles",
+                        "value": "@json('[]')"
+                      }
+                    }
+                  },
+                  "runAfter": {
+                    "Roles": [
+                      "Succeeded"
+                    ]
+                  },
+                  "expression": {
+                    "equals": [
+                      "@items('Each_stage')?['mode']",
+                      "all"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "163658ab-daa4-49cf-b0de-5282c9955ec5"
+                  },
+                  "type": "If"
+                },
+                "Status_for_stage": {
+                  "runAfter": {
+                    "Everyone_must_approve": [
+                      "Succeeded"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "b2991051-c852-4185-8dc5-9307f667fc37"
+                  },
+                  "type": "Compose",
+                  "inputs": "@if(equals(variables('FirstActive'), 0), 1, 0)"
+                },
+                "Due_for_stage": {
+                  "runAfter": {
+                    "Status_for_stage": [
+                      "Succeeded"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "ec111965-d1fd-4536-9db8-96396679b226"
+                  },
+                  "type": "Compose",
+                  "inputs": "@if(equals(variables('FirstActive'), 0), addDays(utcNow(), int(items('Each_stage')?['dueDays'])), null)"
+                },
+                "Each_user": {
+                  "foreach": "@variables('Users')",
+                  "actions": {
+                    "Add_user_step": {
+                      "runAfter": {},
+                      "metadata": {
+                        "operationMetadataId": "290c7767-16aa-4515-baae-4fe20c6fec63"
+                      },
+                      "type": "OpenApiConnection",
+                      "inputs": {
+                        "host": {
+                          "connectionName": "shared_commondataserviceforapps",
+                          "operationId": "CreateRecord",
+                          "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                        },
+                        "parameters": {
+                          "entityName": "soap_approvalsteps",
+                          "item/soap_Approval@odata.bind": "soap_approvals(@{variables('ApprovalId')})",
+                          "item/soap_Assignee@odata.bind": "systemusers(@{items('Each_user')})",
+                          "item/soap_dueon": "@outputs('Due_for_stage')",
+                          "item/soap_fields": "@string(outputs('Snapshot'))",
+                          "item/soap_mode": "@items('Each_stage')?['mode']",
+                          "item/soap_name": "@outputs('Step_name')",
+                          "item/soap_stagekind": "@items('Each_stage')?['kind']",
+                          "item/soap_stagename": "@items('Each_stage')?['name']",
+                          "item/soap_stageorder": "@variables('Order')",
+                          "item/soap_status": "@outputs('Status_for_stage')"
+                        },
+                        "authentication": "@parameters('$authentication')"
+                      }
+                    }
+                  },
+                  "runAfter": {
+                    "Due_for_stage": [
+                      "Succeeded"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "3212df4b-3f6b-4dde-8d99-c5185274c200"
+                  },
+                  "type": "Foreach"
+                },
+                "Each_role": {
+                  "foreach": "@variables('Roles')",
+                  "actions": {
+                    "Get_role": {
+                      "runAfter": {},
+                      "metadata": {
+                        "operationMetadataId": "0e7b82df-1c60-469f-bc15-88e42c9cade5"
+                      },
+                      "type": "OpenApiConnection",
+                      "inputs": {
+                        "host": {
+                          "connectionName": "shared_commondataserviceforapps",
+                          "operationId": "GetItem",
+                          "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                        },
+                        "parameters": {
+                          "entityName": "roles",
+                          "recordId": "@items('Each_role')"
+                        },
+                        "authentication": "@parameters('$authentication')"
+                      }
+                    },
+                    "Add_role_step": {
+                      "runAfter": {
+                        "Get_role": [
+                          "Succeeded"
+                        ]
+                      },
+                      "metadata": {
+                        "operationMetadataId": "b0b79de0-1267-46d8-ad24-a063616cd87d"
+                      },
+                      "type": "OpenApiConnection",
+                      "inputs": {
+                        "host": {
+                          "connectionName": "shared_commondataserviceforapps",
+                          "operationId": "CreateRecord",
+                          "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                        },
+                        "parameters": {
+                          "entityName": "soap_approvalsteps",
+                          "item/soap_Approval@odata.bind": "soap_approvals(@{variables('ApprovalId')})",
+                          "item/soap_assigneeroleid": "@items('Each_role')",
+                          "item/soap_assigneerolename": "@outputs('Get_role')?['body/name']",
+                          "item/soap_dueon": "@outputs('Due_for_stage')",
+                          "item/soap_fields": "@string(outputs('Snapshot'))",
+                          "item/soap_mode": "@items('Each_stage')?['mode']",
+                          "item/soap_name": "@outputs('Step_name')",
+                          "item/soap_stagekind": "@items('Each_stage')?['kind']",
+                          "item/soap_stagename": "@items('Each_stage')?['name']",
+                          "item/soap_stageorder": "@variables('Order')",
+                          "item/soap_status": "@outputs('Status_for_stage')"
+                        },
+                        "authentication": "@parameters('$authentication')"
+                      }
+                    },
+                    "Nobody_to_ask": {
+                      "actions": {
+                        "Add_unassigned_step": {
+                          "runAfter": {},
+                          "metadata": {
+                            "operationMetadataId": "cdd7dcf3-5139-46a2-ba20-ab7af89824d1"
+                          },
+                          "type": "OpenApiConnection",
+                          "inputs": {
+                            "host": {
+                              "connectionName": "shared_commondataserviceforapps",
+                              "operationId": "CreateRecord",
+                              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                            },
+                            "parameters": {
+                              "entityName": "soap_approvalsteps",
+                              "item/soap_Approval@odata.bind": "soap_approvals(@{variables('ApprovalId')})",
+                              "item/soap_dueon": "@outputs('Due_for_stage')",
+                              "item/soap_fields": "@string(outputs('Snapshot'))",
+                              "item/soap_mode": "@items('Each_stage')?['mode']",
+                              "item/soap_name": "@outputs('Step_name')",
+                              "item/soap_stagekind": "@items('Each_stage')?['kind']",
+                              "item/soap_stagename": "@items('Each_stage')?['name']",
+                              "item/soap_stageorder": "@variables('Order')",
+                              "item/soap_status": "@outputs('Status_for_stage')"
+                            },
+                            "authentication": "@parameters('$authentication')"
+                          }
+                        }
+                      },
+                      "runAfter": {
+                        "Add_role_step": [
+                          "Succeeded"
+                        ]
+                      },
+                      "expression": {
+                        "equals": [
+                          "@and(empty(variables('Users')), empty(variables('Roles')))",
+                          "@true"
+                        ]
+                      },
+                      "metadata": {
+                        "operationMetadataId": "e3084f0d-1b0a-4bb8-ad20-ea5e1983fb1e"
+                      },
+                      "type": "If"
+                    },
+                    "First_running_stage": {
+                      "actions": {
+                        "Set_variable_7": {
+                          "runAfter": {},
+                          "metadata": {
+                            "operationMetadataId": "4762ff1e-e996-4e76-b9a8-3008399c828d"
+                          },
+                          "type": "SetVariable",
+                          "inputs": {
+                            "name": "FirstActive",
+                            "value": "@variables('Order')"
+                          }
+                        }
+                      },
+                      "runAfter": {
+                        "Nobody_to_ask": [
+                          "Succeeded"
+                        ]
+                      },
+                      "expression": {
+                        "equals": [
+                          "@variables('FirstActive')",
+                          0
+                        ]
+                      },
+                      "metadata": {
+                        "operationMetadataId": "f2db950e-ff34-46d0-a27f-c76c39dfe54e"
+                      },
+                      "type": "If"
+                    }
+                  },
+                  "runAfter": {
+                    "Each_user": [
+                      "Succeeded"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "7e31a1b2-6b88-4864-b91d-f1574b88706f"
+                  },
+                  "type": "Foreach"
+                },
+                "Set_variable_4": {
+                  "runAfter": {
+                    "Stage_roles": [
+                      "Succeeded"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "99d31683-72b4-40dc-834a-a643bd888992"
+                  },
+                  "type": "SetVariable",
+                  "inputs": {
+                    "name": "GroupUsers",
+                    "value": "@json('[]')"
+                  }
+                },
+                "Stage_group_rules": {
+                  "runAfter": {
+                    "Set_variable_4": [
+                      "Succeeded"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "97f8b8a8-49ce-46fd-bd42-01fb2a945301"
+                  },
+                  "type": "Query",
+                  "inputs": {
+                    "from": "@items('Each_stage')?['approvers']",
+                    "where": "@equals(item()?['kind'], 'group')"
+                  }
+                },
+                "Each_group_rule": {
+                  "foreach": "@body('Stage_group_rules')",
+                  "actions": {
+                    "Matching_group": {
+                      "runAfter": {},
+                      "metadata": {
+                        "operationMetadataId": "c5ba3f7b-fb0a-461a-b1d5-134c57f70973"
+                      },
+                      "type": "Query",
+                      "inputs": {
+                        "from": "@outputs('Global')?['groups']",
+                        "where": "@equals(item()?['id'], items('Each_group_rule')?['id'])"
+                      }
+                    },
+                    "Group_people": {
+                      "runAfter": {
+                        "Matching_group": [
+                          "Succeeded"
+                        ]
+                      },
+                      "metadata": {
+                        "operationMetadataId": "06694bf3-3b04-4137-8cb7-680871edcbb5"
+                      },
+                      "type": "Compose",
+                      "inputs": "@coalesce(first(body('Matching_group'))?['users'], json('[]'))"
+                    },
+                    "Group_plus_people": {
+                      "runAfter": {
+                        "Group_people": [
+                          "Succeeded"
+                        ]
+                      },
+                      "metadata": {
+                        "operationMetadataId": "17e03222-eee3-4799-8d5a-36a88f9636f1"
+                      },
+                      "type": "Compose",
+                      "inputs": "@union(variables('GroupUsers'), outputs('Group_people'))"
+                    },
+                    "Set_variable_5": {
+                      "runAfter": {
+                        "Group_plus_people": [
+                          "Succeeded"
+                        ]
+                      },
+                      "metadata": {
+                        "operationMetadataId": "45663cb5-8aa6-4ff1-8649-81ce175c6a2d"
+                      },
+                      "type": "SetVariable",
+                      "inputs": {
+                        "name": "GroupUsers",
+                        "value": "@outputs('Group_plus_people')"
+                      }
+                    },
+                    "Each_group_team": {
+                      "foreach": "@coalesce(first(body('Matching_group'))?['teams'], json('[]'))",
+                      "actions": {
+                        "List_team_members": {
+                          "runAfter": {},
+                          "metadata": {
+                            "operationMetadataId": "8d22f4a7-c4e0-4feb-b9c9-9b7e1a0f89fe"
+                          },
+                          "type": "OpenApiConnection",
+                          "inputs": {
+                            "host": {
+                              "connectionName": "shared_commondataserviceforapps",
+                              "operationId": "ListRecords",
+                              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                            },
+                            "parameters": {
+                              "entityName": "systemusers",
+                              "fetchXml": "    <fetch distinct=\"true\">\n      <entity name=\"systemuser\">\n        <attribute name=\"systemuserid\" />\n        <filter>\n          <condition attribute=\"isdisabled\" operator=\"eq\" value=\"0\" />\n      <condition attribute=\"accessmode\" operator=\"in\">\n        <value>0</value>\n        <value>1</value>\n        <value>2</value>\n      </condition>\n      <condition attribute=\"applicationid\" operator=\"null\" />\n          <condition attribute=\"systemuserid\" operator=\"ne\" value=\"@{variables('Requester')}\" />\n        </filter>\n        <link-entity name=\"teammembership\" from=\"systemuserid\" to=\"systemuserid\" intersect=\"true\">\n          <filter><condition attribute=\"teamid\" operator=\"eq\" value=\"@{items('Each_group_team')}\" /></filter>\n        </link-entity>\n      </entity>\n    </fetch>"
+                            },
+                            "authentication": "@parameters('$authentication')"
+                          }
+                        },
+                        "Team_member_ids": {
+                          "runAfter": {
+                            "List_team_members": [
+                              "Succeeded"
+                            ]
+                          },
+                          "metadata": {
+                            "operationMetadataId": "aeddb554-b7a5-47af-8803-fdd9f6e4a25f"
+                          },
+                          "type": "Select",
+                          "inputs": {
+                            "from": "@outputs('List_team_members')?['body/value']",
+                            "select": "@toLower(item()?['systemuserid'])"
+                          }
+                        },
+                        "Group_plus_team": {
+                          "runAfter": {
+                            "Team_member_ids": [
+                              "Succeeded"
+                            ]
+                          },
+                          "metadata": {
+                            "operationMetadataId": "fe623f3c-f470-420f-a040-fcfae2181034"
+                          },
+                          "type": "Compose",
+                          "inputs": "@union(variables('GroupUsers'), body('Team_member_ids'))"
+                        },
+                        "Set_variable_6": {
+                          "runAfter": {
+                            "Group_plus_team": [
+                              "Succeeded"
+                            ]
+                          },
+                          "metadata": {
+                            "operationMetadataId": "6ac6ab0b-5951-4d15-a99a-028635b355bf"
+                          },
+                          "type": "SetVariable",
+                          "inputs": {
+                            "name": "GroupUsers",
+                            "value": "@outputs('Group_plus_team')"
+                          }
+                        }
+                      },
+                      "runAfter": {
+                        "Set_variable_5": [
+                          "Succeeded"
+                        ]
+                      },
+                      "metadata": {
+                        "operationMetadataId": "00ebc7dc-6ff5-480e-8fa9-ae5c3cf24050"
+                      },
+                      "type": "Foreach"
+                    }
+                  },
+                  "runAfter": {
+                    "Stage_group_rules": [
+                      "Succeeded"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "ef592040-1422-492a-896e-191bcba3e63c"
+                  },
+                  "type": "Foreach"
+                },
+                "Stage_plus_groups": {
+                  "runAfter": {
+                    "Each_group_rule": [
+                      "Succeeded"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "bd65aaed-1571-4f5b-8baa-fd0392347ad0"
+                  },
+                  "type": "Compose",
+                  "inputs": "@union(body('Stage_users'), variables('GroupUsers'))"
+                },
+                "Stage_people": {
+                  "runAfter": {
+                    "Stage_plus_groups": [
+                      "Succeeded"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "82ae160c-8490-4a71-a1af-ccc6ae1171fb"
+                  },
+                  "type": "Query",
+                  "inputs": {
+                    "from": "@outputs('Stage_plus_groups')",
+                    "where": "@and(not(empty(item())), not(equals(item(), variables('Requester'))))"
+                  }
+                }
+              },
+              "runAfter": {
+                "Step_name": [
+                  "Succeeded"
+                ]
+              },
+              "else": {
+                "actions": {
+                  "Add_skipped_step": {
+                    "runAfter": {},
+                    "metadata": {
+                      "operationMetadataId": "940a1e2b-63f4-4497-9478-fd4e5d4e1a9c"
+                    },
+                    "type": "OpenApiConnection",
+                    "inputs": {
+                      "host": {
+                        "connectionName": "shared_commondataserviceforapps",
+                        "operationId": "CreateRecord",
+                        "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                      },
+                      "parameters": {
+                        "entityName": "soap_approvalsteps",
+                        "item/soap_Approval@odata.bind": "soap_approvals(@{variables('ApprovalId')})",
+                        "item/soap_fields": "@string(outputs('Snapshot'))",
+                        "item/soap_mode": "@items('Each_stage')?['mode']",
+                        "item/soap_name": "@outputs('Step_name')",
+                        "item/soap_stagekind": "@items('Each_stage')?['kind']",
+                        "item/soap_stagename": "@items('Each_stage')?['name']",
+                        "item/soap_stageorder": "@variables('Order')",
+                        "item/soap_status": 6
+                      },
+                      "authentication": "@parameters('$authentication')"
+                    }
+                  }
+                }
+              },
+              "expression": {
+                "equals": [
+                  "@variables('StageMet')",
+                  "@true"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "eb5d083b-5991-4c03-854a-06b07c9dba22"
+              },
+              "type": "If"
+            }
+          },
+          "runAfter": {
+            "Fallback_roles": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "7fd4243e-1e6a-459c-a351-33136c09b5a1"
+          },
+          "type": "Foreach"
+        },
+        "Fallback_users": {
+          "runAfter": {
+            "Select_fallback_users": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "9fa55391-bf45-496e-becd-945760bc7edd"
+          },
+          "type": "Query",
+          "inputs": {
+            "from": "@union(split(join(body('Select_fallback_users'), ','), ','), json('[]'))",
+            "where": "@and(not(empty(item())), not(equals(item(), variables('Requester'))))"
+          }
+        },
+        "Select_fallback_roles": {
+          "runAfter": {
+            "Fallback_users": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "46ec08db-cc64-4b07-9fe9-6457a909bc77"
+          },
+          "type": "Select",
+          "inputs": {
+            "from": "@outputs('Global')?['fallback']",
+            "select": "@if(equals(item()?['kind'], 'role'), toLower(join(coalesce(item()?['roles'], json('[]')), ',')), '')"
+          }
+        },
+        "Initialize_variable_9": {
+          "runAfter": {
+            "Initialize_variable_8": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "3870f7ab-6c60-4843-a4e6-d580c261bc9c"
+          },
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "GroupUsers",
+                "type": "array",
+                "value": []
+              }
+            ]
+          }
+        },
+        "Nothing_to_approve": {
+          "actions": {
+            "Update_a_row": {
+              "runAfter": {},
+              "metadata": {
+                "operationMetadataId": "e3688c7b-c9bf-4cba-a5b0-7d3dc2cbd7f4"
+              },
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "connectionName": "shared_commondataserviceforapps",
+                  "operationId": "UpdateOnlyRecord",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                },
+                "parameters": {
+                  "entityName": "soap_approvals",
+                  "recordId": "@variables('ApprovalId')",
+                  "item/soap_completedon": "@utcNow()",
+                  "item/soap_status": 2
+                },
+                "authentication": "@parameters('$authentication')"
+              }
+            },
+            "Run_a_Child_Flow": {
+              "runAfter": {
+                "Update_a_row": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "d209fb68-595a-4ef6-a8ab-8abccf5b84bc"
+              },
+              "type": "Workflow",
+              "inputs": {
+                "host": {
+                  "workflowReferenceName": "5e5be910-31b9-f111-aaac-70a8a5b02d7a"
+                },
+                "body": {
+                  "text": "@variables('ApprovalId')",
+                  "text_1": "requester"
+                }
+              }
+            }
+          },
+          "runAfter": {
+            "Each_stage": [
+              "Succeeded"
+            ]
+          },
+          "else": {
+            "actions": {
+              "Update_a_row_2": {
+                "runAfter": {},
+                "metadata": {
+                  "operationMetadataId": "ba8e7f9f-820e-4af6-9de7-86f309aec7d7"
+                },
+                "type": "OpenApiConnection",
+                "inputs": {
+                  "host": {
+                    "connectionName": "shared_commondataserviceforapps",
+                    "operationId": "UpdateOnlyRecord",
+                    "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                  },
+                  "parameters": {
+                    "entityName": "soap_approvals",
+                    "recordId": "@variables('ApprovalId')",
+                    "item/soap_currentstage": "@variables('FirstActive')",
+                    "item/soap_status": 1
+                  },
+                  "authentication": "@parameters('$authentication')"
+                }
+              },
+              "Run_a_Child_Flow_2": {
+                "runAfter": {
+                  "Update_a_row_2": [
+                    "Succeeded"
+                  ]
+                },
+                "metadata": {
+                  "operationMetadataId": "a3233791-93f9-4054-979f-aecfa71510ad"
+                },
+                "type": "Workflow",
+                "inputs": {
+                  "host": {
+                    "workflowReferenceName": "5e5be910-31b9-f111-aaac-70a8a5b02d7a"
+                  },
+                  "body": {
+                    "text": "@variables('ApprovalId')",
+                    "text_1": "approvers"
+                  }
+                }
+              }
+            }
+          },
+          "expression": {
+            "equals": [
+              "@variables('FirstActive')",
+              0
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "4e4a5d83-bdf8-431a-a5ae-87afaa560a4a"
+          },
+          "type": "If"
+        }
+      }
+    },
+    "templateName": ""
+  },
+  "schemaVersion": "1.0.0.0"
+}

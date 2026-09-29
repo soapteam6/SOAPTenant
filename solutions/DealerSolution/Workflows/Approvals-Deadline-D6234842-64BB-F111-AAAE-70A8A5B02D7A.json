@@ -1,0 +1,215 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_commondataserviceforapps": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "soap_sharedcommondataserviceforapps_a209b"
+        },
+        "api": {
+          "name": "shared_commondataserviceforapps"
+        }
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        }
+      },
+      "triggers": {
+        "Recurrence": {
+          "recurrence": {
+            "frequency": "Hour",
+            "interval": 1,
+            "startTime": "2026-09-28T17:00:00Z"
+          },
+          "metadata": {
+            "operationMetadataId": "7f1816df-0544-4e24-82ec-80814fe373de"
+          },
+          "type": "Recurrence"
+        }
+      },
+      "actions": {
+        "List_overdue": {
+          "runAfter": {},
+          "metadata": {
+            "operationMetadataId": "e0926580-a16a-40a6-8847-3cc6045b6d4f"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_commondataserviceforapps",
+              "operationId": "ListRecords",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "entityName": "soap_approvalsteps",
+              "$filter": "soap_status eq 1 and soap_dueon lt @{utcNow()}"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        },
+        "Each_overdue": {
+          "foreach": "@outputs('List_overdue')?['body/value']",
+          "actions": {
+            "Get_approval": {
+              "runAfter": {},
+              "metadata": {
+                "operationMetadataId": "9ecf1714-767f-4f68-88b9-38c9e7902f9a"
+              },
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "connectionName": "shared_commondataserviceforapps",
+                  "operationId": "GetItem",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                },
+                "parameters": {
+                  "entityName": "soap_approvals",
+                  "recordId": "@items('Each_overdue')?['_soap_approval_value']\r\n"
+                },
+                "authentication": "@parameters('$authentication')"
+              }
+            },
+            "Still_in_progress": {
+              "actions": {
+                "List_open": {
+                  "runAfter": {},
+                  "metadata": {
+                    "operationMetadataId": "297f76fe-8ee6-43bd-9b70-368aff928084"
+                  },
+                  "type": "OpenApiConnection",
+                  "inputs": {
+                    "host": {
+                      "connectionName": "shared_commondataserviceforapps",
+                      "operationId": "ListRecords",
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                    },
+                    "parameters": {
+                      "entityName": "soap_approvalsteps",
+                      "$filter": "_soap_approval_value eq @{outputs('Get_approval')?['body/soap_approvalid']} and (soap_status eq 0 or soap_status eq 1)"
+                    },
+                    "authentication": "@parameters('$authentication')"
+                  }
+                },
+                "Close": {
+                  "foreach": "@outputs('List_open')?['body/value']",
+                  "actions": {
+                    "Update_a_row": {
+                      "runAfter": {},
+                      "metadata": {
+                        "operationMetadataId": "9f174bcf-54ff-4c71-8f0d-2bd04ff98dba"
+                      },
+                      "type": "OpenApiConnection",
+                      "inputs": {
+                        "host": {
+                          "connectionName": "shared_commondataserviceforapps",
+                          "operationId": "UpdateOnlyRecord",
+                          "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                        },
+                        "parameters": {
+                          "entityName": "soap_approvalsteps",
+                          "recordId": "@items('Close')?['soap_approvalstepid']",
+                          "item/soap_status": "@if(and(equals(items('Close')?['soap_status'], 1), less(ticks(coalesce(items('Close')?['soap_dueon'], '9999-12-31T00:00:00Z')), ticks(utcNow()))), 7, 8)"
+                        },
+                        "authentication": "@parameters('$authentication')"
+                      }
+                    }
+                  },
+                  "runAfter": {
+                    "List_open": [
+                      "Succeeded"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "382217ac-7840-46ff-8f6f-41fe5f443636"
+                  },
+                  "type": "Foreach"
+                },
+                "Update_a_row_2": {
+                  "runAfter": {
+                    "Close": [
+                      "Succeeded"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "5494a08d-b9b4-40fd-9725-43840ba638bc"
+                  },
+                  "type": "OpenApiConnection",
+                  "inputs": {
+                    "host": {
+                      "connectionName": "shared_commondataserviceforapps",
+                      "operationId": "UpdateOnlyRecord",
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                    },
+                    "parameters": {
+                      "entityName": "soap_approvals",
+                      "recordId": "@outputs('Get_approval')?['body/soap_approvalid']",
+                      "item/soap_completedon": "@utcNow()",
+                      "item/soap_status": 5
+                    },
+                    "authentication": "@parameters('$authentication')"
+                  }
+                },
+                "Run_a_Child_Flow": {
+                  "runAfter": {
+                    "Update_a_row_2": [
+                      "Succeeded"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "96fa23c6-23d7-4ba5-accc-b66fe5a33933"
+                  },
+                  "type": "Workflow",
+                  "inputs": {
+                    "host": {
+                      "workflowReferenceName": "5e5be910-31b9-f111-aaac-70a8a5b02d7a"
+                    },
+                    "body": {
+                      "text": "@outputs('Get_approval')?['body/soap_approvalid']",
+                      "text_1": "requester"
+                    }
+                  }
+                }
+              },
+              "runAfter": {
+                "Get_approval": [
+                  "Succeeded"
+                ]
+              },
+              "expression": {
+                "equals": [
+                  "@outputs('Get_approval')?['body/soap_status']",
+                  1
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "26bb15aa-d328-4be0-9a2c-8e7622614edb"
+              },
+              "type": "If"
+            }
+          },
+          "runAfter": {
+            "List_overdue": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "37991ef5-bd38-466c-948c-2cca97c638d4"
+          },
+          "type": "Foreach"
+        }
+      }
+    },
+    "templateName": null
+  },
+  "schemaVersion": "1.0.0.0"
+}

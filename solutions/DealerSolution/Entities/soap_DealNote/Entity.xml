@@ -903,6 +903,22 @@
                   <Description description="" languagecode="1033" />
                 </Descriptions>
               </option>
+              <option value="8" IsHidden="0">
+                <labels>
+                  <label description="Approval requested" languagecode="1033" />
+                </labels>
+                <Descriptions>
+                  <Description description="" languagecode="1033" />
+                </Descriptions>
+              </option>
+              <option value="9" IsHidden="0">
+                <labels>
+                  <label description="Approval decided" languagecode="1033" />
+                </labels>
+                <Descriptions>
+                  <Description description="" languagecode="1033" />
+                </Descriptions>
+              </option>
             </options>
           </optionset>
           <displaynames>
