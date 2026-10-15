@@ -50,6 +50,7 @@
     <AppModuleComponent type="26" id="{c62fd09a-a083-f111-ab0f-6045bd05bb6f}" />
     <AppModuleComponent type="26" id="{7c511431-c02b-4add-8588-80f34eaf0d8e}" />
     <AppModuleComponent type="26" id="{4564090f-2a0b-4033-9601-943972e9f985}" />
+    <AppModuleComponent type="60" id="{31a17e05-2dbe-f111-aaae-70a8a5b02c62}" />
     <AppModuleComponent type="60" id="{8448b78f-8f42-454e-8e2a-f8196b0419af}" />
     <AppModuleComponent type="62" schemaName="soap_CRM" />
   </AppModuleComponents>

@@ -1,0 +1,166 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_commondataserviceforapps_1": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "soap_sharedcommondataserviceforapps_a209b"
+        },
+        "api": {
+          "name": "shared_commondataserviceforapps"
+        }
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        }
+      },
+      "triggers": {
+        "Account": {
+          "metadata": {
+            "operationMetadataId": "6096ff8e-cfee-4c7a-8857-f5e0f99a8840"
+          },
+          "type": "OpenApiConnectionWebhook",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_commondataserviceforapps_1",
+              "operationId": "SubscribeWebhookTrigger",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "subscriptionRequest/message": 4,
+              "subscriptionRequest/entityname": "account",
+              "subscriptionRequest/scope": 4,
+              "subscriptionRequest/filteringattributes": "soap_eanumber"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        }
+      },
+      "actions": {
+        "NotEmpty": {
+          "actions": {
+            "List_rows_EA_Customers": {
+              "runAfter": {},
+              "metadata": {
+                "operationMetadataId": "011aceb0-e39f-4627-9301-7dd42a645937"
+              },
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "connectionName": "shared_commondataserviceforapps_1",
+                  "operationId": "ListRecords",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                },
+                "parameters": {
+                  "entityName": "soap_customers",
+                  "$select": "soap_customerid",
+                  "$filter": "soap_customernumber eq '@{triggerOutputs()?['body/soap_eanumber']}'",
+                  "$top": 1
+                },
+                "authentication": "@parameters('$authentication')"
+              }
+            },
+            "EANotEmpty": {
+              "actions": {
+                "EAID": {
+                  "runAfter": {},
+                  "metadata": {
+                    "operationMetadataId": "8458a042-fdb8-4a59-bafc-d4e9cd0a5847"
+                  },
+                  "type": "Compose",
+                  "inputs": "@first(outputs('List_rows_EA_Customers')?['body/value'])?['soap_customerid']"
+                },
+                "Update_EA_Customer": {
+                  "runAfter": {
+                    "EAID": [
+                      "Succeeded"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "449e374e-167c-47eb-8657-6216d1babd0b"
+                  },
+                  "type": "OpenApiConnection",
+                  "inputs": {
+                    "host": {
+                      "connectionName": "shared_commondataserviceforapps_1",
+                      "operationId": "UpdateOnlyRecord",
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                    },
+                    "parameters": {
+                      "entityName": "soap_customers",
+                      "recordId": "@outputs('EAID')",
+                      "item/soap_accountid@odata.bind": "accounts(@{triggerOutputs()?['body/accountid']})"
+                    },
+                    "authentication": "@parameters('$authentication')"
+                  }
+                },
+                "Update_Account": {
+                  "runAfter": {
+                    "Update_EA_Customer": [
+                      "Succeeded"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "d29bfb9a-5ae4-4fae-82b9-a47ccdf02efd"
+                  },
+                  "type": "OpenApiConnection",
+                  "inputs": {
+                    "host": {
+                      "connectionName": "shared_commondataserviceforapps_1",
+                      "operationId": "UpdateOnlyRecord",
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                    },
+                    "parameters": {
+                      "entityName": "accounts",
+                      "recordId": "@triggerOutputs()?['body/accountid']",
+                      "item/soap_eacustomerid@odata.bind": "soap_customers(@{outputs('EAID')})"
+                    },
+                    "authentication": "@parameters('$authentication')"
+                  }
+                }
+              },
+              "runAfter": {
+                "List_rows_EA_Customers": [
+                  "Succeeded"
+                ]
+              },
+              "expression": {
+                "equals": [
+                  "@empty(outputs('List_rows_EA_Customers')?['body/value'])",
+                  "@false"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "77a4faaa-5fb0-4802-9e61-1e7164550d01"
+              },
+              "type": "If"
+            }
+          },
+          "runAfter": {},
+          "expression": {
+            "equals": [
+              "@empty(triggerOutputs()?['body/soap_eanumber'])",
+              "@false"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "e28a052c-ecc9-41c7-bb88-d5687b0b3078"
+          },
+          "type": "If"
+        }
+      }
+    },
+    "templateName": ""
+  },
+  "schemaVersion": "1.0.0.0"
+}
